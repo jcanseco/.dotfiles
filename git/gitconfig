@@ -51,6 +51,7 @@
 [core]
     editor = vim
     excludesfile = ~/.dotfiles.new/git/gitignore_global
+    pager = less -+F -+X -C
 
 [push]
     default = simple
