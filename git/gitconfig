@@ -1,0 +1,71 @@
+[user]
+    name = Jazel Canseco
+    email = jazel.canseco@gmail.com
+
+[alias]
+    # List all aliases
+    la = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | less
+
+    # Basic aliases
+    l = log
+    s = status
+    d = diff HEAD
+    ds = diff --staged
+    du = diff
+    a = add
+    aa = add -A :/
+    ci = commit
+    cm = commit -m
+    amd = commit --amend
+    ss = stash
+    ssp = stash pop
+    b = branch
+    co = checkout
+    cob = checkout -b
+    f = fetch
+    pl = pull
+    pr = pull --rebase
+    ps = push
+    cp = cherry-pick
+    cpa = cherry-pick --abort
+    rb = rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    rba = rebase --abort
+    r = reset
+    rh = ! bash ~/.dotfiles.new/git/scripts/git_reset_hard.sh
+
+    # Show changes made in the last few commits
+    c1 = diff HEAD~1 HEAD
+    c2 = diff HEAD~2 HEAD~1
+    c3 = diff HEAD~3 HEAD~2
+    c4 = diff HEAD~4 HEAD~3
+    c5 = diff HEAD~5 HEAD~4
+
+    # git cof <file>; reset file back to HEAD
+    cof = checkout --
+
+    # git lg <branch>; show log graph for branch (defaults to current branch if none passed)
+    lg = log --pretty=oneline --abbrev-commit --graph --decorate
+
+[core]
+    editor = vim
+    excludesfile = ~/.dotfiles.new/git/gitignore_global
+
+[push]
+    default = simple
+
+[color]
+    ui = true
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+
+[log]
+    decorate = on
+
+[advice]
+    statusHints = false
