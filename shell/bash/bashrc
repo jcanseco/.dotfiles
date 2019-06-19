@@ -39,6 +39,12 @@ fi
 # Set aliases
 source ~/.dotfiles.new/shell/aliases
 
+# Set bash to automatically list directory contents whenever you change directories
+function cd() {
+    builtin cd $@
+    ls
+}
+
 # Enable programmable completion features
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
