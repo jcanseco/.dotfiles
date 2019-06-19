@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Helper function for opening files in vim
+# Usage: v <filename>
+function v() {
+    # Open current directory by default if no file argument given.
+    if [[ $# == 0 ]]; then
+        vim .
+        return
+    fi
+
+    # Open file or directory if it exists.
+    if [[ -f $1 ]] || [[ -d $1 ]]; then
+        vim $1
+        return
+    fi
+
+    # Prompt user regarding creating a new file if it does not exist.
+    read -n1 -p "vim: Creating new file '$1'. Continue? [Y/n]: " opt
+    printf "\n"
+    if [[ $opt == "Y" ]]; then
+        vim $1
+        return
+    fi
+}
+
+# Helper function for quick creation of temporary sandbox projects in vim
+# Usage: vs <extension>
+function vs() {
+    # Create and go to new temporary directory
+    cd $(mktemp -d)
+
+    # Create 'main' file with given extension (or empty extension if none given)
+    if [[ $# == 0 ]]; then
+        vim main
+    else
+        vim main.$1
+    fi
+}
+
+# Search for files within the current directory whose filename contains a given string
+# Usage: search <filename>
+function search() {
+    find . -iname "*$@*" | less
+}
+
+# Create a symlink to the current directory in ~/Quicklinks/
+# Usage: mkql <linkname>
+function mkql() {
+    if [[ ! -d ~/Quicklinks/ ]]; then
+        echo "Error: ~/Quicklinks/ does not exist."; return
+    elif [[ -z $1 ]]; then
+        echo "Error: no argument provided for link name."; return
+    fi
+
+    ln -s "$(pwd -P)" ~/Quicklinks/"$1"
+}

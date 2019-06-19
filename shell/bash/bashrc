@@ -39,6 +39,9 @@ fi
 # Set aliases
 source ~/.dotfiles.new/shell/aliases
 
+# Set functions
+source ~/.dotfiles.new/shell/functions
+
 # Set bash to automatically list directory contents whenever you change directories
 function cd() {
     builtin cd $@

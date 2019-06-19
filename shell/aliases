@@ -1,4 +1,5 @@
-alias v="vim"
+#!/bin/bash
+
 alias g="git"
 alias cl="clear"
 alias q="exit"
