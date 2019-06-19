@@ -4,11 +4,11 @@
 
 [alias]
     # List all aliases
-    la = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | less
+    alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | less
 
     # Basic aliases
     l = log
-    s = status
+    st = status
     d = diff HEAD
     ds = diff --staged
     du = diff
@@ -45,7 +45,7 @@
     # git cof <file>; reset file back to HEAD
     cof = checkout --
 
-    # git lg <branch>; show log graph for branch (defaults to current branch if none passed)
+    # git lg <branch>; show log graph for branch (defaults to current branch)
     lg = log --pretty=oneline --abbrev-commit --graph --decorate
 
 [core]
