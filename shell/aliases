@@ -1,0 +1,36 @@
+alias v="vim"
+alias g="git"
+alias cl="clear"
+alias q="exit"
+alias qq="exit"
+alias tgz="tar -xvzf"
+
+alias vdot="vim ~/.dotfiles.new"
+alias rl="source ~/.bashrc" # Reload the bash configuration file
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias dot="cd ~/.dotfiles.new"
+alias ws="cd ~/Workspace"
+alias ql="cd ~/Quicklinks"
+alias doc="cd ~/Documents"
+alias down="cd ~/Downloads"
+
+alias ls="ls --color=auto --group-directories-first"
+alias tree="tree --dirsfirst"
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+alias mkdir="mkdir -p" # Automatically create intermediate non-existing directories when needed
+
+alias cd..="cd .."
+alias gti="git"
+alias igt="git"
+alias gt="git"
+alias got="git"
+alias giut="git"
+alias gitu="git"
+alias giit="git"
+alias it="git"

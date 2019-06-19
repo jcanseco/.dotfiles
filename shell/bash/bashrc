@@ -1,0 +1,49 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+HISTCONTROL=ignoredups # Don't put duplicate lines in history
+
+shopt -s histappend # Append to history file, don't overwrite it
+shopt -s globstar # Set pattern "**" to match all files and directories/subdirectories
+shopt -s checkwinsize # Check window size after each command and update LINES and COLUMNS if needed
+
+# Make 'less' more friendly for non-text files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Set variable identifying the chroot you're working in (used to configure the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# Use color prompt if supported by terminal
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+# Configure prompt
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt
+
+# Enable color support for ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# Set aliases
+source ~/.dotfiles.new/shell/aliases
+
+# Enable programmable completion features
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        source /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion
+    fi
+fi

@@ -13,6 +13,7 @@ BACKUP_DIR="${HOME}/.backups/${CURR_DATE_TIME}"
 # Map of [symlink to be created on home dir] to [path to actual dotfile]
 typeset -A DOTFILES
 DOTFILES=(
+    [".bashrc"]="${DOTFILES_DIR}/shell/bash/bashrc"
     [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
 )
 
