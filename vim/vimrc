@@ -1,0 +1,57 @@
+set nocompatible " Enable modern vim features not compatible with vi (must be at the top)
+syntax on " Turn on syntax highlighting
+
+""" Dependencies
+source ~/.dotfiles.new/vim/plugins.vim
+source ~/.dotfiles.new/vim/keymaps.vim
+source ~/.dotfiles.new/vim/sensible.vim
+
+""" Colors
+colorscheme dim
+
+""" General
+set number " Show current line number on the side bar
+set hlsearch " Highlight search results
+set ignorecase " Ignore case when searching ...
+set smartcase " ... unless search pattern contains upper case characters
+set smartindent " Smart autoindenting when starting a new line
+set formatoptions=crqlj " Format options that are good for Google style (see :h fo-table)
+set nowrap " Disable line wrapping by default ...
+set linebreak " ... but if enabled, don't break words when wrapping
+set noshowmode " Disable the mode status at the bottom
+set showcmd " Show last command executed at the bottom
+set mouse-=a " Disable mouse click to go to position
+set autochdir " Make :e and :vsp show directory relative to buffer
+set autoread " Detect when a file is changed
+set splitbelow " Open files below the current window when doing a horizontal split
+set splitright " Open files to the right of the current window when doing a vertical split
+set hidden " Allow for current buffer to be backgrounded
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undo " Save undo history files here instead of where the modified files are
+set noswapfile " Don't make swap files
+
+autocmd InsertEnter * :setlocal nohlsearch " Toggle hl off when entering insert mode
+autocmd InsertLeave * :setlocal hlsearch " Toggle hl back on when leaving insert mode
+
+autocmd FileType * set formatoptions-=o " See :h fo-table for what removing the option 'o' does, and https://vi.stackexchange.com/q/9366 for why we remove it this way here
+
+" Create undo dir if it does not exist
+if !isdirectory(&undodir)
+  silent call system('mkdir -p ' . &undodir)
+endif
+
+""" Tab Control
+set expandtab " Replace tabs with spaces
+set softtabstop=4 " # of spaces inserted when you hit <TAB> in insert mode, and # of spaces deleted when you hit backspace on a <TAB>
+set shiftwidth=4 " # of spaces to use for indenting and unindenting using >> and <<
+set tabstop=8 " # of spaces used to visually represent the <TAB> character
+
+autocmd FileType vim setlocal softtabstop=2 shiftwidth=2
+autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
+autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
+autocmd FileType json setlocal softtabstop=2 shiftwidth=2
+
+""" Highlights
+highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
+
+filetype plugin indent on " Enable filetype detection and load the ftplugin and indent files for any detected filetypes (must be at the bottom)

@@ -15,6 +15,7 @@ typeset -A DOTFILES
 DOTFILES=(
     [".bashrc"]="${DOTFILES_DIR}/shell/bash/bashrc"
     [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
+    [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
 )
 
 function handle_error {
