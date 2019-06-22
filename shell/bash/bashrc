@@ -36,6 +36,9 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
+# Set theme
+source ~/.dotfiles.new/shell/theme
+
 # Set aliases
 source ~/.dotfiles.new/shell/aliases
 
