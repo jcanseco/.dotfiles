@@ -1,10 +1,13 @@
 set nocompatible " Enable modern vim features not compatible with vi (must be at the top)
-syntax on " Turn on syntax highlighting
 
-""" Dependencies
+""" Base Defaults
+source ~/.dotfiles.new/vim/sensible.vim " Loaded here instead of via a plugin manager cause plugin managers typically load plugins after vimrc (see https://unix.stackexchange.com/a/74778)
+
+""" Plugins
 source ~/.dotfiles.new/vim/plugins.vim
+
+""" Keymaps
 source ~/.dotfiles.new/vim/keymaps.vim
-source ~/.dotfiles.new/vim/sensible.vim
 
 """ Colors
 colorscheme dim
@@ -53,5 +56,3 @@ autocmd FileType json setlocal softtabstop=2 shiftwidth=2
 
 """ Highlights
 highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
-
-filetype plugin indent on " Enable filetype detection and load the ftplugin and indent files for any detected filetypes (must be at the bottom)
