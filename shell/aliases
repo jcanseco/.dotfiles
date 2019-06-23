@@ -13,6 +13,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias -- -="cd -" # Go back to previous directory using -
+
 alias dot="cd ~/.dotfiles.new"
 alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
