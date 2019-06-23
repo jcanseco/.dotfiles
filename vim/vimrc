@@ -3,11 +3,11 @@ set nocompatible " Enable modern vim features not compatible with vi (must be at
 """ Base Defaults
 source ~/.dotfiles.new/vim/sensible.vim " Loaded here instead of via a plugin manager cause plugin managers typically load plugins after vimrc (see https://unix.stackexchange.com/a/74778)
 
-""" Plugins
-source ~/.dotfiles.new/vim/plugins.vim
-
 """ Keymaps
 source ~/.dotfiles.new/vim/keymaps.vim
+
+""" Plugins
+source ~/.dotfiles.new/vim/plugins.vim
 
 """ Colors
 colorscheme dim

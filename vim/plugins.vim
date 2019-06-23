@@ -63,6 +63,8 @@ augroup END
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1
 
+nnoremap <Leader>f :FileBeagle<CR> " Open file browser
+
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
 
