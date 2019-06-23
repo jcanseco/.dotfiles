@@ -24,7 +24,6 @@ set linebreak " ... but if enabled, don't break words when wrapping
 set noshowmode " Disable the mode status at the bottom
 set showcmd " Show last command executed at the bottom
 set mouse-=a " Disable mouse click to go to position
-set autochdir " Make :e and :vsp show directory relative to buffer
 set autoread " Detect when a file is changed
 set splitbelow " Open files below the current window when doing a horizontal split
 set splitright " Open files to the right of the current window when doing a vertical split
@@ -32,6 +31,8 @@ set hidden " Allow for current buffer to be backgrounded
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undo " Save undo history files here instead of where the modified files are
 set noswapfile " Don't make swap files
+
+autocmd BufNewFile,BufEnter * silent! lcd %:p:h " Auto-change current working directory to that of the current buffer (works better with fzf unlike the 'autochdir' option)
 
 autocmd InsertEnter * :setlocal nohlsearch " Toggle hl off when entering insert mode
 autocmd InsertLeave * :setlocal hlsearch " Toggle hl back on when leaving insert mode

@@ -28,12 +28,14 @@ Plug 'sheerun/vim-polyglot' " Syntax highlighting and indentation for various la
 Plug 'Raimondi/delimitMate' " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'sickill/vim-pasta' " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
 Plug 'tpope/vim-commentary' " Comment stuff out
-Plug 'dbakker/vim-projectroot' " Helper functions for guessing the project root using heuristics
-Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
-Plug 'jeetsukumaran/vim-filebeagle' " File browser
 Plug 'unblevable/quick-scope' " Highlights for more efficient left/right motions using f/F
 Plug 'google/vim-searchindex' " Make searches more like Ctrl+F on web browsers
-Plug 'ludovicchabant/vim-gutentags', { 'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+)
+Plug 'ludovicchabant/vim-gutentags', {'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+)
+Plug 'jeetsukumaran/vim-filebeagle' " File browser
+Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
+Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim
+Plug 'dbakker/vim-projectroot' " Helper functions for guessing the project root using heuristics (e.g. :ProjectRootExe)
+Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
 
 call plug#end()
 
@@ -60,3 +62,11 @@ augroup END
 """ FileBeagle
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1
+
+""" Fzf
+let g:fzf_layout={'down': '~25%'}
+
+nnoremap <C-p> :ProjectRootExe Files<CR> " Start file search from the project root
+nnoremap <Leader>h :History<CR> " Start file search amongst recently opened files
+nnoremap <Leader>l :Lines<CR> " Start search for lines on open buffers
+nnoremap <Leader>ag :ProjectRootExe Ag<CR> " Start ag search from the project root
