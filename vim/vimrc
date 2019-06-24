@@ -53,6 +53,8 @@ autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
 autocmd FileType json setlocal softtabstop=2 shiftwidth=2
 
 """ Colors
+set background=dark " Fixes a weird issue with vim-dim where the colorscheme quickly changes from light to dark on start-up
+
 augroup my_colors " Colorscheme overrides (see https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f)
   autocmd!
   autocmd Colorscheme * highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
