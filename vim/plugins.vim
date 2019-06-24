@@ -71,4 +71,4 @@ let g:fzf_layout={'down': '~25%'}
 nnoremap <C-p> :ProjectRootExe Files<CR> " Start file search from the project root
 nnoremap <Leader>h :History<CR> " Start file search amongst recently opened files
 nnoremap <Leader>l :Lines!<CR> " Start line search on open buffers (full-screen)
-nnoremap <Leader>ag :ProjectRootExe Ag!<CR> " Start ag search from the project root (full-screen)
+nnoremap <Leader>a :ProjectRootExe Ag!<CR> " Start ag search from the project root (full-screen)
