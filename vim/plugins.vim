@@ -31,10 +31,10 @@ Plug 'tpope/vim-commentary' " Comment stuff out
 Plug 'unblevable/quick-scope' " Highlights for more efficient left/right motions using f/F
 Plug 'google/vim-searchindex' " Make searches more like Ctrl+F on web browsers
 Plug 'ludovicchabant/vim-gutentags', {'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+)
+Plug 'airblade/vim-rooter' " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
 Plug 'jeetsukumaran/vim-filebeagle' " File browser
 Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
 Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim
-Plug 'dbakker/vim-projectroot' " Helper functions for guessing the project root using heuristics (e.g. :ProjectRootExe)
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
 
 call plug#end()
@@ -59,16 +59,22 @@ augroup qs_colors
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 augroup END
 
+""" Vim-rooter
+let g:rooter_manual_only=1 " Disable auto-changing of the current working directory; we only want this plugin for its helper functions
+
 """ FileBeagle
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1
 
-nnoremap <Leader>f :FileBeagle<CR> " Open file browser
+nnoremap <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
 
-nnoremap <C-p> :ProjectRootExe Files<CR> " Start file search from the project root
-nnoremap <Leader>h :History<CR> " Start file search amongst recently opened files
-nnoremap <Leader>l :Lines!<CR> " Start line search on open buffers (full-screen)
-nnoremap <Leader>a :ProjectRootExe Ag!<CR> " Start ag search from the project root (full-screen)
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
+
+nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
+nnoremap <Leader>h :History<CR>| " Start file search amongst recently opened files
+nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
+nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
