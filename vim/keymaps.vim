@@ -1,5 +1,5 @@
 " Set the <Leader> key
-let mapleader=','
+let mapleader="\<space>"
 
 " Reload vimrc using :rl
 cnoreabbrev <expr> rl 'source ~/.vimrc'
