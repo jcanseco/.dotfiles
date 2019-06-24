@@ -20,9 +20,6 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-nnoremap I g^i
-nnoremap A g$a
-
 " Move between vim-splits using 'Ctrl + (h/j/k/l)'
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
