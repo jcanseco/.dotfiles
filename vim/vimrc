@@ -59,3 +59,4 @@ autocmd FileType json setlocal softtabstop=2 shiftwidth=2
 highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
 highlight VertSplit ctermbg=none " Remove highlighting on boundaries of vertical splits
 highlight SignColumn ctermbg=none " Remove highlighting on the gutter (used by plugins like Neomake)
+highlight! link Todo Comment " Make TODO's (and FIXME's, etc.) have the same highlighting as regular comments
