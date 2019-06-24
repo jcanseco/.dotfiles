@@ -36,6 +36,7 @@ Plug 'jeetsukumaran/vim-filebeagle' " File browser
 Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
 Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
+Plug 'neomake/neomake' " Linting and make framework
 
 call plug#end()
 
@@ -55,8 +56,8 @@ let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into bod
 let g:qs_highlight_on_keys=['f','F'] " Trigger highlights only when one of these keys is pressed
 augroup qs_colors
   autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+  autocmd ColorScheme * highlight QuickScopePrimary cterm=bold,underline ctermfg=green
+  autocmd ColorScheme * highlight QuickScopeSecondary cterm=bold,underline ctermfg=cyan
 augroup END
 
 """ Vim-rooter
@@ -78,3 +79,12 @@ nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search 
 nnoremap <Leader>h :History<CR>| " Start file search amongst recently opened files
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
+
+""" Neomake
+call neomake#configure#automake('w') " Run on buffer write
+
+augroup my_neomake_highlights
+  autocmd!
+  autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
+  autocmd ColorScheme * highlight NeomakeWarning cterm=underline ctermfg=yellow
+augroup END
