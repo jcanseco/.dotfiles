@@ -5,7 +5,10 @@ let mapleader="\<space>"
 cnoreabbrev <expr> rl 'source ~/.vimrc'
 
 " Save
-nnoremap <Leader>s :w<CR>
+nnoremap <Leader>w :w<CR>
+
+" Quit
+nnoremap <Leader>q :q<CR>
 
 " Toggle paste mode
 nnoremap <Leader>p :set paste!<CR>
@@ -16,7 +19,6 @@ nnoremap Y y$
 " Move over wrapped lines same as normal lines
 nnoremap j gj
 nnoremap k gk
-
 vnoremap j gj
 vnoremap k gk
 
@@ -37,16 +39,16 @@ vnoremap > >gv
 " Prevent jumping to the next match when pressing '*'
 nnoremap * :keepjumps normal! mi*`i<CR>
 
-" Disable highlights using '<Leader> + d'
+" Disable highlights
 nnoremap <silent> <Leader>d :noh<CR>
 
-" Remove all trailing whitespace using '<Leader> + t'
+" Remove all trailing whitespace
 nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR> :w<CR> :noh<CR>
 
-" Refresh current buffer to match the saved state using '<Leader> + r', and then save the file right after to remove the 'trailing whitespace' warning on airline.
+" Refresh current buffer to match saved state, and then save right after to remove the 'trailing whitespace' warning on airline
 nnoremap <silent> <Leader>r :e!<CR> :w<CR>
 
-" Common mistypes
+" Common mistypes (we don't add one for 'q:' because we use 'q' in FileBeagle)
 command! WQ wq
 command! Wq wq
 command! Wqa wqa
