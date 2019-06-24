@@ -11,7 +11,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Toggle paste mode
-nnoremap <Leader>p :set paste!<CR>
+nnoremap <silent> <Leader>p :set paste!<CR>
 
 " Like 'C' and 'D', yank from cursor to end of line
 nnoremap Y y$

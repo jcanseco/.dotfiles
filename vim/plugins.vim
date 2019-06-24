@@ -66,7 +66,7 @@ let g:rooter_manual_only=1 " Disable auto-changing of the current working direct
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1
 
-nnoremap <Leader>f :FileBeagle<CR>| " Open file browser
+nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
