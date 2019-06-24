@@ -29,10 +29,10 @@ set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undo " Save undo history files here instead of where the modified files are
 set noswapfile " Don't make swap files
 
-autocmd BufNewFile,BufEnter * silent! lcd %:p:h " Auto-change current working directory to that of the current buffer (works better with fzf unlike the 'autochdir' option)
+autocmd BufNewFile,BufEnter * silent! lcd %:p:h " Auto-change current working directory to that of the current buffer (works better with fzf compared to the 'autochdir' option)
 
-autocmd InsertEnter * :setlocal nohlsearch " Toggle hl off when entering insert mode
-autocmd InsertLeave * :setlocal hlsearch " Toggle hl back on when leaving insert mode
+autocmd InsertEnter * :setlocal nohlsearch " Turn off search result highlighting when entering insert mode ...
+autocmd InsertLeave * :setlocal hlsearch " ... but turn it back on when leaving insert mode
 
 autocmd FileType * set formatoptions-=o " See :h fo-table for what removing the option 'o' does, and https://vi.stackexchange.com/q/9366 for why we remove it this way here
 

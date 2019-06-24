@@ -13,7 +13,7 @@ nnoremap <Leader>q :q<CR>
 " Toggle paste mode
 nnoremap <silent> <Leader>p :set paste!<CR>
 
-" Like 'C' and 'D', yank from cursor to end of line
+" Yank from cursor to end-of-line (i.e. make 'Y' behave like 'C' and 'D')
 nnoremap Y y$
 
 " Move over wrapped lines same as normal lines
@@ -32,14 +32,14 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-b> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
 
-" Align blocks of text and keep them selected
+" Indent blocks of text in visual mode without leaving visual mode
 vnoremap < <gv
 vnoremap > >gv
 
 " Prevent jumping to the next match when pressing '*'
 nnoremap * :keepjumps normal! mi*`i<CR>
 
-" Disable highlights
+" Stop the highlighting of search results
 nnoremap <silent> <Leader>d :noh<CR>
 
 " Remove all trailing whitespace
