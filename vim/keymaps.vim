@@ -1,9 +1,6 @@
 " Set the <Leader> key
 let mapleader="\<space>"
 
-" Reload vimrc using :rl
-cnoreabbrev <expr> rl 'source ~/.vimrc'
-
 " Save
 nnoremap <Leader>w :w<CR>
 
