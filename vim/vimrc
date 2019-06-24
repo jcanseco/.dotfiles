@@ -57,3 +57,4 @@ autocmd FileType json setlocal softtabstop=2 shiftwidth=2
 
 """ Highlights
 highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
+highlight VertSplit ctermbg=none " Remove highlighting on boundaries of vertical splits
