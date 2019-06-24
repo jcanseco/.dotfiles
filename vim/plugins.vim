@@ -19,6 +19,18 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
+" Helper function for building YouCompleteMe after first-time download or
+" updates by vim-plug. If you need to force a (re)build, run ':PlugInstall!'.
+" Semantic completion...
+"   * for C/C++: install libclang and rebuild YCM with '--clang-completer'
+"   * for Python: enabled by default
+"   * for others: see README for YCM
+function! BuildYcm(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+
 call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 
 Plug 'jeffkreeftmeijer/vim-dim' " Colorscheme
@@ -36,6 +48,7 @@ Plug 'jeetsukumaran/vim-filebeagle' " File browser
 Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
 Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
+Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine
 Plug 'neomake/neomake' " Linting and make framework
 
 call plug#end()
@@ -80,6 +93,13 @@ nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search 
 nnoremap <Leader>h :History<CR>| " Start file search amongst recently opened files
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
+
+""" YouCompleteMe
+set completeopt-=preview " Only show completion candidates as a list instead of on a preview window
+
+let g:ycm_register_as_syntastic_checker=0 " Turn off built-in syntax checker
+let g:ycm_show_diagnostics_ui=0 " Turn off built-in diagnostics ui
+let g:ycm_global_ycm_extra_conf='~/.dotfiles.new/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
 
 """ Neomake
 call neomake#configure#automake('w') " Run on buffer write
