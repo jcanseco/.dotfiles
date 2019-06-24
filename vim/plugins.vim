@@ -54,7 +54,8 @@ let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into bod
 
 """ Quickscope
 let g:qs_highlight_on_keys=['f','F'] " Trigger highlights only when one of these keys is pressed
-augroup qs_colors
+
+augroup my_quickscope_colors
   autocmd!
   autocmd ColorScheme * highlight QuickScopePrimary cterm=bold,underline ctermfg=green
   autocmd ColorScheme * highlight QuickScopeSecondary cterm=bold,underline ctermfg=cyan
@@ -83,7 +84,7 @@ nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-sc
 """ Neomake
 call neomake#configure#automake('w') " Run on buffer write
 
-augroup my_neomake_highlights
+augroup my_neomake_colors
   autocmd!
   autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
   autocmd ColorScheme * highlight NeomakeWarning cterm=underline ctermfg=yellow
