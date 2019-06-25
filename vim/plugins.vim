@@ -34,7 +34,7 @@ Plug 'Raimondi/delimitMate' " Automatic closing of quotes, parenthesis, brackets
 Plug 'sickill/vim-pasta' " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
 Plug 'tpope/vim-commentary' " Comment stuff out
 Plug 'unblevable/quick-scope' " Highlights for more efficient left/right motions using f/F
-Plug 'google/vim-searchindex' " Make searches more like Ctrl+F on web browsers
+Plug 'google/vim-searchindex' " Display number of search matches and index of current match
 Plug 'ludovicchabant/vim-gutentags', {'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+)
 Plug 'airblade/vim-rooter' " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
 Plug 'jeetsukumaran/vim-filebeagle' " File browser
