@@ -20,7 +20,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * Python 2 or 3 (used by YouCompleteMe)
 * CTags (used by vim-gutentags)
 * Vim (v7.4.1578+ required by YouCompleteMe)
-* Tmux (v1.9+ required by Tmux Plugin Manager)
+* Tmux (v1.9+ required by TPM, v2.3+ preferred for `split-window`'s `-f` option)
 
 ```
 sudo apt install git curl python python3 exuberant-ctags vim tmux
