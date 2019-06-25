@@ -19,7 +19,7 @@
     amd = commit --amend
     ss = stash
     ssp = stash pop
-    b = branch
+    br = branch
     co = checkout
     cob = checkout -b
     f = fetch
