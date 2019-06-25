@@ -34,6 +34,14 @@ sudo apt install git curl python python3 exuberant-ctags vim
 sudo apt install tree silversearcher-ag
 ```
 
+## Installation
+
+Clone the repository onto the home directory, then run the bootstrap script:
+
+```
+~/.dotfiles.new/scripts/bootstrap.sh
+```
+
 ## Appendix
 
 ### YouCompleteMe

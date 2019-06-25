@@ -1,16 +1,9 @@
 """ Vim-plug
+
+" Skip this file entirely if vim-plug not found
 if empty(glob('~/.vim/autoload/plug.vim'))
-  " Auto-install vim-plug (and plugins) if not yet installed
-  " Useful when launching vim on a new machine for the first time
-  if !executable('curl')
-    echomsg 'Installation of vim-plug failed: curl not found.'
-    echomsg 'Remove plugins.vim in vimrc if you want to disable plugins entirely.'
-    exit
-  endif
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  echomsg 'Installing plugins for the first time. Restart vim when done.'
+  echomsg 'Vim-plug not found; skipping the loading of plugins.'
+  finish
 endif
 
 " Auto-install missing plugins on start-up
