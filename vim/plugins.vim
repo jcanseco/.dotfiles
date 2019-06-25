@@ -46,13 +46,14 @@ Plug 'neomake/neomake' " Linting and make framework
 Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits
 Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard; see repo for other benefits
 Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard
+Plug 'edkolev/tmuxline.vim' " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
 
 call plug#end()
 
 """ Airline
 let g:airline_theme='base16_classic'
-let g:airline_powerline_fonts=0
-let g:airline_symbols_ascii=1
+let g:airline_powerline_fonts=0 " Disable powerline symbols
+let g:airline_symbols_ascii=1 " Use only ascii symbols
 let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing whitespace / mixed indent warnings; the warning is visible enough as is
 let g:airline_section_c='%f%m %r' " Show file path relative to working directory instead of full path (+ other options, see :h statusline)
 let g:airline_section_z='ln %l/%L : %2c' " Simplify format of the line and column number display
@@ -108,3 +109,20 @@ augroup END
 
 """ Vim-Tmux-Navigator
 let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane
+
+""" Tmuxline
+let g:tmuxline_powerline_separators=0 " Disable powerline symbols
+let g:tmuxline_separators={
+  \ 'left' : '',
+  \ 'left_alt': ':',
+  \ 'right' : '',
+  \ 'right_alt' : '',
+  \ 'space' : ' '
+  \ }
+let g:tmuxline_preset = {
+  \'a'    : '#S',
+  \'cwin' : '#I #W #F',
+  \'win'  : '#I #W',
+  \'z'    : '#h',
+  \'options' : {'status-justify': 'left'}
+  \}
