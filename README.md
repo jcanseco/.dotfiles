@@ -19,7 +19,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * Curl (used to install vim-plug)
 * Python 2 or 3 (used by YouCompleteMe)
 * CTags (used by vim-gutentags)
-* Vim (v7.4.1578+ required by YouCompleteMe, v7.4.503+ prefered by Neomake)
+* Vim (v7.4.1578+ required by YouCompleteMe)
 
 ```
 sudo apt install git curl python python3 exuberant-ctags vim
