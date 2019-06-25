@@ -58,6 +58,7 @@ let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing
 let g:airline_section_c='%f%m %r' " Show file path relative to working directory instead of full path (+ other options, see :h statusline)
 let g:airline_section_z='ln %l/%L : %2c' " Simplify format of the line and column number display
 let g:airline#extensions#gutentags#enabled=0 " Disable messages from gutentags
+let g:airline#extensions#tmuxline#enabled=0 " Disable auto-loading of tmux statusline, which, if already loaded, reloads it and undoes our overrides in tmux.conf like pane-border colors
 
 """ DelimitMate
 let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into body when creating code block with braces
