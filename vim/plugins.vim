@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in 
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
 Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine
 Plug 'neomake/neomake' " Linting and make framework
+Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits
 
 call plug#end()
 

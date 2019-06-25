@@ -14,6 +14,11 @@ function check_cmd_exists {
 check_cmd_exists git
 check_cmd_exists curl
 
+# Create directories
+printf "\n[Bootstrap] Creating the Workspace and Quicklinks directories...\n"
+mkdir -p ~/Workspace
+mkdir -p ~/Quicklinks
+
 # Download Base16 Shell
 printf "\n[Bootstrap] Downloading Base16 Shell...\n"
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
@@ -23,10 +28,13 @@ printf "\n[Bootstrap] Downloading vim-plug...\n"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Create directories
-printf "\n[Bootstrap] Creating the Workspace and Quicklinks directories...\n"
-mkdir -p ~/Workspace
-mkdir -p ~/Quicklinks
+# Download Tmux Plugin Manager
+printf "\n[Bootstrap] Downloading Tmux Plugin Manager...\n"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Download tmux plugins
+printf "\n[Bootstrap] Downloading tmux plugins...\n"
+~/.tmux/plugins/tpm/bin/install_plugins
 
 # Create symlinks
 printf "\n[Bootstrap] Creating symlinks to dotfiles...\n"

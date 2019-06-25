@@ -16,6 +16,7 @@ DOTFILES=(
     [".bashrc"]="${DOTFILES_DIR}/shell/bash/bashrc"
     [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
+    [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
 )
 
 function handle_error {

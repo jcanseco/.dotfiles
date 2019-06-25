@@ -19,7 +19,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Move between vim-splits using 'Ctrl + (h/j/k/l)'
+" Move between splits using 'Ctrl + (h/j/k/l)'
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
