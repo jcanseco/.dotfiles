@@ -113,13 +113,6 @@ let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i
 
 """ Tmuxline
 let g:tmuxline_powerline_separators=0 " Disable powerline symbols
-let g:tmuxline_separators={
-  \ 'left' : '',
-  \ 'left_alt': ':',
-  \ 'right' : '',
-  \ 'right_alt' : '',
-  \ 'space' : ' '
-  \ }
 let g:tmuxline_preset = {
   \'a'    : '#S',
   \'cwin' : '#I #W #F',
