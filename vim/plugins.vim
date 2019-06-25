@@ -44,6 +44,8 @@ Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories be
 Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine
 Plug 'neomake/neomake' " Linting and make framework
 Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits
+Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard; see repo for other benefits
+Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard
 
 call plug#end()
 
