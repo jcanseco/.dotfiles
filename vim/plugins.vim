@@ -105,3 +105,6 @@ augroup my_neomake_colors
   autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
   autocmd ColorScheme * highlight NeomakeWarning cterm=underline ctermfg=yellow
 augroup END
+
+""" Vim-Tmux-Navigator
+let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane
