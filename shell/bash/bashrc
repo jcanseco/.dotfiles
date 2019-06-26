@@ -4,7 +4,7 @@ case $- in
       *) return;;
 esac
 
-HISTCONTROL=ignoredups # Don't put duplicate lines in history
+HISTCONTROL=ignoredups # Don't save line onto history if it matches the previous line
 
 shopt -s histappend # Append to history file, don't overwrite it
 shopt -s globstar # Set pattern "**" to match all files and directories/subdirectories

@@ -23,6 +23,10 @@ mkdir -p ~/Quicklinks
 printf "\n[Bootstrap] Downloading Base16 Shell...\n"
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
+# Download zgen
+printf "\n[Bootstrap] Downloading zgen...\n"
+git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+
 # Download vim-plug
 printf "\n[Bootstrap] Downloading vim-plug...\n"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

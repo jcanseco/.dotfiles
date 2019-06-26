@@ -21,9 +21,10 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * CTags (required by vim-gutentags)
 * Vim (v7.4.1578+ required by YouCompleteMe)
 * Tmux (v1.9+ required by TPM, v2.3+ recommended for `split-window`'s `-f` option)
+* Zsh (v5.1.1+ required by oh-my-zsh)
 
 ```
-sudo apt install git curl python python3 exuberant-ctags vim tmux
+sudo apt install git curl python python3 exuberant-ctags vim tmux zsh
 ```
 
 ## Extras

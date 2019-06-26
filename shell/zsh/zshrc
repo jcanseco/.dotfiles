@@ -1,0 +1,41 @@
+# Load zgen for plugin management
+source ~/.zgen/zgen.zsh
+
+# Plugin Configs (must go before plugins are loaded)
+ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOCONNECT="false"
+
+# Download and install plugins if init script does not exist
+# (run 'zgen reset' to delete init script; you must do this when adding/removing plugins)
+if ! zgen saved; then
+    echo "Creating new zgen save"
+
+    zgen oh-my-zsh # Sensible zsh settings + library of themes and plugins (required: zsh 5.1.1+)
+    zgen oh-my-zsh plugins/tmux # Tmux integration
+    zgen oh-my-zsh plugins/colored-man-pages # Colorize man pages
+    zgen load zsh-users/zsh-autosuggestions # As-you-type autosuggestions
+
+    zgen save # Save all to init script
+fi
+
+# Theme for the prompt (must go after oh-my-zsh is loaded since this depends on oh-my-zsh functions and definitions)
+source ~/.dotfiles.new/shell/zsh/prompt_theme
+
+setopt CHASE_LINKS # Resolve symlinks to their true values when changing directory
+
+bindkey "^p" up-line-or-search # Set 'Ctrl + p' to behave like the up-arrow
+bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
+
+# Set theme
+source ~/.dotfiles.new/shell/theme
+
+# Set aliases
+source ~/.dotfiles.new/shell/aliases
+
+# Set functions
+source ~/.dotfiles.new/shell/functions
+
+# Set zsh to automatically list directory contents whenever you change directories
+function chpwd() {
+    ls
+}

@@ -14,6 +14,7 @@ BACKUP_DIR="${HOME}/.backups/${CURR_DATE_TIME}"
 typeset -A DOTFILES
 DOTFILES=(
     [".bashrc"]="${DOTFILES_DIR}/shell/bash/bashrc"
+    [".zshrc"]="${DOTFILES_DIR}/shell/zsh/zshrc"
     [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
     [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
