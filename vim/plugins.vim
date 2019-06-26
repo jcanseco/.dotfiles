@@ -52,19 +52,18 @@ call plug#end()
 
 """ Airline
 let g:airline_theme='base16_classic'
-let g:airline_powerline_fonts=0 " Disable powerline symbols
-let g:airline_symbols_ascii=1 " Use only ascii symbols
-let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing whitespace / mixed indent warnings; the warning is visible enough as is
 let g:airline_section_c='%f%m %r' " Show file path relative to current working directory instead of the full path if the file is somewhere inside the directory (+ other options, see :h statusline)
 let g:airline_section_z='ln %l/%L : %2c' " Simplify format of the line and column number display
-let g:airline#extensions#gutentags#enabled=0 " Disable messages from gutentags
-let g:airline#extensions#tmuxline#enabled=0 " Disable auto-loading of tmux statusline, which, if already loaded, reloads it and undoes our overrides in tmux.conf like pane-border colors
+let g:airline_powerline_fonts=0 " Disable powerline symbols
+let g:airline_symbols_ascii=1 " Use only ascii symbols
+let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing-whitespace/mixed-indent warnings; they're visible enough as is
+let g:airline_extensions=['neomake', 'quickfix', 'whitespace'] " Explicitly whitelist enabled extensions to avoid unintentionally loading unwanted ones, especially ones that are enabled by default and loaded in once their corresponding plugin is installed
 
 """ DelimitMate
 let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into body when creating code block with braces
 
 """ Quickscope
-let g:qs_highlight_on_keys=['f','F'] " Trigger highlights only when one of these keys is pressed
+let g:qs_highlight_on_keys=['f', 'F'] " Trigger highlights only when one of these keys is pressed
 
 augroup my_quickscope_colors
   autocmd!
@@ -113,7 +112,7 @@ let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i
 
 """ Tmuxline
 let g:tmuxline_powerline_separators=0 " Disable powerline symbols
-let g:tmuxline_preset = {
+let g:tmuxline_preset={
   \'a'    : '#S',
   \'cwin' : '#I #W #F',
   \'win'  : '#I #W',
