@@ -63,7 +63,7 @@ let g:airline_extensions=['neomake', 'quickfix', 'whitespace'] " Explicitly whit
 let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into body when creating code block with braces
 
 """ Quickscope
-let g:qs_highlight_on_keys=['f', 'F'] " Trigger highlights only when one of these keys is pressed
+let g:qs_highlight_on_keys=['f', 'F', 't', 'T'] " Trigger highlights only when one of these keys is pressed
 
 augroup my_quickscope_colors
   autocmd!
