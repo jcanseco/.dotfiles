@@ -16,11 +16,11 @@ These are my dotfiles. There are many like it, but these ones are mine.
 ## Requirements
 
 * Git
-* Curl (used to install vim-plug)
-* Python 2 or 3 (used by YouCompleteMe)
-* CTags (used by vim-gutentags)
+* Curl (required by bootstrap script)
+* Python 2 or 3 (required by YouCompleteMe)
+* CTags (required by vim-gutentags)
 * Vim (v7.4.1578+ required by YouCompleteMe)
-* Tmux (v1.9+ required by TPM, v2.3+ preferred for `split-window`'s `-f` option)
+* Tmux (v1.9+ required by TPM, v2.3+ recommended for `split-window`'s `-f` option)
 
 ```
 sudo apt install git curl python python3 exuberant-ctags vim tmux
@@ -29,7 +29,7 @@ sudo apt install git curl python python3 exuberant-ctags vim tmux
 ## Extras
 
 * Tree
-* Ag (used by fzf's ag search)
+* Ag (recommended for fzf's ag search)
 
 ```
 sudo apt install tree silversearcher-ag
