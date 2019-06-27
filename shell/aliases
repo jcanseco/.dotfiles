@@ -1,14 +1,12 @@
 #!/bin/bash
 
-alias cl="clear"
-alias q="exit"
-alias qq="exit"
-
+alias vdot="vim ~/.dotfiles.new"
 alias open="nemo"
 alias tgz="tar -xvzf"
 
-alias vdot="vim ~/.dotfiles.new"
-alias rl="source ~/.bashrc" # Reload the bash configuration file
+alias cl="clear"
+alias q="exit"
+alias qq="exit"
 
 alias ..="cd .."
 alias ...="cd ../.."

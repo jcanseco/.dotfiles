@@ -40,3 +40,6 @@ source ~/.dotfiles.new/shell/functions
 function chpwd() {
     ls
 }
+
+# Zsh-specific aliases
+alias rl="source ~/.zshrc" # Reload the zsh configuration file
