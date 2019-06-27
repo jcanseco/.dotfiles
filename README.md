@@ -32,9 +32,10 @@ sudo apt install git curl python python3 exuberant-ctags vim tmux zsh
 * Nemo
 * Tree
 * Ag (recommended for fzf's ag search)
+* Vim-Gtk (recommended for vim's clipboard feature on Debian/Ubuntu, see [this](https://vim.fandom.com/wiki/Accessing_the_system_clipboard#Checking_for_X11-clipboard_support_in_terminal) for info on other distros)
 
 ```
-sudo apt install nemo tree silversearcher-ag
+sudo apt install nemo tree silversearcher-ag vim-gtk
 ```
 
 ## Installation
