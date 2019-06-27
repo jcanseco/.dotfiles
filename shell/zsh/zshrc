@@ -36,7 +36,7 @@ source ~/.dotfiles.new/shell/aliases
 # Set functions
 source ~/.dotfiles.new/shell/functions
 
-# Set zsh to automatically list directory contents whenever you change directories
+# Set zsh to automatically list directory contents when changing directories
 function chpwd() {
     ls
 }

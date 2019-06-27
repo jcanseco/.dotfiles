@@ -45,10 +45,10 @@ source ~/.dotfiles.new/shell/aliases
 # Set functions
 source ~/.dotfiles.new/shell/functions
 
-# Set bash to automatically list directory contents whenever you change directories
+# Override what happens when changing directories
 function cd() {
-    builtin cd $@
-    ls
+    builtin cd -P $@ # Resolve symlinks to their true values
+    ls # Automatically list directory contents
 }
 
 # Enable programmable completion features
