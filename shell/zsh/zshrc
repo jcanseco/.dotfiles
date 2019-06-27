@@ -1,12 +1,13 @@
-# Load zgen for plugin management
-source ~/.zgen/zgen.zsh
-
 # Plugin Configs (must go before plugins are loaded)
 ZSH_TMUX_AUTOSTART="true"
 ZSH_TMUX_AUTOCONNECT="false"
 
-# Download and install plugins if init script does not exist
-# (run 'zgen reset' to delete init script; you must do this when adding/removing plugins)
+# Load zgen for plugin management
+# This also loads plugins using a plugin init script if one has been generated
+source ~/.zgen/zgen.zsh
+
+# If there is no plugin init script, load the plugins and then generate one
+# (to delete the init script, run 'zgen reset'; you must do this when adding/removing plugins)
 if ! zgen saved; then
     echo "Creating new zgen save"
 
