@@ -3,6 +3,8 @@
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
+
+alias open="nemo"
 alias tgz="tar -xvzf"
 
 alias vdot="vim ~/.dotfiles.new"

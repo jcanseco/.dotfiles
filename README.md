@@ -29,11 +29,12 @@ sudo apt install git curl python python3 exuberant-ctags vim tmux zsh
 
 ## Extras
 
+* Nemo
 * Tree
 * Ag (recommended for fzf's ag search)
 
 ```
-sudo apt install tree silversearcher-ag
+sudo apt install nemo tree silversearcher-ag
 ```
 
 ## Installation
