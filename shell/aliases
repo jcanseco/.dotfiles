@@ -1,6 +1,5 @@
 #!/bin/bash
 
-alias g="git"
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
