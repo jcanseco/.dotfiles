@@ -61,4 +61,5 @@ function cd() {
 }
 
 # Bash-specific aliases
+alias z="SHELL=/bin/zsh zsh" # Launch zsh
 alias rl="source ~/.bashrc" # Reload the bash configuration file
