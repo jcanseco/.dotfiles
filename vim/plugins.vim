@@ -46,7 +46,7 @@ Plug 'neomake/neomake' " Linting and make framework (required: vim 7.4.503+; rec
 Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
 Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard; see repo for other benefits
 Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
-Plug 'edkolev/tmuxline.vim' " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
+Plug 'edkolev/tmuxline.vim', {'on': ['Tmuxline', 'TmuxlineSnapshot']} " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
 
 call plug#end()
 
