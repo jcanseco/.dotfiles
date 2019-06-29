@@ -1,6 +1,7 @@
 #!/bin/bash
 
 alias vdot="vim ~/.dotfiles.new"
+alias vin="vim -Nu NONE" # Launch vim in no-compatible mode, but with no vimrc
 alias open="nemo"
 alias tgz="tar -xvzf"
 
