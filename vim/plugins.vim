@@ -53,7 +53,7 @@ call plug#end()
 """ Airline
 let g:airline_theme='base16_classic'
 let g:airline_section_c='%f%m %r' " Show file path relative to current working directory instead of the full path if the file is somewhere inside the directory (+ other options, see :h statusline)
-let g:airline_section_z='ln %l/%L : %2c' " Simplify format of the line and column number display
+let g:airline_section_z='ln %l/%L : %2v' " Simplify format of the line and column number display
 let g:airline_powerline_fonts=0 " Disable powerline symbols
 let g:airline_symbols_ascii=1 " Use only ascii symbols
 let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing-whitespace/mixed-indent warnings; they're visible enough as is
