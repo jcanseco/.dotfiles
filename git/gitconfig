@@ -4,7 +4,7 @@
 
 [alias]
     # List all aliases
-    alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | less
+    alias = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ / | less
 
     # Basic aliases
     l = log
@@ -33,8 +33,8 @@
     rbc = rebase --continue
     rba = rebase --abort
     r = reset
-    rh = ! bash ~/.dotfiles.new/git/scripts/git_reset_hard.sh
-    rp = "! f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
+    rh = !bash ~/.dotfiles.new/git/scripts/git_reset_hard.sh
+    rp = "!f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
 
     # Show changes made in the last few commits
     c1 = diff HEAD~1 HEAD
