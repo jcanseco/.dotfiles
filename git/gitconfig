@@ -34,6 +34,7 @@
     rba = rebase --abort
     r = reset
     rh = ! bash ~/.dotfiles.new/git/scripts/git_reset_hard.sh
+    rp = "! f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
 
     # Show changes made in the last few commits
     c1 = diff HEAD~1 HEAD
