@@ -48,11 +48,11 @@ fi
 # Set theme
 source ~/.dotfiles.new/shell/theme
 
-# Set aliases
-source ~/.dotfiles.new/shell/aliases
-
 # Set functions
 source ~/.dotfiles.new/shell/functions
+
+# Set aliases
+source ~/.dotfiles.new/shell/aliases
 
 # Override what happens when changing directories
 function cd() {
@@ -63,3 +63,4 @@ function cd() {
 # Bash-specific aliases
 alias z="SHELL=/bin/zsh zsh" # Launch zsh
 alias rl="source ~/.bashrc" # Reload the bash configuration file
+alias rla="all 'source ~/.bashrc'" # Reload the bash configuration file on all tmux panes

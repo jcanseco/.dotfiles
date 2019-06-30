@@ -9,6 +9,9 @@ alias cl="clear"
 alias q="exit"
 alias qq="exit"
 
+alias cla="all 'clear'"
+alias qa="all 'exit'"
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
