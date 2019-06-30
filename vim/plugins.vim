@@ -110,6 +110,9 @@ augroup END
 """ Vim-Tmux-Navigator
 let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane
 
+""" Vim-Tmux-Focus-Events
+autocmd FocusLost * silent redraw! " Fixes weird issue where '^[[O' is sometimes left behind when vim loses focus (see https://github.com/tmux-plugins/vim-tmux-focus-events/issues/2)
+
 """ Tmuxline
 let g:tmuxline_powerline_separators=0 " Disable powerline symbols
 let g:tmuxline_preset={
