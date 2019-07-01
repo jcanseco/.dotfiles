@@ -49,6 +49,7 @@ nnoremap <silent> <Leader>r :e!<CR> :w<CR>
 command! WQ wq
 command! Wq wq
 command! Wqa wqa
+command! Wa wa
 command! W w
 command! Q q
 command! QA qa
