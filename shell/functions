@@ -38,6 +38,16 @@ function vs() {
     fi
 }
 
+# Helper function for opening files in zathura (PDF reader)
+# Usage: za <filename>
+function za() {
+    if [[ ! -f $1 ]]; then
+        echo "Error: file not found: '$1'"; return
+    fi
+
+    zathura --fork $1
+}
+
 # Search for files within the current directory whose filename contains a given string
 # Usage: search <filename>
 function search() {
