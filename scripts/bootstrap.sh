@@ -19,9 +19,10 @@ function handle_error {
     exit 1
 }
 
-# Check if git and curl exist
+# Check if dependencies exist
 check_cmd_exists git
 check_cmd_exists curl
+check_cmd_exists tmux
 
 # Create directories
 printf "\n[Bootstrap] Creating the Workspace and Quicklinks directories...\n"
@@ -50,8 +51,12 @@ printf "\n[Bootstrap] Downloading Tmux Plugin Manager...\n"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || handle_error
 
 # Download tmux plugins
+# Requires a bit of a hack to work (see https://github.com/tmux-plugins/tpm/issues/151)
 printf "\n[Bootstrap] Downloading tmux plugins...\n"
-~/.tmux/plugins/tpm/bin/install_plugins || handle_error
+tmux new-session -d "sleep 1" \
+    && sleep 0.1 \
+    && ~/.tmux/plugins/tpm/bin/install_plugins \
+    || handle_error
 
 # Done
 printf "\n[Bootstrap] Done.\n"
