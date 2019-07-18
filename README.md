@@ -47,6 +47,12 @@ Clone the repository onto the home directory, then run the bootstrap script:
 ~/.dotfiles/scripts/bootstrap.sh
 ```
 
+Afterwards, restart your terminal and launch zsh and vim to run their respective plugin installation scripts and finalize the changes.
+
+## Closing Notes
+
+Make sure to check that you meet the version requirements outlined in the [Requirements](#requirements) section.
+
 ## Appendix
 
 ### YouCompleteMe
@@ -69,7 +75,7 @@ YouCompleteMe depends on some programs being installed to build successfully; se
 sudo apt install build-essential cmake python-dev python3-dev
 ```
 
-You should have these installed before vim-plug downloads YouCompleteMe so that the build could succeed the first time. Otherwise, run `:PlugInstall!` in vim to force a rebuild of YouCompleteMe.
+Vim-plug will have successfully built YouCompleteMe if you already had these dependencies installed when vim-plug downloaded YouCompleteMe for the first time. Otherwise, run `:PlugInstall!` in vim to force a rebuild of YouCompleteMe.
 
 Following this short guide should be enough to successfully build a basic build of YouCompleteMe. If you're on a different distro than the ones listed or if something goes wrong with the installation, refer to the [full installation guide](https://github.com/Valloric/YouCompleteMe#full-installation-guide).
 
