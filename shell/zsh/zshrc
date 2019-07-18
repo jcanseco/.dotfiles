@@ -20,7 +20,7 @@ if ! zgen saved; then
 fi
 
 # Theme for the prompt (must go after oh-my-zsh is loaded since this depends on oh-my-zsh functions and definitions)
-source ~/.dotfiles.new/shell/zsh/prompt_theme
+source ~/.dotfiles/shell/zsh/prompt_theme
 
 setopt CHASE_LINKS # Resolve symlinks to their true values when changing directory
 
@@ -28,13 +28,13 @@ bindkey "^p" up-line-or-search # Set 'Ctrl + p' to behave like the up-arrow
 bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 
 # Set theme
-source ~/.dotfiles.new/shell/theme
+source ~/.dotfiles/shell/theme
 
 # Set functions
-source ~/.dotfiles.new/shell/functions
+source ~/.dotfiles/shell/functions
 
 # Set aliases
-source ~/.dotfiles.new/shell/aliases
+source ~/.dotfiles/shell/aliases
 
 # Set zsh to automatically list directory contents when changing directories
 function chpwd() {

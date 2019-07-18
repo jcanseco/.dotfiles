@@ -46,13 +46,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Set theme
-source ~/.dotfiles.new/shell/theme
+source ~/.dotfiles/shell/theme
 
 # Set functions
-source ~/.dotfiles.new/shell/functions
+source ~/.dotfiles/shell/functions
 
 # Set aliases
-source ~/.dotfiles.new/shell/aliases
+source ~/.dotfiles/shell/aliases
 
 # Override what happens when changing directories
 function cd() {

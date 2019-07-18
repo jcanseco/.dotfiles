@@ -97,7 +97,7 @@ set completeopt-=preview " Only show completion candidates as a list instead of 
 
 let g:ycm_register_as_syntastic_checker=0 " Turn off built-in syntax checker
 let g:ycm_show_diagnostics_ui=0 " Turn off built-in diagnostics ui
-let g:ycm_global_ycm_extra_conf='~/.dotfiles.new/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
+let g:ycm_global_ycm_extra_conf='~/.dotfiles/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
 
 """ Neomake
 call neomake#configure#automake('w') " Run on buffer write

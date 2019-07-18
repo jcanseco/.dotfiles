@@ -1,13 +1,13 @@
 set nocompatible " Enable modern vim features not compatible with vi (must be at the top)
 
 """ Base Defaults
-source ~/.dotfiles.new/vim/sensible.vim " Loaded here instead of via a plugin manager cause plugin managers typically load plugins after vimrc (see https://unix.stackexchange.com/a/74778)
+source ~/.dotfiles/vim/sensible.vim " Loaded here instead of via a plugin manager cause plugin managers typically load plugins after vimrc (see https://unix.stackexchange.com/a/74778)
 
 """ Keymaps
-source ~/.dotfiles.new/vim/keymaps.vim
+source ~/.dotfiles/vim/keymaps.vim
 
 """ Plugins
-source ~/.dotfiles.new/vim/plugins.vim
+source ~/.dotfiles/vim/plugins.vim
 
 """ General
 set number " Show current line number on the side bar

@@ -44,7 +44,7 @@ sudo apt install nemo tree silversearcher-ag vim-gtk zathura
 Clone the repository onto the home directory, then run the bootstrap script:
 
 ```
-~/.dotfiles.new/scripts/bootstrap.sh
+~/.dotfiles/scripts/bootstrap.sh
 ```
 
 ## Appendix

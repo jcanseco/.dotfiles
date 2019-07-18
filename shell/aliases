@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias vdot="vim ~/.dotfiles.new"
+alias vdot="vim ~/.dotfiles"
 alias vin="vim -Nu NONE" # Launch vim in no-compatible mode, but with no vimrc
 alias open="nemo"
 alias tgz="tar -xvzf"
@@ -18,7 +18,7 @@ alias ....="cd ../../.."
 
 alias -- -="cd -" # Go back to previous directory using -
 
-alias dot="cd ~/.dotfiles.new"
+alias dot="cd ~/.dotfiles"
 alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
