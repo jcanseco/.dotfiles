@@ -4,6 +4,10 @@
 # Pre-existing dotfiles (or directories) that have name conflicts are saved onto
 # the .backups directory.
 
+# Usage: create_links.sh
+
+# Note: safe to re-run
+
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
 DOTFILES_DIR="$(cd $SCRIPTS_DIR/.. && pwd)"
 
