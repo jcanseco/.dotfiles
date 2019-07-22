@@ -2,25 +2,11 @@
 ZSH_TMUX_AUTOSTART="true"
 ZSH_TMUX_AUTOCONNECT="false"
 
-# Load zgen for plugin management
-# This also loads plugins using a plugin init script if one has been generated
-source ~/.zgen/zgen.zsh
+# Load plugins
+source ~/.dotfiles/shell/zsh/plugins
 
-# If there is no plugin init script, load the plugins and then generate one
-# (to delete the init script, run 'zgen reset'; you must do this when adding/removing plugins)
-if ! zgen saved; then
-    echo "Creating new zgen save"
-
-    zgen oh-my-zsh # Sensible zsh settings + library of themes and plugins (required: zsh 5.1.1+)
-    zgen oh-my-zsh plugins/tmux # Tmux integration
-    zgen oh-my-zsh plugins/colored-man-pages # Colorize man pages
-    zgen load zsh-users/zsh-autosuggestions # As-you-type autosuggestions
-
-    zgen save # Save all to init script
-fi
-
-# Theme for the prompt (must go after oh-my-zsh is loaded since this depends on oh-my-zsh functions and definitions)
-source ~/.dotfiles/shell/zsh/prompt_theme
+# Set the prompt (must go after plugins are loaded since this depends on functions and definitions from oh-my-zsh)
+source ~/.dotfiles/shell/zsh/prompt
 
 setopt CHASE_LINKS # Resolve symlinks to their true values when changing directory
 

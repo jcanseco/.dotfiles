@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# Load zgen for plugin management
+# This also loads plugins using a plugin init script if one has been generated
+source ~/.zgen/zgen.zsh
+
+# If there is no plugin init script, load the plugins and then generate one
+# (to delete the init script, run 'zgen reset'; you must do this when adding/removing plugins)
+if ! zgen saved; then
+    echo "Creating new zgen save"
+
+    zgen oh-my-zsh # Sensible zsh settings + library of themes and plugins (required: zsh 5.1.1+)
+    zgen oh-my-zsh plugins/tmux # Tmux integration
+    zgen oh-my-zsh plugins/colored-man-pages # Colorize man pages
+    zgen load zsh-users/zsh-autosuggestions # As-you-type autosuggestions
+
+    zgen save # Save all to init script
+fi

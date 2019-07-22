@@ -5,7 +5,6 @@
 # the .backups directory.
 
 # Usage: create_links.sh
-
 # Note: safe to re-run
 
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Usage: bootstrap.sh
-
 # Note: safe to re-run
 
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
@@ -22,7 +21,9 @@ function handle_error {
 # Check if dependencies exist
 check_cmd_exists git
 check_cmd_exists curl
+check_cmd_exists zsh
 check_cmd_exists tmux
+check_cmd_exists vim
 
 # Create directories
 printf "\n[Bootstrap] Creating the Workspace and Quicklinks directories...\n"
@@ -41,10 +42,9 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 printf "\n[Bootstrap] Downloading zgen...\n"
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen || handle_error
 
-# Download vim-plug
-printf "\n[Bootstrap] Downloading vim-plug...\n"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || handle_error
+# Download zsh plugins
+printf "\n[Bootstrap] Downloading zsh plugins...\n"
+zsh -c 'source ~/.dotfiles/shell/zsh/plugins' || handle_error
 
 # Download Tmux Plugin Manager
 printf "\n[Bootstrap] Downloading Tmux Plugin Manager...\n"
@@ -57,6 +57,15 @@ tmux new-session -d "sleep 1" \
     && sleep 0.1 \
     && ~/.tmux/plugins/tpm/bin/install_plugins \
     || handle_error
+
+# Download vim-plug
+printf "\n[Bootstrap] Downloading vim-plug...\n"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim || handle_error
+
+# Download vim plugins
+printf "\n[Bootstrap] Downloading vim plugins...\n"
+vim +PlugInstall +qa!
 
 # Done
 printf "\n[Bootstrap] Done.\n"

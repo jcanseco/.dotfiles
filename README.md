@@ -47,8 +47,6 @@ Clone the repository onto the home directory, then run the bootstrap script:
 ~/.dotfiles/scripts/bootstrap.sh
 ```
 
-Afterwards, restart your terminal and launch zsh and vim to run their respective plugin installation scripts and finalize the changes.
-
 ## Closing Notes
 
 Make sure to check that you meet the version requirements outlined in the [Requirements](#requirements) section.
