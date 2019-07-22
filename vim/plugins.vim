@@ -120,6 +120,6 @@ let g:tmuxline_preset={
   \'a'    : '#S',
   \'cwin' : '#I #W #F',
   \'win'  : '#I #W',
-  \'z'    : '#h',
+  \'z'    : '%I:%M %p',
   \'options' : {'status-justify': 'left'}
   \}
