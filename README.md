@@ -43,8 +43,11 @@ sudo apt install nemo tree silversearcher-ag vim-gtk zathura
 
 Clone the repository onto the home directory, then run the bootstrap script:
 
+[//]: # "Different ways of saving terminal output to a file: https://askubuntu.com/a/731237"
+[//]: # "Using tee with '|&' but in a way that works with older versions of bash: https://askubuntu.com/a/485762"
+
 ```
-~/.dotfiles/scripts/bootstrap.sh
+~/.dotfiles/scripts/bootstrap.sh 2>&1 | tee ~/.bootstrap.log
 ```
 
 ## Closing Notes
