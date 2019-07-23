@@ -5,6 +5,7 @@ alias vin="vim -Nu NONE" # Launch vim in no-compatible mode, but with no vimrc
 alias open="nemo"
 alias tgz="tar -xvzf"
 
+alias s="sudo"
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
