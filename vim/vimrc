@@ -10,7 +10,7 @@ source ~/.dotfiles/vim/keymaps.vim
 source ~/.dotfiles/vim/plugins.vim
 
 """ General
-set number " Show current line number on the side bar
+set number " Show line numbers on the side bar
 set hlsearch " Highlight search results
 set ignorecase " Ignore case when searching ...
 set smartcase " ... unless search pattern contains upper case characters
