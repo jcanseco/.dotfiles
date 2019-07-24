@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Set Base16 Shell theme without setting any global functions (i.e. base16_*)
 # and creating any files (e.g. .vimrc_background) that Base16 Shell typically

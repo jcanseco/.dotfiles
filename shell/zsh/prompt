@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Inspired by the robbyrussell and risto themes from oh-my-zsh
 # Contains a fix to a bug in robbyrussell that occurs when using zsh plugin managers

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Helper for opening files in vim
 # Usage: v.sh <file>

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Execute a command in all the tmux panes in the current window
 # Warning: does not work properly if you have a program running in at least one

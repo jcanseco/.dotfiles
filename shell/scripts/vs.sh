@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Helper for quick creation of temporary sandbox projects in vim
 # Usage: vs.sh <extension>

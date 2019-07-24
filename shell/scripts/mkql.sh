@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Create a symlink to the current directory in ~/Quicklinks/
 # Usage: mkql.sh <linkname>

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Creates symlinks to dotfiles (including dotdirectories) on the home directory.
 # Pre-existing dotfiles (or directories) that have name conflicts are saved onto

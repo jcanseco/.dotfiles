@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Load zgen for plugin management
 # This also loads plugins using a plugin init script if one has been generated

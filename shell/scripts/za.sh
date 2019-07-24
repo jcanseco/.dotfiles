@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Helper for opening files in zathura (PDF reader)
 # Usage: za.sh <filename>
