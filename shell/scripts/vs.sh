@@ -3,12 +3,13 @@
 # Helper for quick creation of temporary sandbox projects in vim
 # Usage: vs.sh <extension>
 
-# Create and go to new temporary directory
-cd $(mktemp -d)
+ext=$1
+tmp_dir=$(mktemp -d)
 
-# Create 'main' file with given extension (or empty extension if none given)
-if [[ $# == 0 ]]; then
-    vim main
+if [[ -z $ext ]]; then
+    vim "$tmp_dir/main"
 else
-    vim main.$1
+    vim "$tmp_dir/main.$ext"
 fi
+
+echo "Temporary project created in: $tmp_dir"
