@@ -32,7 +32,6 @@ alias mkdir="mkdir -p" # Automatically create intermediate non-existing director
 alias v="~/.dotfiles/shell/scripts/v.sh"
 alias vs="~/.dotfiles/shell/scripts/vs.sh"
 alias za="~/.dotfiles/shell/scripts/za.sh"
-alias search="~/.dotfiles/shell/scripts/search.sh"
 alias mkql="~/.dotfiles/shell/scripts/mkql.sh"
 alias all="~/.dotfiles/shell/scripts/all.sh"
 
