@@ -21,9 +21,10 @@
     amd = commit --amend
     ss = stash
     ssp = stash pop
-    br = branch
+    cl = clone
     co = checkout
     cob = checkout -b
+    br = branch
     f = fetch
     pl = pull
     pr = pull --rebase
