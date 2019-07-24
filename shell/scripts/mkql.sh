@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Create a symlink to the current directory in ~/Quicklinks/
-# Usage: mkql.sh <linkname>
+# Usage: mkql.sh LINKNAME
 # Note: treats multiple arguments as one filename with spaces
 
 link="$@"

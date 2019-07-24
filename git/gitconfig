@@ -38,7 +38,7 @@
     rh = !bash ~/.dotfiles/git/scripts/git_reset_hard.sh
     rp = "!f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
 
-    # git cof <file>; reset file back to HEAD
+    # git cof FILE; reset file back to HEAD
     cof = checkout --
 
     # Show changes made in the last few commits
@@ -48,10 +48,10 @@
     c4 = diff HEAD~4 HEAD~3
     c5 = diff HEAD~5 HEAD~4
 
-    # git ll <branch>; show log graph for branch (defaults to current branch)
+    # git ll [BRANCH]; show log graph for branch (defaults to current branch)
     ll = log --pretty=oneline --abbrev-commit --graph --decorate
 
-    # git contains <commit>; show branches that contain the given commit (defaults to HEAD)
+    # git contains [COMMIT]; show branches that contain the given commit (defaults to HEAD)
     contains = branch --contains
 [core]
     editor = vim

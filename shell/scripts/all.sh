@@ -3,7 +3,7 @@
 # Execute a command in all the tmux panes in the current window
 # Warning: does not work properly if you have a program running in at least one
 # of the panes since this function just types out the command one key at a time
-# Usage: all.sh <command>
+# Usage: all.sh [COMMAND]
 
 CR=C-m # Carriage return in tmux
 cmd="$@"

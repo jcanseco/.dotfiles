@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Helper for quick creation of temporary sandbox projects in vim
-# Usage: vs.sh <extension>
+# Usage: vs.sh [EXTENSION]
 
 ext=$1
 tmp_dir=$(mktemp -d)

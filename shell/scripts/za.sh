@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Helper for opening files in zathura (PDF reader)
-# Usage: za.sh <filename>
+# Usage: za.sh [FILE]
 # Note: treats multiple arguments as one filename with spaces
 
 file="$@"
