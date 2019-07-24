@@ -48,9 +48,6 @@ fi
 # Set theme
 source ~/.dotfiles/shell/theme
 
-# Set functions
-source ~/.dotfiles/shell/functions
-
 # Set aliases
 source ~/.dotfiles/shell/aliases
 

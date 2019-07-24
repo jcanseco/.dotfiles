@@ -16,13 +16,10 @@ bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 # Set theme
 source ~/.dotfiles/shell/theme
 
-# Set functions
-source ~/.dotfiles/shell/functions
-
 # Set aliases
 source ~/.dotfiles/shell/aliases
 
-# Set zsh to automatically list directory contents when changing directories
+# Automatically list directory contents when changing directories
 function chpwd() {
     ls
 }

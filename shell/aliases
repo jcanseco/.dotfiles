@@ -10,9 +10,6 @@ alias cl="clear"
 alias q="exit"
 alias qq="exit"
 
-alias cla="all 'clear'"
-alias qa="all 'exit'"
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -31,6 +28,16 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 alias mkdir="mkdir -p" # Automatically create intermediate non-existing directories when needed
+
+alias v="~/.dotfiles/shell/scripts/v.sh"
+alias vs="~/.dotfiles/shell/scripts/vs.sh"
+alias za="~/.dotfiles/shell/scripts/za.sh"
+alias search="~/.dotfiles/shell/scripts/search.sh"
+alias mkql="~/.dotfiles/shell/scripts/mkql.sh"
+alias all="~/.dotfiles/shell/scripts/all.sh"
+
+alias cla="all 'clear'"
+alias qa="all 'exit'"
 
 alias cd..="cd .."
 alias gti="git"
