@@ -42,7 +42,7 @@ function vs() {
 # Usage: za <filename>
 function za() {
     if [[ ! -f $1 ]]; then
-        echo "Error: file not found: '$1'"; return
+        echo "Error: file not found: '$1'"; return 1
     fi
 
     zathura --fork $1
@@ -58,9 +58,9 @@ function search() {
 # Usage: mkql <linkname>
 function mkql() {
     if [[ ! -d ~/Quicklinks/ ]]; then
-        echo "Error: ~/Quicklinks/ does not exist."; return
+        echo "Error: ~/Quicklinks/ does not exist."; return 1
     elif [[ -z $1 ]]; then
-        echo "Error: no argument provided for link name."; return
+        echo "Error: no argument provided for link name."; return 1
     fi
 
     ln -s "$(pwd -P)" ~/Quicklinks/"$1"
