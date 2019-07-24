@@ -16,6 +16,9 @@ bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 # Set theme
 source ~/.dotfiles/shell/theme
 
+# Set paths
+source ~/.dotfiles/shell/path
+
 # Set aliases
 source ~/.dotfiles/shell/aliases
 

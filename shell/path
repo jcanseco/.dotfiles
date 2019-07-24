@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Helper for adding directories to the PATH environment variable
+# Usage: add_to_path DIRECTORY
+# Note: doesn't do anything if directory is already in PATH
+# As for why you don't want duplicates in PATH: https://unix.stackexchange.com/a/14898
+function add_to_path() {
+    dir=$1
+
+    if [[ -z $PATH ]]; then
+        export PATH=$dir
+        return 0
+    fi
+
+    # Add dir to PATH only if not already there
+    case ":$PATH:" in
+      *":$dir:"*) :;; # Already there
+      *) export PATH=$PATH:$dir;;
+    esac
+}
+
+add_to_path ~/.dotfiles/shell/bin
