@@ -8,6 +8,8 @@
 
     # Basic aliases
     l = log
+    lg = log
+    lgo = log
     st = status
     d = diff HEAD
     ds = diff --staged
@@ -46,8 +48,8 @@
     c4 = diff HEAD~4 HEAD~3
     c5 = diff HEAD~5 HEAD~4
 
-    # git lg <branch>; show log graph for branch (defaults to current branch)
-    lg = log --pretty=oneline --abbrev-commit --graph --decorate
+    # git ll <branch>; show log graph for branch (defaults to current branch)
+    ll = log --pretty=oneline --abbrev-commit --graph --decorate
 
     # git contains <commit>; show branches that contain the given commit (defaults to HEAD)
     contains = branch --contains
