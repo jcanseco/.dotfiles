@@ -6,6 +6,13 @@
 # it does extra things we don't need (sets global functions like the base16_*
 # functions, creates files like .vimrc_background)
 
+# Don't set a Base16 Shell theme if running on ssh since Base16 Shell currently
+# has a problem where it doesn't set colors properly when on tmux+ssh
+# (see https://github.com/chriskempson/base16-shell/issues/145)
+if [ -n "$SSH_CONNECTION" ]; then
+    exit 0
+fi
+
 theme=~/.config/base16-shell/scripts/base16-onedark.sh
 if [ -s "$theme" ]; then
     source $theme
