@@ -31,6 +31,8 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 alias mkdir="mkdir -p" # Automatically create intermediate non-existing directories when needed
+alias cp="cp -i" # Ask if about to overwrite existing file
+alias mv="mv -i" # Same as above
 
 alias cd..="cd .."
 alias gti="git"
