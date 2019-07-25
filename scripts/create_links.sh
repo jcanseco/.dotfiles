@@ -11,7 +11,7 @@ SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
 DOTFILES_DIR="$(cd $SCRIPTS_DIR/.. && pwd)"
 
 CURR_DATE_TIME="$(date '+%Y%m%d%H%M%S')"
-BACKUP_DIR="${HOME}/.backups/${CURR_DATE_TIME}"
+BACKUP_DIR="${HOME}/.backups/dotfiles-${CURR_DATE_TIME}"
 
 # Map of [symlink to be created on home dir] to [path to actual dotfile]
 typeset -A DOTFILES

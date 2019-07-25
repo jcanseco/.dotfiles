@@ -40,11 +40,8 @@ If you're on Ubuntu, you can install these prerequisites (and [YouCompleteMe's b
 
 ## Installation
 
-[//]: # "Different ways of saving terminal output to a file: https://askubuntu.com/a/731237"
-[//]: # "Using tee with '|&' but in a way that works with older versions of bash: https://askubuntu.com/a/485762"
-
 ```
-~/.dotfiles/scripts/bootstrap.sh 2>&1 | tee ~/.bootstrap.log
+~/.dotfiles/scripts/bootstrap.sh
 ```
 
 ## Closing Notes
