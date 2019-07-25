@@ -52,6 +52,7 @@ autocmd FileType vim setlocal softtabstop=2 shiftwidth=2
 autocmd FileType yaml setlocal softtabstop=2 shiftwidth=2
 autocmd FileType xml setlocal softtabstop=2 shiftwidth=2
 autocmd FileType json setlocal softtabstop=2 shiftwidth=2
+autocmd FileType make setlocal noexpandtab shiftwidth=8
 
 """ Colors
 set background=dark " Fixes a weird issue with vim-dim where the colorscheme quickly changes from light to dark on start-up
