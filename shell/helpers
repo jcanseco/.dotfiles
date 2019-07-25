@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+function in_ssh() {
+    [[ -n $SSH_CLIENT || -n $SSH_TTY ]]
+}
