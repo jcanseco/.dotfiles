@@ -1,7 +1,9 @@
+# Load .profile if it exists and is readable
 if [ -r ~/.profile ]; then
     . ~/.profile
 fi
 
+# If running interactively, load .bashrc if it exists and is readable
 case $- in
     *i*)
         if [ -r ~/.bashrc ]; then
