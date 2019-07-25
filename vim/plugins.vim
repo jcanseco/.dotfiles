@@ -88,7 +88,7 @@ command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
 
 nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
-nnoremap <Leader>h :History<CR>| " Start file search amongst recently opened files
+nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
 
