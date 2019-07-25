@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-# Set Base16 Shell theme without setting any global functions (i.e. base16_*)
-# and creating any files (e.g. .vimrc_background) that Base16 Shell typically
-# creates through profile_helper.sh
+# Sets the Base16 Shell theme
+
+# Note: We don't use profiler_helper.sh (from the Base16 Shell repo), because
+# it does extra things we don't need (sets global functions like the base16_*
+# functions, creates files like .vimrc_background)
+
 theme=~/.config/base16-shell/scripts/base16-onedark.sh
 if [ -s "$theme" ]; then
     source $theme
