@@ -81,7 +81,8 @@ function bootstrap {
 function main {
     check_deps_exist
 
-    mkdir -p $LOG_DIR
+    mkdir -p $LOG_DIR || handle_error
+    touch $LOG_FILE || handle_error
 
     # Run bootstrap with logging
     # Different ways of saving terminal output to a file: https://askubuntu.com/a/731237
