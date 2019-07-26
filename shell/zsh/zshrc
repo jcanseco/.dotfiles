@@ -27,7 +27,7 @@ source ~/.dotfiles/shell/path
 source ~/.dotfiles/shell/aliases
 
 # Automatically list directory contents when changing directories
-function chpwd() {
+function chpwd {
     ls
 }
 

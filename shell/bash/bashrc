@@ -55,7 +55,7 @@ source ~/.dotfiles/shell/path
 source ~/.dotfiles/shell/aliases
 
 # Override what happens when changing directories
-function cd() {
+function cd {
     builtin cd -P "$@" # Resolve symlinks to their true values
     ls # Automatically list directory contents
 }
