@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Sets the Base16 Shell theme
-
 # Note: We don't use profiler_helper.sh (from the Base16 Shell repo), because
 # it does extra things we don't need (sets global functions like the base16_*
 # functions, creates files like .vimrc_background)
