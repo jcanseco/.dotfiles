@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+source ~/.dotfiles/shell/helpers
+
+# Autostart tmux if not running zsh on ssh
+if ! in_ssh; then
+    ZSH_TMUX_AUTOSTART="true"
+fi
+
+ZSH_TMUX_AUTOCONNECT="false"

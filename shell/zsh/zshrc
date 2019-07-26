@@ -1,21 +1,11 @@
-source ~/.dotfiles/shell/helpers
-
-# Plugin Configs (must go before plugins are loaded)
-if ! in_ssh; then
-    ZSH_TMUX_AUTOSTART="true" # Autostart tmux if not running zsh on ssh
-fi
-ZSH_TMUX_AUTOCONNECT="false"
+# Load plugin configs (must go before plugins are loaded)
+source ~/.dotfiles/shell/zsh/plugin_configs
 
 # Load plugins
 source ~/.dotfiles/shell/zsh/plugins
 
-# Set the prompt (must go after plugins are loaded since this depends on functions and definitions from oh-my-zsh)
+# Set prompt (must go after plugins are loaded since this depends on functions and definitions from oh-my-zsh)
 source ~/.dotfiles/shell/zsh/prompt
-
-setopt CHASE_LINKS # Resolve symlinks to their true values when changing directory
-
-bindkey "^p" up-line-or-search # Set 'Ctrl + p' to behave like the up-arrow
-bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 
 # Set theme
 source ~/.dotfiles/shell/theme
@@ -30,6 +20,11 @@ source ~/.dotfiles/shell/aliases
 function chpwd {
     ls
 }
+
+setopt CHASE_LINKS # Resolve symlinks to their true values when changing directory
+
+bindkey "^p" up-line-or-search # Set 'Ctrl + p' to behave like the up-arrow
+bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 
 # Zsh-specific aliases
 alias rl="source ~/.zshrc" # Reload the zsh configuration file
