@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Helper for opening files in vim
-# Usage: v.sh [FILE]
+# Usage: v [FILE]
 # Note: treats multiple arguments as one filename with spaces
 
 file="$@"
