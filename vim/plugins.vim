@@ -75,6 +75,9 @@ augroup END
 """ Vim-rooter
 let g:rooter_manual_only=1 " Disable auto-changing of the current working directory; we only want this plugin for its helper functions
 
+command! Rt execute 'edit ' . FindRootDirectory()| " Open project root directory
+command! RT Rt " Common typo
+
 """ FileBeagle
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1

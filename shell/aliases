@@ -2,7 +2,7 @@
 
 alias vdot="vim ~/.dotfiles"
 alias vin="vim -Nu NONE" # Launch vim in no-compatible mode, but with no vimrc
-alias gr='cd "$(git rev-parse --show-toplevel)"' # Go to git root directory
+alias rt='cd "$(git rev-parse --show-toplevel)"' # Go to git root directory
 alias open="xdg-open"
 alias tgz="tar -xvzf"
 alias myip="dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com" # Get public IPv4 address (see https://unix.stackexchange.com/a/477715)
