@@ -53,6 +53,9 @@
     # git ll [BRANCH]; show log graph for branch (defaults to current branch)
     ll = log --pretty=oneline --abbrev-commit --graph --decorate
 
+    # git lla; show log graph for all branches
+    lla = log --pretty=oneline --abbrev-commit --graph --decorate --all
+
     # git contains [COMMIT]; show branches that contain the given commit (defaults to HEAD)
     contains = branch --contains
 [core]
