@@ -6,7 +6,6 @@ alias gr='cd "$(git rev-parse --show-toplevel)"' # Go to git root directory
 alias open="xdg-open"
 alias tgz="tar -xvzf"
 
-alias s="sudo"
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
@@ -26,14 +25,15 @@ alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
 alias down="cd ~/Downloads"
 
+alias sudo="sudo -E" # Preserve existing environment variables
+alias cp="cp -i" # Ask if about to overwrite existing file
+alias mv="mv -i" # Same as above
+alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
 alias ls="ls --color=auto --group-directories-first"
 alias tree="tree --dirsfirst"
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-alias mkdir="mkdir -p" # Automatically create intermediate non-existing directories when needed
-alias cp="cp -i" # Ask if about to overwrite existing file
-alias mv="mv -i" # Same as above
 
 alias cd..="cd .."
 alias gti="git"
