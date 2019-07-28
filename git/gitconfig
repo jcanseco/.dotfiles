@@ -29,6 +29,7 @@
     pl = pull
     pr = pull --rebase
     ps = push
+    psf = !bash ~/.dotfiles/git/scripts/git_push_force.sh
     cp = cherry-pick
     cpa = cherry-pick --abort
     rb = rebase
