@@ -4,6 +4,10 @@
 # Usage: install_ubuntu_deps.sh
 # Note: tested on Ubuntu 16.04 and 18.04
 
+# Repositories
+sudo add-apt-repository -y ppa:longsleep/golang-backports # Golang (see https://github.com/golang/go/wiki/Ubuntu)
+sudo apt update
+
 # Required
 sudo apt install -y \
     git \
@@ -21,7 +25,8 @@ sudo apt install -y \
     silversearcher-ag \
     vim-gtk \
     libterm-readkey-perl \
-    zathura
+    zathura \
+    golang-go
 
 # YouCompleteMe
 sudo apt install -y \

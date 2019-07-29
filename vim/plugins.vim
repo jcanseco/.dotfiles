@@ -20,7 +20,7 @@ autocmd VimEnter *
 "   * for others: see README for YCM
 function! BuildYcm(info)
   if a:info.status == 'installed' || a:info.force
-    !./install.py
+    !./install.py --go-completer
   endif
 endfunction
 
@@ -44,6 +44,7 @@ Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in 
 Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
 Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
 Plug 'neomake/neomake' " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
+Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'} " Go support
 Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
 Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
 Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
@@ -59,6 +60,7 @@ let g:airline_powerline_fonts=0 " Disable powerline symbols
 let g:airline_symbols_ascii=1 " Use only ascii symbols
 let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing-whitespace/mixed-indent warnings; they're visible enough as is
 let g:airline_extensions=['neomake', 'quickfix', 'whitespace'] " Explicitly whitelist enabled extensions to avoid unintentionally loading unwanted ones, especially ones that are enabled by default and loaded in once their corresponding plugin is installed
+let g:airline#extensions#whitespace#skip_indent_check_ft={'go': ['mixed-indent-file']} " Disable mixed-indent-file checks for Go
 
 """ DelimitMate
 let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into body when creating code block with braces
@@ -127,6 +129,19 @@ augroup my_neomake_colors
   autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
   autocmd ColorScheme * highlight NeomakeWarning cterm=underline ctermfg=yellow
 augroup END
+
+""" Vim-Go
+let g:go_fmt_command='goimports' " Everything gofmt does + manages imports (adds missing, removes unused, and groups imports)
+let g:go_fmt_fail_silently=1 " Disable auto-opening of location list when g:go_fmt_command fails (e.g. when there are syntax errors; Neomake already notifies us of such errors through vim-airline and the sign-gutter, and if we fail to notice these, then the next :GoBuild/:GoRun will fail, which would open up a quickfix/location list)
+let g:go_list_height=10 " Set height of quickfix/location list to be same as default heights used by vim
+
+autocmd FileType go nmap <Leader>gb <Plug>(go-build)
+autocmd FileType go nmap <Leader>gr <Plug>(go-run)
+autocmd FileType go nmap <Leader>gt <Plug>(go-test)
+autocmd FileType go nmap <Leader>gc <Plug>(go-coverage)
+autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gs <Plug>(go-implements)
 
 """ Vim-Tmux-Navigator
 let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane

@@ -25,6 +25,7 @@ alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
 alias down="cd ~/Downloads"
+alias gs="cd $GOPATH/src"
 
 alias sudo="sudo -E" # Preserve existing environment variables
 alias cp="cp -i" # Ask if about to overwrite existing file

@@ -1,7 +1,28 @@
-# Created by https://www.gitignore.io/api/git,vim,tags,linux,sublimetext
+# Created by https://www.gitignore.io/api/git,vim,tags,linux,sublimetext,go
 
 ### Git ###
 *.orig
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
 
 ### Linux ###
 *~
@@ -82,4 +103,4 @@ Session.vim
 # auto-generated tag files
 
 
-# End of https://www.gitignore.io/api/git,vim,tags,linux,sublimetext
+# End of https://www.gitignore.io/api/git,vim,tags,linux,sublimetext,go

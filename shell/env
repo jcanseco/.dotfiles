@@ -20,3 +20,7 @@ function add_to_path() {
 }
 
 add_to_path ~/.dotfiles/shell/bin
+
+# Golang
+export GOPATH=~/Workspace/go
+add_to_path $GOPATH/bin
