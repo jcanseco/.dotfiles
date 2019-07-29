@@ -33,8 +33,8 @@ source ~/.dotfiles/shell/bash/prompt
 # Set theme
 source ~/.dotfiles/shell/theme
 
-# Set paths
-source ~/.dotfiles/shell/path
+# Set env vars
+source ~/.dotfiles/shell/env
 
 # Set aliases
 source ~/.dotfiles/shell/aliases
