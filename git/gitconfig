@@ -56,8 +56,12 @@
     # git lla; show log graph for all branches
     lla = log --pretty=oneline --abbrev-commit --graph --decorate --all
 
+    # git lp [BRANCH]; A better 'log -p': jump between commits of a branch using n/N (defaults to current branch)
+    lp = -c core.pager='less -p^commit.*$' log -p
+
     # git contains [COMMIT]; show branches that contain the given commit (defaults to HEAD)
     contains = branch --contains
+
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/git/gitignore_global
