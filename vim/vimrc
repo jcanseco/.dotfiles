@@ -16,6 +16,7 @@ set ignorecase " Ignore case when searching ...
 set smartcase " ... unless search pattern contains upper case characters
 set smartindent " Smart autoindenting when starting a new line
 set formatoptions=crqlj " Format options that are good for Google style (see :h fo-table)
+set list lcs=tab:\ \  " When cursor is on a tab char, go to beginning of tab, not end (Note: the space after the second \ is important) (see :h listchars and https://vi.stackexchange.com/a/2242)
 set nowrap " Disable line wrapping by default ...
 set linebreak " ... but if enabled, don't break words when wrapping
 set noshowmode " Disable the mode status at the bottom
