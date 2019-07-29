@@ -105,6 +105,23 @@ let g:ycm_global_ycm_extra_conf='~/.dotfiles/vim/extras/ycm_extra_conf.py' " Glo
 """ Neomake
 call neomake#configure#automake('w') " Run on buffer write
 
+let g:neomake_error_sign = {
+  \ 'text': '>>',
+  \ 'texthl': 'NeomakeErrorSign',
+  \ }
+let g:neomake_warning_sign = {
+  \ 'text': '>>',
+  \ 'texthl': 'NeomakeWarningSign',
+  \ }
+let g:neomake_message_sign = {
+  \ 'text': '>>',
+  \ 'texthl': 'NeomakeMessageSign',
+  \ }
+let g:neomake_info_sign = {
+  \ 'text': '>>',
+  \ 'texthl': 'NeomakeInfoSign'
+  \ }
+
 augroup my_neomake_colors
   autocmd!
   autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
@@ -120,9 +137,9 @@ autocmd FocusLost * silent redraw! " Fixes weird issue where '^[[O' is sometimes
 """ Tmuxline
 let g:tmuxline_powerline_separators=0 " Disable powerline symbols
 let g:tmuxline_preset={
-  \'a'    : '#S',
-  \'cwin' : '#I #W #F',
-  \'win'  : '#I #W',
-  \'z'    : '%I:%M %p',
-  \'options' : {'status-justify': 'left'}
-  \}
+  \ 'a'    : '#S',
+  \ 'cwin' : '#I #W #F',
+  \ 'win'  : '#I #W',
+  \ 'z'    : '%I:%M %p',
+  \ 'options' : {'status-justify': 'left'}
+  \ }
