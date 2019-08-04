@@ -15,6 +15,7 @@
     ds = diff --staged
     du = diff
     a = add
+    ap = add -p
     aa = add -A :/
     ci = commit
     cm = commit -m
@@ -37,8 +38,9 @@
     rbc = rebase --continue
     rba = rebase --abort
     r = reset
+    rp = reset -p
     rh = !bash ~/.dotfiles/git/scripts/git_reset_hard.sh
-    rp = "!f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
+    prall = "!f() { for remote in $(git remote); do git remote prune $remote; done; }; f"
 
     # git cof FILE; reset file back to HEAD
     cof = checkout --
