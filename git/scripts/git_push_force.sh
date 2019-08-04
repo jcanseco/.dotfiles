@@ -19,7 +19,18 @@ remote_branch=${3:-"$local_branch"}
 # see https://longair.net/blog/2011/02/27/an-asymmetry-between-git-pull-and-git-push
 git_push_cmd="git push $remote $local_branch:$remote_branch"
 
-read -n1 -p "git: Force pushing $local_branch to $remote/$remote_branch with lease. Continue? [Y/n]: " opt
+# Helper for generating coloured terminal output using tput
+# (see https://stackoverflow.com/a/20983251)
+function emph {
+    local bold="$(tput bold)"
+    local red="$(tput setaf 1)"
+    local reset="$(tput sgr0)"
+
+    local str="$@"
+    echo $bold$red$str$reset
+}
+
+read -n1 -p "git: Force pushing $(emph $local_branch) to $(emph $remote/$remote_branch) with lease. Continue? [Y/n]: " opt
 printf "\n"
 
 if [[ $opt == "Y" ]]; then
