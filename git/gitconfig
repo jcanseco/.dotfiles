@@ -56,6 +56,9 @@
     # git lla; show log graph for all branches
     lla = log --pretty=oneline --abbrev-commit --graph --decorate --all
 
+    # git lls; show simplified (i.e. more compact) log graph for all branches
+    lls = log --pretty=oneline --abbrev-commit --graph --decorate --all --simplify-by-decoration
+
     # git lp [BRANCH]; a better 'log -p': jump between commits of a branch using n/N (defaults to current branch)
     lp = -c core.pager='less -p ^commit.*$' log -p
 
