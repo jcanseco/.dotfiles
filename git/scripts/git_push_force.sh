@@ -18,6 +18,9 @@
 # matter by failing and giving you a warning. This is done to prevent
 # fat-finger errors.
 
+# Terminate immediately if not currently in a git working tree
+git rev-parse --is-inside-work-tree > /dev/null || exit 1
+
 remote=$1
 branch=$2
 
