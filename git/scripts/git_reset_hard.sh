@@ -7,5 +7,5 @@ read -n1 -p "git: Resetting the working tree to HEAD. Continue? [Y/n]: " opt
 printf "\n"
 
 if [[ $opt == "Y" ]]; then
-    git add -A && git reset --hard
+    git add -A :/ && git reset --hard
 fi
