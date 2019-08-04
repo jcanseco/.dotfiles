@@ -1,23 +1,42 @@
 #!/usr/bin/env bash
 
-# Helper script for force pushing to remote.
-# Usage: git_push_force.sh [REMOTE] [LOCAL_BRANCH] [REMOTE_BRANCH]
+# Helper script for force pushing $branch to $remote/$branch
+# Usage: git_push_force.sh [REMOTE] [BRANCH]
+#
 # Note: First attempts the push with '--force-with-lease', which fails if the
-# remote branch has new commits that you have not yet pulled. If force-with-lease
-# fails, displays a prompt if you'd like to continue with regular '--force'
-# anyway (see https://stackoverflow.com/a/52823955)
+# remote branch has new commits that you have not yet pulled
+# (see https://stackoverflow.com/a/52823955)
+#
+# If '--force-with-lease' fails, prompts if you'd like to proceed with
+# '--force' anyway.
+#
+# Note: even if this script accepts arguments, it actually only works if the
+# arguments are what we expect them to be (i.e. $branch is the current branch,
+# and $remote/$branch is the remote branch being tracked by $branch).  This is
+# done intentionally. The script assumes that you've made a mistake if you've
+# called it with unexpected arguments, and thus brings your attention to the
+# matter by failing and giving you a warning. This is done to prevent
+# fat-finger errors.
+
+remote=$1
+branch=$2
+
+[[ -z $remote ]] && { echo "git: Error: no argument provided for remote."; exit 1; }
+[[ -z $branch ]] && { echo "git: Error: no argument provided for branch."; exit 1; }
 
 curr_branch="$(git symbolic-ref --short -q HEAD)"
+if [[ $branch != $curr_branch ]]; then
+    echo "git: Error: '$branch' is not the currently checked out branch."
+    exit 1
+fi
 
-remote=${1:-"origin"}
-local_branch=${2:-"$curr_branch"}
-remote_branch=${3:-"$local_branch"}
-
-# This is the most explicit way to make a push (and works the same way
-# regardless of what push.default is set to). To understand what happens when
-# you omit certain parts of this line (e.g. remote/local_branch/remote_branch),
-# see https://longair.net/blog/2011/02/27/an-asymmetry-between-git-pull-and-git-push
-git_push_cmd="git push $remote $local_branch:$remote_branch"
+# Determine remote branch tracked by $branch
+# (see https://stackoverflow.com/a/9753364)
+remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git rev-parse --symbolic-full-name $branch 2> /dev/null))
+if [[ $remote/$branch != $remote_branch ]]; then
+    echo "git: Error: the remote branch tracked by '$branch' is not '$remote/$branch', but '$remote_branch'"
+    exit 1
+fi
 
 # Helper for generating coloured terminal output using tput
 # (see https://stackoverflow.com/a/20983251)
@@ -30,10 +49,17 @@ function emph {
     echo $bold$red$str$reset
 }
 
-read -n1 -p "git: Force pushing $(emph $local_branch) to $(emph $remote/$remote_branch) with lease. Continue? [Y/n]: " opt
+read -n1 -p "git: Force pushing $(emph $branch) to $(emph $remote/$branch) with lease. Continue? [Y/n]: " opt
 printf "\n"
 
 if [[ $opt == "Y" ]]; then
+    # Command to push $branch to $remote/$branch
+    # Note: it's important to understand that this commonly used syntax for
+    # git-push is fairly misleading and can therefore be dangerous when used
+    # with something like --force[-with-lease], hence all the safety checks
+    # (see https://longair.net/blog/2011/02/27/an-asymmetry-between-git-pull-and-git-push)
+    git_push_cmd="git push $remote $branch"
+
     $git_push_cmd --force-with-lease
 
     if [[ $? -ne 0 ]]; then
