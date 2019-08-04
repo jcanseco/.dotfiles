@@ -20,6 +20,7 @@ sudo apt install -y \
     tree \
     silversearcher-ag \
     vim-gtk \
+    libterm-readkey-perl \
     zathura
 
 # YouCompleteMe

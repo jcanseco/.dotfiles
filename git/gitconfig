@@ -72,6 +72,9 @@
     excludesfile = ~/.dotfiles/git/gitignore_global
     pager = less -+F -+X -C
 
+[interactive]
+    singleKey = true
+
 [push]
     default = simple
 

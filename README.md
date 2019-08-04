@@ -30,6 +30,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * Tree
 * Ag (recommended for fzf's ag search)
 * Vim-GTK (recommended for vim's clipboard feature on Debian/Ubuntu, see [this](https://vim.fandom.com/wiki/Accessing_the_system_clipboard#Checking_for_X11-clipboard_support_in_terminal) for info on other distros)
+* Term::ReadKey Perl Module (recommended for git's interactive.singleKey feature)
 * Zathura
 
 If you're on Ubuntu, you can install these prerequisites (and [YouCompleteMe's build dependencies](docs/YouCompleteMe.md)) by running:
