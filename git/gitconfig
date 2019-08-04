@@ -21,7 +21,7 @@
     cm = commit -m
     amd = commit --amend
     ss = stash
-    ssp = stash pop
+    ssp = stash -p
     cl = clone
     co = checkout
     cob = checkout -b
