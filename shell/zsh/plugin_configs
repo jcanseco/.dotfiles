@@ -2,6 +2,9 @@
 
 source ~/.dotfiles/shell/helpers
 
+# Disable auto-update checks for oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
+
 # Autostart tmux if not running zsh on ssh
 if ! in_ssh; then
     ZSH_TMUX_AUTOSTART="true"
