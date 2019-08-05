@@ -7,6 +7,9 @@ nnoremap <Leader>w :w<CR>
 " Quit
 nnoremap <Leader>q :q<CR>
 
+" Edit from home
+nnoremap <Leader>e :e ~/
+
 " Toggle paste mode
 nnoremap <silent> <Leader>p :set paste!<CR>
 
