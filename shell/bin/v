@@ -8,20 +8,17 @@ file="$@"
 
 # Open current directory by default if no file argument given.
 if [[ -z $file ]]; then
-    vim .
-    exit
+    exec vim .
 fi
 
 # Open file or directory if it exists.
 if [[ -f $file ]] || [[ -d $file ]]; then
-    vim "$file"
-    exit
+    exec vim "$file"
 fi
 
 # Prompt user regarding creating a new file if it does not exist.
 read -n1 -p "vim: Creating new file '$file'. Continue? [Y/n]: " opt
 printf "\n"
 if [[ $opt == "Y" ]]; then
-    vim "$file"
-    exit
+    exec vim "$file"
 fi

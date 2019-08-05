@@ -6,10 +6,11 @@
 ext=$1
 tmp_dir=$(mktemp -d)
 
+echo "Creating temporary project in: $tmp_dir"
+
 if [[ -z $ext ]]; then
-    vim "$tmp_dir/main"
+    exec vim "$tmp_dir/main"
 else
-    vim "$tmp_dir/main.$ext"
+    exec vim "$tmp_dir/main.$ext"
 fi
 
-echo "Temporary project created in: $tmp_dir"
