@@ -36,6 +36,13 @@ alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
+alias t="tmux"
+alias tl="tmux ls"
+alias ta="tmux attach-session -t"
+alias td="tmux detach"
+alias tn="tmux new-session"
+alias tr="tmux rename-session"
+
 alias cd..="cd .."
 alias gti="git"
 alias igt="git"
