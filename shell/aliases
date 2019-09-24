@@ -44,6 +44,7 @@ alias tn="tmux new-session"
 alias tr="tmux rename-session"
 
 alias cd..="cd .."
+alias g="git"
 alias gti="git"
 alias igt="git"
 alias gt="git"
