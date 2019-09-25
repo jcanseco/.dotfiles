@@ -8,6 +8,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Edit from within directories
+nnoremap <Leader>er :e /
 nnoremap <Leader>eh :e ~/
 nnoremap <Leader>ew :e ~/Workspace/
 nnoremap <Leader>eq :e ~/Quicklinks/
