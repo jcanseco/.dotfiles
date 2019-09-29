@@ -72,8 +72,9 @@ augroup my_quickscope_colors
   autocmd ColorScheme * highlight QuickScopeSecondary cterm=bold,underline ctermfg=cyan
 augroup END
 
-""" Vim-rooter
+""" Vim-Rooter
 let g:rooter_manual_only=1 " Disable auto-changing of the current working directory; we only want this plugin for its helper functions
+let g:rooter_patterns=['.proj_root', '.git', '.git/'] " The files/directories used to identify the project root directory (see :h rooter_patterns)
 
 command! Rt execute 'edit ' . FindRootDirectory()| " Open project root directory
 command! RT Rt " Common typo

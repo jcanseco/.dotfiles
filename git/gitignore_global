@@ -77,9 +77,10 @@ cscope.po.out
 Session.vim
 # temporary
 .netrwhist
+# Vim-Rooter
+.proj_root
 # CtrlP
 .ctrlp_root
 # auto-generated tag files
-
 
 # End of https://www.gitignore.io/api/git,vim,tags,linux,sublimetext
