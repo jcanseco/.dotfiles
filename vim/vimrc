@@ -61,8 +61,8 @@ set background=dark " Fixes a weird issue with vim-dim where the colorscheme qui
 augroup my_colors " Colorscheme overrides (see https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f)
   autocmd!
   autocmd Colorscheme * highlight MatchParen cterm=none ctermbg=none ctermfg=blue " Make highlighting used for matching parentheses more distinguishable from the cursor
-  autocmd Colorscheme * highlight VertSplit ctermbg=none " Remove highlighting on boundaries of vertical splits
   autocmd Colorscheme * highlight SignColumn ctermbg=none " Remove highlighting on the gutter (used by plugins like Neomake)
+  autocmd Colorscheme * highlight! link VertSplit LineNr " Make vertical split boundaries have the same highlighting as line numbers
   autocmd Colorscheme * highlight! link NonText LineNr " Make NonText characters (:h NonText; e.g. ~ symbols indicating end of buffer) have the same highlighting as line numbers. Note: this also affects characters in listchars (see https://stackoverflow.com/a/1294834)
   autocmd Colorscheme * highlight! link Todo Comment " Make TODO's (and FIXME's, etc.) have the same highlighting as regular comments
 augroup END
