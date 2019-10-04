@@ -65,7 +65,7 @@
     lp = -c core.pager='less -+F -+X -C -p ^commit.*$' log -p
 
     # git contains [COMMIT]; show branches that contain the given commit (defaults to HEAD)
-    contains = branch --contains
+    contains = branch --all --contains
 
 [core]
     editor = vim
