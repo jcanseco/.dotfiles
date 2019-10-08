@@ -101,6 +101,9 @@ set completeopt-=preview " Only show completion candidates as a list instead of 
 
 let g:ycm_register_as_syntastic_checker=0 " Turn off built-in syntax checker
 let g:ycm_show_diagnostics_ui=0 " Turn off built-in diagnostics ui
+let g:ycm_enable_diagnostic_signs=0 " Turn off diagnostic signs on the gutter
+let g:ycm_enable_diagnostic_highlighting=0 " Turn off diagnostic line highlighting
+let g:ycm_echo_current_diagnostic=0 " Turn off diagnostic messages
 let g:ycm_global_ycm_extra_conf='~/.dotfiles/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
 
 """ Neomake
