@@ -26,7 +26,7 @@ alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
 alias down="cd ~/Downloads"
 
-alias sudo="sudo -E" # Preserve existing environment variables
+alias sudo="sudo -E " # Add -E to preserve existing env vars, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
 alias cp="cp -i" # Ask if about to overwrite existing file
 alias mv="mv -i" # Same as above
 alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
