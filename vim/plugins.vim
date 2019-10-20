@@ -141,6 +141,8 @@ autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
 autocmd FileType go nmap <Leader>gr <Plug>(go-referrers)
 autocmd FileType go nmap <Leader>gs <Plug>(go-implements)
 
+autocmd FileType go nnoremap <Leader>l :GoDecls<CR>| " Show function and type declarations for the current file (note: overrides the keymap for FZF's line search)
+
 """ Vim-Tmux-Navigator
 let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane
 
