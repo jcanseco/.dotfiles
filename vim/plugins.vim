@@ -136,7 +136,6 @@ let g:go_fmt_fail_silently=1 " Disable auto-opening of location list when g:go_f
 let g:go_list_height=10 " Set height of quickfix/location list to be same as default heights used by vim
 
 autocmd FileType go nmap <Leader>gb <Plug>(go-build)
-autocmd FileType go nmap <Leader>gt <Plug>(go-test)
 autocmd FileType go nmap <Leader>gi <Plug>(go-info)
 autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
 autocmd FileType go nmap <Leader>gr <Plug>(go-referrers)
