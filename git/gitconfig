@@ -74,6 +74,7 @@
 
 [pager]
     branch = false
+    diff = less -+F -+X -C -p ^diff.*$ # Allow jumping between files using n/N in diffs
 
 [interactive]
     singleKey = true
