@@ -31,6 +31,7 @@ set noswapfile " Don't make swap files
 set mouse= " Disable use of mouse
 set ttymouse= " Empty the list of terminal types for which mouse codes are to be recognized
 set clipboard^=unnamedplus " Use system clipboard for seamless copy-pasting between vim and the system (required: X11 clipboard support, see https://vim.fandom.com/wiki/Accessing_the_system_clipboard#Checking_for_X11-clipboard_support_in_terminal)
+set grepprg=grep\ -nREI\ --exclude-dir=.git\ --exclude=tags\ $*\ /dev/null " Command to execute when :grep is invoked. This is very close to the default grepprg, just with extra flags. Note: the '\' characters are for escaping the spaces.
 
 autocmd BufNewFile,BufEnter * silent! lcd %:p:h " Auto-change current working directory to that of the current buffer (works better with fzf compared to the 'autochdir' option)
 
