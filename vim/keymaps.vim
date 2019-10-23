@@ -40,6 +40,9 @@ nnoremap <C-n> :bnext<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Prepare to grep
+nnoremap <Leader>gg :grep<space>
+
 " Prevent jumping to the next match when pressing '*'
 nnoremap * :keepjumps normal! mi*`i<CR>
 
