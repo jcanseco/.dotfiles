@@ -43,6 +43,9 @@ vnoremap > >gv
 " Prepare to grep
 nnoremap <Leader>gg :grep<space>
 
+" Prepare to grep word under cursor
+nnoremap <Leader>gw :grep "<C-r><C-w>"<space>
+
 " Prevent jumping to the next match when pressing '*'
 nnoremap * :keepjumps normal! mi*`i<CR>
 
