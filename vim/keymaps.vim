@@ -41,7 +41,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Prepare to grep
-nnoremap <Leader>gg :grep<space>
+nnoremap <Leader>gg :grep "
 
 " Prepare to grep word under cursor
 nnoremap <Leader>gw :grep "<C-r><C-w>"<space>
