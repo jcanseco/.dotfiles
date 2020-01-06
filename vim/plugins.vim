@@ -1,4 +1,5 @@
-""" Vim-plug
+""" Helpers
+source ~/.dotfiles/vim/helpers.vim
 
 " Skip this file entirely if vim-plug not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -95,7 +96,7 @@ nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search 
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>aa :Ag!<space>| " Start ag search from the project root (full-screen)
-nnoremap <Leader>aw :Ag! <C-r><C-w><CR>| " Start ag search for word under cursor (full-screen)
+nnoremap <Leader>aw :call ExecAndRecordInCmdHistory("Ag! <C-r><C-w>")<CR>| " Start ag search for word under cursor (full-screen)
 
 """ YouCompleteMe
 set completeopt-=preview " Only show completion candidates as a list instead of on a preview window
