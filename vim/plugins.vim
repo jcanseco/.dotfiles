@@ -94,7 +94,8 @@ command! -bang -nargs=* Ag
 nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
-nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
+nnoremap <Leader>aa :Ag!<space>| " Start ag search from the project root (full-screen)
+nnoremap <Leader>aw :Ag! <C-r><C-w><CR>| " Start ag search for word under cursor (full-screen)
 
 """ YouCompleteMe
 set completeopt-=preview " Only show completion candidates as a list instead of on a preview window
