@@ -24,7 +24,7 @@ alias dot="cd ~/.dotfiles"
 alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
-alias down="cd ~/Downloads"
+alias dl="cd ~/Downloads"
 
 alias sudo="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
 alias watch="watch " # Add extra space to allow use of aliases with watch
