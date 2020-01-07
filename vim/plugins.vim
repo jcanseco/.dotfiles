@@ -84,7 +84,7 @@ command! RT Rt " Common typo
 let g:filebeagle_suppress_keymaps=1
 let g:filebeagle_show_hidden=1
 
-nnoremap <silent> <Leader>f :e .<CR>| " Open file browser on current working directory
+nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
