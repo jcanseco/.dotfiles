@@ -35,14 +35,10 @@ alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
 alias ls="ls --color=auto --group-directories-first"
 alias tree="tree --dirsfirst"
 alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
 
 alias t="tmux"
 alias tl="tmux ls"
 alias ta="tmux attach-session -t"
-alias td="tmux detach"
-alias tn="tmux new-session"
 alias tr="tmux rename-session"
 
 alias cd..="cd .."
