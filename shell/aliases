@@ -27,7 +27,7 @@ alias doc="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias tmp="cd /tmp"
 
-alias sudo="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
+alias s="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
 alias watch="watch " # Add extra space to allow use of aliases with watch
 alias cp="cp -i" # Ask if about to overwrite existing file
 alias mv="mv -i" # Same as above
