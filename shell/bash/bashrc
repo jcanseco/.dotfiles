@@ -11,6 +11,7 @@ shopt -s globstar # Set pattern "**" to match all files and directories/subdirec
 shopt -s checkwinsize # Check window size after each command and update LINES and COLUMNS if needed
 
 bind "set completion-ignore-case on" # Make tab completion case insensitive (see https://superuser.com/a/435127)
+bind "set show-all-if-ambiguous on" # Make it unnecessary to press tab twice when there is more than one match (see same superuser link regarding case insensitive tab completion)
 
 # Make 'less' more friendly for non-text files (see 'man lesspipe')
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
