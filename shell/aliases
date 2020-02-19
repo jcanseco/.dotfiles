@@ -7,6 +7,8 @@ alias open="xdg-open"
 alias tgz="tar -xvzf"
 alias myip="dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com" # Get public IPv4 address (see https://unix.stackexchange.com/a/477715)
 
+alias s="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
+alias w="watch " # Add extra space to allow use of aliases with watch
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
@@ -27,8 +29,6 @@ alias doc="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias tmp="cd /tmp"
 
-alias s="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
-alias w="watch " # Add extra space to allow use of aliases with watch
 alias cp="cp -i" # Ask if about to overwrite existing file
 alias mv="mv -i" # Same as above
 alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
