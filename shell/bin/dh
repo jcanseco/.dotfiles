@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Helper for deleting commands from bash and zsh history
+# Usage: dh REGEX
+# Examples:
+#   Deletes all instances of 'git psf origin master': dh git psf origin master
+#   Deletes all calls to 'git psf': dh "git psf .*"
+
+cmd="$@"
+
+sed -i -E "s/^${cmd}\$/d/" ~/.bash_history
+sed -i -E "s/^: [0-9]+:[0-9]+;${cmd}\$/d/" ~/.zsh_history
