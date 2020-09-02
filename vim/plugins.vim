@@ -45,7 +45,7 @@ Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to i
 Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
 Plug 'Valloric/YouCompleteMe', {'commit': '27362f8', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
 Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
-Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'} " Go support
+Plug 'fatih/vim-go', {'commit': '8baba37', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support
 Plug 'christoomey/vim-tmux-navigator', {'commit': '44ba6fb'} " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
 Plug 'tmux-plugins/vim-tmux-focus-events', {'commit': 'e809607'} " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
 Plug 'roxma/vim-tmux-clipboard', {'commit': '4718774'} " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
