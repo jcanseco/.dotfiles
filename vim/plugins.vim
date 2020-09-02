@@ -88,6 +88,7 @@ nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
+let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening an FZF search
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
