@@ -107,6 +107,7 @@ let g:ycm_show_diagnostics_ui=0 " Turn off built-in diagnostics ui
 let g:ycm_enable_diagnostic_signs=0 " Turn off diagnostic signs on the gutter
 let g:ycm_enable_diagnostic_highlighting=0 " Turn off diagnostic line highlighting
 let g:ycm_echo_current_diagnostic=0 " Turn off diagnostic messages
+let g:ycm_auto_hover='' " Turn off documentation popups that appear at the cursor location after a short delay
 let g:ycm_global_ycm_extra_conf='~/.dotfiles/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
 
 """ Neomake
