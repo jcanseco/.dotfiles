@@ -27,28 +27,28 @@ endfunction
 
 call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 
-Plug 'jeffkreeftmeijer/vim-dim' " Colorscheme
-Plug 'vim-airline/vim-airline' " Fancy status line (required: vim 7.2+)
-Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
-Plug 'sheerun/vim-polyglot' " Syntax highlighting and indentation for various languages
-Plug 'Raimondi/delimitMate' " Automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'sickill/vim-pasta' " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
-Plug 'tpope/vim-commentary' " Comment stuff out
-Plug 'tpope/vim-unimpaired' " Pairs of useful keymappings (see :h unimpaired)
-Plug 'unblevable/quick-scope' " Highlights for more efficient left/right motions using f/F
-Plug 'google/vim-searchindex' " Display number of search matches and index of current match
-Plug 'ludovicchabant/vim-gutentags', {'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+) (required: ctags)
-Plug 'airblade/vim-rooter' " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
-Plug 'jeetsukumaran/vim-filebeagle' " File browser
-Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
-Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
-Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
-Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
-Plug 'neomake/neomake' " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
-Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
-Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
-Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
-Plug 'edkolev/tmuxline.vim', {'on': ['Tmuxline', 'TmuxlineSnapshot']} " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
+Plug 'jeffkreeftmeijer/vim-dim', {'commit': '00d1b3b'} " Colorscheme
+Plug 'vim-airline/vim-airline', {'commit': 'ee85ed4'} " Fancy status line (required: vim 7.2+)
+Plug 'vim-airline/vim-airline-themes', {'commit': '3fb676b'} " Themes for vim-airline
+Plug 'sheerun/vim-polyglot', {'commit': '22095fe'} " Syntax highlighting and indentation for various languages
+Plug 'Raimondi/delimitMate', {'commit': '728b57a'} " Automatic closing of quotes, parenthesis, brackets, etc.
+Plug 'sickill/vim-pasta', {'commit': 'cb4501a'} " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
+Plug 'tpope/vim-commentary', {'commit': 'f8238d7'} " Comment stuff out
+Plug 'tpope/vim-unimpaired', {'commit': '4afbe5e'} " Pairs of useful keymappings (see :h unimpaired)
+Plug 'unblevable/quick-scope', {'commit': '95578ca'} " Highlights for more efficient left/right motions using f/F
+Plug 'google/vim-searchindex', {'commit': 'b0788c8'} " Display number of search matches and index of current match
+Plug 'ludovicchabant/vim-gutentags', {'commit': '0423321'} " Tag files generator/manager (v1.0.0 is what works for vim 7+) (required: ctags)
+Plug 'airblade/vim-rooter', {'commit': 'd64f3e0'} " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
+Plug 'jeetsukumaran/vim-filebeagle', {'commit': '9c05886'} " File browser
+Plug 'junegunn/fzf', {'commit': '06d63a8', 'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
+Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
+Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
+Plug 'Valloric/YouCompleteMe', {'commit': '27362f8', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
+Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
+Plug 'christoomey/vim-tmux-navigator', {'commit': '44ba6fb'} " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
+Plug 'tmux-plugins/vim-tmux-focus-events', {'commit': 'e809607'} " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
+Plug 'roxma/vim-tmux-clipboard', {'commit': '4718774'} " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
+Plug 'edkolev/tmuxline.vim', {'commit': '7001ab3', 'on': ['Tmuxline', 'TmuxlineSnapshot']} " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
 
 call plug#end()
 
