@@ -3,3 +3,39 @@
 function in_ssh {
     [[ -n $SSH_CLIENT || -n $SSH_TTY ]]
 }
+
+function append_to_path() {
+    add_to_path $1
+}
+
+function prepend_to_path() {
+    add_to_path $1 true
+}
+
+# Helper for adding directories to the PATH environment variable.
+# Usage: add_to_path DIRECTORY [SHOULD_PREPEND]
+# Appends DIRECTORY to PATH by default, unless SHOULD_PREPEND is set to 'true'.
+# Doesn't do anything if directory is already in PATH.
+# As for why you don't want duplicates in PATH: https://unix.stackexchange.com/a/14898
+function add_to_path() {
+    dir=$1
+    should_prepend=${2:-false}
+
+    # PATH is empty
+    if [[ -z $PATH ]]; then
+        export PATH=$dir
+        return 0
+    fi
+
+    # PATH already contains directory
+    if [[ ":$PATH:" == *":$dir:"* ]]; then
+        return 0
+    fi
+
+    if [[ "$should_prepend" == "true" ]]; then
+        export PATH=$dir:$PATH
+        return 0
+    fi
+
+    export PATH=$PATH:$dir
+}
