@@ -15,7 +15,7 @@ function add_to_path() {
     # Add dir to PATH only if not already there
     case ":$PATH:" in
       *":$dir:"*) :;; # Already there
-      *) export PATH=$PATH:$dir;;
+      *) export PATH=$dir:$PATH;;
     esac
 }
 

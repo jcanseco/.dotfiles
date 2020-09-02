@@ -19,7 +19,7 @@
     aa = add -A :/
     ci = commit
     cm = commit -m
-    amd = commit --amend
+    amd = !bash ~/.dotfiles/git/scripts/git_commit_amend.sh
     ss = stash
     ssp = stash -p
     co = checkout
@@ -31,6 +31,7 @@
     ps = push
     psf = !bash ~/.dotfiles/git/scripts/git_push_force.sh
     cp = cherry-pick
+    cpc = cherry-pick --continue
     cpa = cherry-pick --abort
     rb = rebase
     rbi = rebase --interactive
@@ -62,15 +63,19 @@
     lls = log --pretty=oneline --abbrev-commit --graph --decorate --all --simplify-by-decoration
 
     # git lp [BRANCH]; a better 'log -p': jump between commits of a branch using n/N (defaults to current branch)
-    lp = -c core.pager='less -p ^commit.*$' log -p
+    lp = -c core.pager='less -+F -+X -C -p ^commit.*$' log -p
 
     # git contains [COMMIT]; show branches that contain the given commit (defaults to HEAD)
-    contains = branch --contains
+    contains = branch --all --contains
 
 [core]
     editor = vim
     excludesfile = ~/.dotfiles/git/gitignore_global
     pager = less -+F -+X -C
+
+[pager]
+    branch = false
+    diff = less -+F -+X -C -p ^diff.*$ # Allow jumping between files using n/N in diffs
 
 [interactive]
     singleKey = true

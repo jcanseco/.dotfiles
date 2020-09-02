@@ -8,10 +8,12 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 
 " Edit from within directories
+nnoremap <Leader>er :e /
 nnoremap <Leader>eh :e ~/
 nnoremap <Leader>ew :e ~/Workspace/
 nnoremap <Leader>eq :e ~/Quicklinks/
 nnoremap <Leader>ed :e ~/Documents/
+nnoremap <Leader>et :e /tmp/
 nnoremap <Leader>eg :e $GOPATH/src/
 
 " Toggle paste mode
@@ -39,6 +41,12 @@ nnoremap <C-n> :bnext<CR>
 " Indent blocks of text in visual mode without leaving visual mode
 vnoremap < <gv
 vnoremap > >gv
+
+" Prepare to grep
+nnoremap <Leader>gg :grep "
+
+" Prepare to grep word under cursor
+nnoremap <Leader>gw :grep "<C-r><C-w>"<space>
 
 " Prevent jumping to the next match when pressing '*'
 nnoremap * :keepjumps normal! mi*`i<CR>

@@ -1,4 +1,5 @@
-""" Vim-plug
+""" Helpers
+source ~/.dotfiles/vim/helpers.vim
 
 " Skip this file entirely if vim-plug not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -26,29 +27,29 @@ endfunction
 
 call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 
-Plug 'jeffkreeftmeijer/vim-dim' " Colorscheme
-Plug 'vim-airline/vim-airline' " Fancy status line (required: vim 7.2+)
-Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
-Plug 'sheerun/vim-polyglot' " Syntax highlighting and indentation for various languages
-Plug 'Raimondi/delimitMate' " Automatic closing of quotes, parenthesis, brackets, etc.
-Plug 'sickill/vim-pasta' " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
-Plug 'tpope/vim-commentary' " Comment stuff out
-Plug 'tpope/vim-unimpaired' " Pairs of useful keymappings (see :h unimpaired)
-Plug 'unblevable/quick-scope' " Highlights for more efficient left/right motions using f/F
-Plug 'google/vim-searchindex' " Display number of search matches and index of current match
-Plug 'ludovicchabant/vim-gutentags', {'tag': 'v1.0.0'} " Tag files generator/manager (v1.0.0 is what works for vim 7+) (required: ctags)
-Plug 'airblade/vim-rooter' " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
-Plug 'jeetsukumaran/vim-filebeagle' " File browser
-Plug 'junegunn/fzf', {'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
-Plug 'junegunn/fzf.vim' " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
-Plug 'pbrisbin/vim-mkdir' " Automatically create any non-existing directories before writing the buffer
-Plug 'Valloric/YouCompleteMe', {'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
-Plug 'neomake/neomake' " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
+Plug 'jeffkreeftmeijer/vim-dim', {'commit': '00d1b3b'} " Colorscheme
+Plug 'vim-airline/vim-airline', {'commit': 'ee85ed4'} " Fancy status line (required: vim 7.2+)
+Plug 'vim-airline/vim-airline-themes', {'commit': '3fb676b'} " Themes for vim-airline
+Plug 'sheerun/vim-polyglot', {'commit': '22095fe'} " Syntax highlighting and indentation for various languages
+Plug 'Raimondi/delimitMate', {'commit': '728b57a'} " Automatic closing of quotes, parenthesis, brackets, etc.
+Plug 'sickill/vim-pasta', {'commit': 'cb4501a'} " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
+Plug 'tpope/vim-commentary', {'commit': 'f8238d7'} " Comment stuff out
+Plug 'tpope/vim-unimpaired', {'commit': '4afbe5e'} " Pairs of useful keymappings (see :h unimpaired)
+Plug 'unblevable/quick-scope', {'commit': '95578ca'} " Highlights for more efficient left/right motions using f/F
+Plug 'google/vim-searchindex', {'commit': 'b0788c8'} " Display number of search matches and index of current match
+Plug 'ludovicchabant/vim-gutentags', {'commit': '0423321'} " Tag files generator/manager (v1.0.0 is what works for vim 7+) (required: ctags)
+Plug 'airblade/vim-rooter', {'commit': 'd64f3e0'} " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
+Plug 'jeetsukumaran/vim-filebeagle', {'commit': '9c05886'} " File browser
+Plug 'junegunn/fzf', {'commit': '06d63a8', 'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
+Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
+Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
+Plug 'Valloric/YouCompleteMe', {'commit': '27362f8', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 7.4.1578+ with python 2 or 3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
+Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
 Plug 'fatih/vim-go', {'for': 'go', 'do': ':GoInstallBinaries'} " Go support
-Plug 'christoomey/vim-tmux-navigator' " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
-Plug 'tmux-plugins/vim-tmux-focus-events' " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
-Plug 'roxma/vim-tmux-clipboard' " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
-Plug 'edkolev/tmuxline.vim', {'on': ['Tmuxline', 'TmuxlineSnapshot']} " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
+Plug 'christoomey/vim-tmux-navigator', {'commit': '44ba6fb'} " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
+Plug 'tmux-plugins/vim-tmux-focus-events', {'commit': 'e809607'} " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
+Plug 'roxma/vim-tmux-clipboard', {'commit': '4718774'} " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
+Plug 'edkolev/tmuxline.vim', {'commit': '7001ab3', 'on': ['Tmuxline', 'TmuxlineSnapshot']} " Used to generate tmux statusline configs to make it look like the current vim-airline set-up (see repo on how to do this)
 
 call plug#end()
 
@@ -74,8 +75,9 @@ augroup my_quickscope_colors
   autocmd ColorScheme * highlight QuickScopeSecondary cterm=bold,underline ctermfg=cyan
 augroup END
 
-""" Vim-rooter
+""" Vim-Rooter
 let g:rooter_manual_only=1 " Disable auto-changing of the current working directory; we only want this plugin for its helper functions
+let g:rooter_patterns=['.proj_root', '.git', '.git/'] " The files/directories used to identify the project root directory (see :h rooter_patterns)
 
 command! Rt execute 'edit ' . FindRootDirectory()| " Open project root directory
 command! RT Rt " Common typo
@@ -88,6 +90,7 @@ nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
+let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening an FZF search
 
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
@@ -95,13 +98,17 @@ command! -bang -nargs=* Ag
 nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
-nnoremap <Leader>a :Ag!<space>| " Start ag search from the project root (full-screen)
+nnoremap <Leader>aa :Ag!<space>| " Start ag search from the project root (full-screen)
+nnoremap <Leader>aw :call ExecAndRecordInCmdHistory("Ag! <C-r><C-w>")<CR>| " Start ag search for word under cursor (full-screen)
 
 """ YouCompleteMe
 set completeopt-=preview " Only show completion candidates as a list instead of on a preview window
 
 let g:ycm_register_as_syntastic_checker=0 " Turn off built-in syntax checker
 let g:ycm_show_diagnostics_ui=0 " Turn off built-in diagnostics ui
+let g:ycm_enable_diagnostic_signs=0 " Turn off diagnostic signs on the gutter
+let g:ycm_enable_diagnostic_highlighting=0 " Turn off diagnostic line highlighting
+let g:ycm_echo_current_diagnostic=0 " Turn off diagnostic messages
 let g:ycm_global_ycm_extra_conf='~/.dotfiles/vim/extras/ycm_extra_conf.py' " Global config for C/C++ semantic completion
 
 """ Neomake

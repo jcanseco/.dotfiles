@@ -7,6 +7,8 @@ alias open="xdg-open"
 alias tgz="tar -xvzf"
 alias myip="dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com" # Get public IPv4 address (see https://unix.stackexchange.com/a/477715)
 
+alias s="sudo -E env 'PATH=$PATH' " # Add -E to preserve existing env vars, use env to preserve $PATH, and add extra space to allow use of aliases with sudo (see https://askubuntu.com/a/22043)
+alias w="watch " # Add extra space to allow use of aliases with watch
 alias cl="clear"
 alias q="exit"
 alias qq="exit"
@@ -24,20 +26,24 @@ alias dot="cd ~/.dotfiles"
 alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
-alias down="cd ~/Downloads"
+alias dl="cd ~/Downloads"
+alias tmp="cd /tmp"
 alias gs="cd $GOPATH/src"
 
-alias sudo="sudo -E" # Preserve existing environment variables
 alias cp="cp -i" # Ask if about to overwrite existing file
 alias mv="mv -i" # Same as above
 alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
 alias ls="ls --color=auto --group-directories-first"
 alias tree="tree --dirsfirst"
 alias grep="grep --color=auto"
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
+
+alias t="tmux"
+alias tl="tmux ls"
+alias ta="tmux attach-session -t"
+alias tr="tmux rename-session"
 
 alias cd..="cd .."
+alias g="git"
 alias gti="git"
 alias igt="git"
 alias gt="git"
@@ -45,5 +51,7 @@ alias got="git"
 alias giut="git"
 alias gitu="git"
 alias giit="git"
+alias ggit="git"
+alias gitt="git"
 alias gi="git"
 alias it="git"
