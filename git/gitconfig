@@ -19,7 +19,7 @@
     aa = add -A :/
     ci = commit
     cm = commit -m
-    amd = commit --amend
+    amd = !bash ~/.dotfiles/git/scripts/git_commit_amend.sh
     ss = stash
     ssp = stash -p
     co = checkout
