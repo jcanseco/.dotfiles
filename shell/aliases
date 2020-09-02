@@ -35,6 +35,7 @@ alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
 alias ls="ls --color=auto --group-directories-first"
 alias tree="tree --dirsfirst"
 alias grep="grep --color=auto"
+alias less="less --ignore-case" # Ignore case during searches
 
 alias t="tmux"
 alias tl="tmux ls"
