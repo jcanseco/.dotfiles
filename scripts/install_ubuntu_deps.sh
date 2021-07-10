@@ -12,7 +12,6 @@ sudo apt update
 sudo apt install -y \
     git \
     curl \
-    python \
     python3 \
     exuberant-ctags \
     vim \
@@ -32,5 +31,4 @@ sudo apt install -y \
 sudo apt install -y \
     build-essential \
     cmake \
-    python-dev \
     python3-dev
