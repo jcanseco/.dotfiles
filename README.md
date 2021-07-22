@@ -37,11 +37,12 @@ These are my dotfiles. There are many like it, but these ones are mine.
   feature)
 * Zathura
 
-If you're on Ubuntu, you can install these prerequisites (and [YouCompleteMe's
-build dependencies](docs/YouCompleteMe.md)) by running:
+If you're on a Debian-like Linux distro (e.g. Ubuntu), you can install these
+prerequisites (and [YouCompleteMe's build dependencies](docs/YouCompleteMe.md))
+by running:
 
 ```
-~/.dotfiles/scripts/install_ubuntu_deps.sh
+~/.dotfiles/scripts/install_debian_deps.sh
 ```
 
 ## Installation

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# Installs dependencies for Ubuntu
-# Usage: install_ubuntu_deps.sh
-# Note: tested on Ubuntu 16.04 and 18.04
+# Installs dependencies for Debian-like Linux distros (e.g. Ubuntu).
+# Usage: install_debian_deps.sh
 
 # Required
 sudo apt install -y \
