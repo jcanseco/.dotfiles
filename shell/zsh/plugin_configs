@@ -2,7 +2,7 @@
 
 source ~/.dotfiles/shell/helpers
 
-# Disable auto-update checks for oh-my-zsh
+# Disable auto-update checks for ohmyzsh
 DISABLE_AUTO_UPDATE="true"
 
 # Disable auto-escaping of copy-pasted URLs

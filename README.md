@@ -24,7 +24,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * Vim (v8.1.2269+ required by YouCompleteMe)
 * Tmux (v1.9+ required by TPM, v2.3+ recommended for `split-window`'s `-f`
   option)
-* Zsh (v5.1.1+ required by oh-my-zsh)
+* Zsh (v5.1.1+ required by ohmyzsh)
 
 #### Extras
 
