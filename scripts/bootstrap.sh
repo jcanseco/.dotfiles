@@ -45,9 +45,9 @@ function bootstrap {
     printf "\n[Bootstrap] Downloading Base16 Shell...\n"
     git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell || handle_error
 
-    # Download zgen
-    printf "\n[Bootstrap] Downloading zgen...\n"
-    git clone https://github.com/jcanseco/zgen.git ~/.zgen || handle_error
+    # Download zgenom
+    printf "\n[Bootstrap] Downloading zgenom...\n"
+    git clone https://github.com/jandamm/zgenom.git ~/.zgenom || handle_error
 
     # Download zsh plugins
     printf "\n[Bootstrap] Downloading zsh plugins...\n"
