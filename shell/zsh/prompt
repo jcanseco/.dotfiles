@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# Inspired by the robbyrussell and risto themes from oh-my-zsh
+# Inspired by the robbyrussell and risto themes from ohmyzsh
 # Contains a fix to a bug in robbyrussell that occurs when using zsh plugin managers
 # (see https://github.com/zplug/zplug/issues/95)
 

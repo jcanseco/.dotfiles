@@ -4,7 +4,7 @@ source ~/.dotfiles/shell/zsh/plugin_configs
 # Load plugins
 source ~/.dotfiles/shell/zsh/plugins
 
-# Set prompt (must go after plugins are loaded since this depends on functions and definitions from oh-my-zsh)
+# Set prompt (must go after plugins are loaded since this depends on functions and definitions from ohmyzsh)
 source ~/.dotfiles/shell/zsh/prompt
 
 # Set theme

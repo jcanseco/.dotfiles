@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# Installs dependencies for Ubuntu
-# Usage: install_ubuntu_deps.sh
-# Note: tested on Ubuntu 16.04 and 18.04
+# Installs dependencies for Debian-like Linux distros (e.g. Ubuntu).
+# Usage: install_debian_deps.sh
 
 # Repositories
 sudo add-apt-repository -y ppa:longsleep/golang-backports # Golang (see https://github.com/golang/go/wiki/Ubuntu)
@@ -24,7 +23,6 @@ sudo apt install -y \
     silversearcher-ag \
     vim-gtk \
     libterm-readkey-perl \
-    zathura \
     golang-go
 
 # YouCompleteMe

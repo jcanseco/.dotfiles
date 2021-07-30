@@ -24,7 +24,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * Vim (v8.1.2269+ required by YouCompleteMe)
 * Tmux (v1.9+ required by TPM, v2.3+ recommended for `split-window`'s `-f`
   option)
-* Zsh (v5.1.1+ required by oh-my-zsh)
+* Zsh (v5.1.1+ required by ohmyzsh)
 
 #### Extras
 
@@ -35,14 +35,14 @@ These are my dotfiles. There are many like it, but these ones are mine.
   for info on other distros)
 * Term::ReadKey Perl Module (recommended for git's interactive.singleKey
   feature)
-* Zathura
 * Go
 
-If you're on Ubuntu, you can install these prerequisites (and [YouCompleteMe's
-build dependencies](docs/YouCompleteMe.md)) by running:
+If you're on a Debian-like Linux distro (e.g. Ubuntu), you can install these
+prerequisites (and [YouCompleteMe's build dependencies](docs/YouCompleteMe.md))
+by running:
 
 ```
-~/.dotfiles/scripts/install_ubuntu_deps.sh
+~/.dotfiles/scripts/install_debian_deps.sh
 ```
 
 ## Installation

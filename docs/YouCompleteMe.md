@@ -18,7 +18,7 @@ source](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
 YouCompleteMe depends on some programs being installed to build successfully;
 see the (short) [installation
 guide](https://github.com/ycm-core/YouCompleteMe#linux-64-bit). For Ubuntu
-16.04+ for example:
+20.04+ for example:
 
 ```
 sudo apt install build-essential cmake python3-dev
