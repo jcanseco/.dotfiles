@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Helper script for amending a git commit.
-# Usage: git_commit_amend.sh
+# Implementation of 'git amd' which amends the current git commit.
+# Usage: git amd
 
 # Terminate immediately if not currently in a git working tree
 git rev-parse --is-inside-work-tree > /dev/null || exit 1

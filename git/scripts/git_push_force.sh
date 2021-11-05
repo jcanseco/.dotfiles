@@ -1,22 +1,21 @@
 #!/usr/bin/env bash
 
-# Helper script for force pushing $branch to $remote/$branch
-# Usage: git_push_force.sh [REMOTE] [BRANCH]
+# Implementation of 'git psf' which force pushes BRANCH to REMOTE/BRANCH.
+# Usage: git psf [REMOTE] [BRANCH]
 #
 # Note: First attempts the push with '--force-with-lease', which fails if the
-# remote branch has new commits that you have not yet pulled
-# (see https://stackoverflow.com/a/52823955)
+# remote branch has new commits that you have not yet pulled (see
+# https://stackoverflow.com/a/52823955)
 #
 # If '--force-with-lease' fails, prompts if you'd like to proceed with
 # '--force' anyway.
 #
 # Note: even if this script accepts arguments, it actually only works if the
-# arguments are what we expect them to be (i.e. $branch is the current branch,
-# and $remote/$branch is the remote branch being tracked by $branch).  This is
-# done intentionally. The script assumes that you've made a mistake if you've
-# called it with unexpected arguments, and thus brings your attention to the
-# matter by failing and giving you a warning. This is done to prevent
-# fat-finger errors.
+# arguments are what we expect them to be (i.e. BRANCH is the current branch,
+# and REMOTE/BRANCH is the remote branch being tracked by BRANCH). This is done
+# intentionally. The script assumes that you've made a mistake if you've called
+# it with unexpected arguments, and thus brings your attention to the matter by
+# failing and giving you a warning. This is done to prevent fat-finger errors.
 
 # Terminate immediately if not currently in a git working tree
 git rev-parse --is-inside-work-tree > /dev/null || exit 1

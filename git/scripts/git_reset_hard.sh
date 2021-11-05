@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Helper script for resetting the git working tree to HEAD.
-# Usage: git_reset_hard.sh
+# Implementation of 'git rh' which resets the git working tree to HEAD.
+# Usage: git rh
 
 # Terminate immediately if not currently in a git working tree
 git rev-parse --is-inside-work-tree > /dev/null || exit 1
