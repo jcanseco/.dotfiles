@@ -142,6 +142,7 @@ augroup END
 let g:go_fmt_command='goimports' " Everything gofmt does + manages imports (adds missing, removes unused, and groups imports)
 let g:go_fmt_fail_silently=1 " Disable auto-opening of location list when g:go_fmt_command fails (e.g. when there are syntax errors; Neomake already notifies us of such errors through vim-airline and the sign-gutter, and if we fail to notice these, then the next :GoBuild/:GoRun will fail, which would open up a quickfix/location list)
 let g:go_list_height=10 " Set height of quickfix/location list to be same as default heights used by vim
+let g:go_build_tags='integration' " Ensure that Go tools used by vim-go (e.g. go, gopls) work on integration test files too (files with build tag 'integration').  See https://github.com/golang/go/issues/41081#issuecomment-682269983 for details on why this is needed for gopls to work correctly on integration test files and https://wawand.co/blog/posts/using-build-tags/ for info on build tags in Go.
 let g:go_highlight_function_calls=1
 
 autocmd FileType go nmap <Leader>gb <Plug>(go-build)
