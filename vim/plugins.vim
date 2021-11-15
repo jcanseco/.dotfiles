@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 Plug 'jeffkreeftmeijer/vim-dim', {'commit': '00d1b3b'} " Colorscheme
 Plug 'vim-airline/vim-airline', {'commit': 'ee85ed4'} " Fancy status line (required: vim 7.2+)
 Plug 'vim-airline/vim-airline-themes', {'commit': '3fb676b'} " Themes for vim-airline
+Plug 'fatih/vim-go', {'commit': '8baba37', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support; must be loaded before vim-polyglot (see https://github.com/fatih/vim-go/blob/96b74acc8747d667247fd8d30eb15f6b44778f6f/doc/vim-go.txt#L2647-L2651)
 Plug 'sheerun/vim-polyglot', {'commit': '22095fe'} " Syntax highlighting and indentation for various languages
 Plug 'Raimondi/delimitMate', {'commit': '728b57a'} " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'sickill/vim-pasta', {'commit': 'cb4501a'} " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
@@ -45,7 +46,6 @@ Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to i
 Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
 Plug 'Valloric/YouCompleteMe', {'commit': 'c83c240', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 8.1.2269+ with python3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
 Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
-Plug 'fatih/vim-go', {'commit': '8baba37', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support
 Plug 'christoomey/vim-tmux-navigator', {'commit': '44ba6fb'} " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
 Plug 'tmux-plugins/vim-tmux-focus-events', {'commit': 'e809607'} " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
 Plug 'roxma/vim-tmux-clipboard', {'commit': '4718774'} " Makes for easy copy-paste from vim to tmux by auto-copying text copied in vim onto the tmux clipboard (recommended: vim 8.0.1394+)
