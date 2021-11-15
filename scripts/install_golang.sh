@@ -14,10 +14,18 @@ TARBALL_URL="https://golang.org/dl/${TARBALL_NAME}"
 INSTALL_DIR="/usr/local"
 INSTALL_PATH="/usr/local/go"
 
+# Terminate if script is not run as root. The script needs to be run as root in
+# order to be able to create files in /usr/local directory.
+if [[ "${EUID}" -ne 0 ]]; then
+    echo "error: must run script as root (e.g. with 'sudo')"
+    exit 1
+fi
+
+# Terminate if a file/directory already exists at the installation path.
 if [[ -f $INSTALL_PATH ]] || [[ -d $INSTALL_PATH ]]; then
     echo "error: a file or directory already exists at the installation path" \
         "'${INSTALL_PATH}'; check that it is safe to delete, then delete it" \
-        "and re-run the installation script."
+        "and re-run script."
     exit 1
 fi
 
