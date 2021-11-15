@@ -7,3 +7,6 @@ append_to_path ~/.dotfiles/shell/bin
 # Golang
 export GOPATH=~/Workspace/go
 prepend_to_path $GOPATH/bin
+# Make the 'go' binary installed using install_golang.sh
+# available for execution from anywhere in the shell.
+prepend_to_path /usr/local/go/bin

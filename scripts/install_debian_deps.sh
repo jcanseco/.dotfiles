@@ -3,10 +3,6 @@
 # Installs dependencies for Debian-like Linux distros (e.g. Ubuntu).
 # Usage: install_debian_deps.sh
 
-# Repositories
-sudo add-apt-repository -y ppa:longsleep/golang-backports # Golang (see https://github.com/golang/go/wiki/Ubuntu)
-sudo apt update
-
 # Required
 sudo apt install -y \
     git \
@@ -22,11 +18,13 @@ sudo apt install -y \
     tree \
     silversearcher-ag \
     vim-gtk \
-    libterm-readkey-perl \
-    golang-go
+    libterm-readkey-perl
 
 # YouCompleteMe
 sudo apt install -y \
     build-essential \
     cmake \
     python3-dev
+
+# Golang
+sudo ./install_golang.sh
