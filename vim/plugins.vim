@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 Plug 'jeffkreeftmeijer/vim-dim', {'commit': '00d1b3b'} " Colorscheme
 Plug 'vim-airline/vim-airline', {'commit': 'ee85ed4'} " Fancy status line (required: vim 7.2+)
 Plug 'vim-airline/vim-airline-themes', {'commit': '3fb676b'} " Themes for vim-airline
-Plug 'fatih/vim-go', {'commit': '8baba37', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support; must be loaded before vim-polyglot (see https://github.com/fatih/vim-go/blob/96b74acc8747d667247fd8d30eb15f6b44778f6f/doc/vim-go.txt#L2647-L2651)
+Plug 'fatih/vim-go', {'tag': 'v1.25', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support; must be loaded before vim-polyglot (see https://github.com/fatih/vim-go/blob/96b74acc8747d667247fd8d30eb15f6b44778f6f/doc/vim-go.txt#L2647-L2651)
 Plug 'sheerun/vim-polyglot', {'commit': '22095fe'} " Syntax highlighting and indentation for various languages
 Plug 'Raimondi/delimitMate', {'commit': '728b57a'} " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'sickill/vim-pasta', {'commit': 'cb4501a'} " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
