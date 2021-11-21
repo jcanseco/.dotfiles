@@ -22,6 +22,7 @@
     amd = !bash ~/.dotfiles/git/scripts/git_commit_amend.sh
     ss = stash
     ssp = stash -p
+    sss = stash show -p
     co = checkout
     cob = checkout -b
     br = branch -vv
