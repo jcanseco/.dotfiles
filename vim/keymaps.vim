@@ -56,5 +56,6 @@ nnoremap <silent> <Leader>d :noh<CR>
 " Remove all trailing whitespace
 nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR> :w<CR> :noh<CR>
 
-" Refresh current buffer to match saved state, and then save right after to remove the 'trailing whitespace' warning on airline
+" Refresh current buffer to match saved state, and then save right after to
+" remove the 'trailing whitespace' warning on airline
 nnoremap <silent> <Leader>r :e!<CR> :w<CR>
