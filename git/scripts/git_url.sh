@@ -24,13 +24,17 @@ esac
 
 remote_url=$(git remote get-url --push origin)
 case ${remote_url} in
-    # GitHub repository
+    # GitHub repository (SSH)
     "git@github.com:"*".git")
         url_without_prefix="${remote_url#"git@github.com:"}"
         url_without_suffix="${url_without_prefix%".git"}"
-        user=$(echo $url_without_suffix | cut -d "/" -f 1)
-        repo=$(echo $url_without_suffix | cut -d "/" -f 2)
-        echo "https://github.com/${user}/${repo}/tree/master/${path_relative_to_repo_root}"
+        echo "https://github.com/${url_without_suffix}/tree/master/${path_relative_to_repo_root}"
+    ;;
+
+    # GitHub repository (HTTPS)
+    "https://github.com/"*".git")
+        url_without_suffix="${remote_url%".git"}"
+        echo "${url_without_suffix}/tree/master/${path_relative_to_repo_root}"
     ;;
 
     # Unregonized repository

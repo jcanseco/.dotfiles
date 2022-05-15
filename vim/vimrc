@@ -6,6 +6,9 @@ source ~/.dotfiles/vim/sensible.vim " Loaded here instead of via a plugin manage
 """ Keymaps
 source ~/.dotfiles/vim/keymaps.vim
 
+""" Commands
+source ~/.dotfiles/vim/commands.vim
+
 """ Plugins
 source ~/.dotfiles/vim/plugins.vim
 

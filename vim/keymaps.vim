@@ -57,16 +57,6 @@ nnoremap <silent> <Leader>d :noh<CR>
 " Remove all trailing whitespace
 nnoremap <silent> <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR> :w<CR> :noh<CR>
 
-" Refresh current buffer to match saved state, and then save right after to remove the 'trailing whitespace' warning on airline
+" Refresh current buffer to match saved state, and then save right after to
+" remove the 'trailing whitespace' warning on airline
 nnoremap <silent> <Leader>r :e!<CR> :w<CR>
-
-" Common typos (we don't add one for 'q:' because we use 'q' in FileBeagle)
-command! WQ wq
-command! Wq wq
-command! Wqa wqa
-command! Wa wa
-command! W w
-command! Q q
-command! QA qa
-command! Qa qa
-command! E e
