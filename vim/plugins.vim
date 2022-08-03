@@ -44,7 +44,7 @@ Plug 'jeetsukumaran/vim-filebeagle', {'commit': '9c05886'} " File browser
 Plug 'junegunn/fzf', {'commit': '06d63a8', 'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
 Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
 Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
-Plug 'Valloric/YouCompleteMe', {'commit': 'c83c240', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 8.1.2269+ with python3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
+Plug 'ycm-core/YouCompleteMe', {'commit': 'd35df61', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 8.1.2269+ with python3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
 Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
 Plug 'christoomey/vim-tmux-navigator', {'commit': '44ba6fb'} " Seamlessly navigate between tmux panes and vim splits (required: tmux 1.8+)
 Plug 'tmux-plugins/vim-tmux-focus-events', {'commit': 'e809607'} " Fixes the 'FocusGained' and 'FocusLost' autocmds; required by vim-tmux-clipboard (see repo for other benefits)
