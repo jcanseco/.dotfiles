@@ -39,7 +39,7 @@ function main {
 
         file="${HOME}/${f}"
         if [[ -e $file ]]; then
-            mkdir -p $backup_dir
+            mkdir -p $backup_dir || handle_error
             cp -rv $file $backup_dir/ || handle_error
             rm -rf $file || handle_error
         fi
@@ -48,6 +48,9 @@ function main {
 
     echo "Creating symlinks to dotfiles in the home directory..."
     for f in "${!DOTFILES[@]}"; do
+        parent_dirs=$(dirname ${f}) # Outputs "." if f has no parent directory (see dirname --help)
+        mkdir -p "${HOME}/${parent_dirs}" || handle_error
+
         symlink="${HOME}/${f}"
         file="${DOTFILES[$f]}"
         ln -sv $file $symlink || handle_error
