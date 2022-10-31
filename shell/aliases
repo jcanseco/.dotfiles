@@ -26,6 +26,8 @@ alias ws="cd ~/Workspace"
 alias ql="cd ~/Quicklinks"
 alias doc="cd ~/Documents"
 alias dl="cd ~/Downloads"
+alias scripts="cd ~/Workspace/scripts"
+alias notes="cd ~/Documents/notes"
 alias tmp="cd /tmp"
 
 alias cp="cp -i" # Ask if about to overwrite existing file
