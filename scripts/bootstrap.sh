@@ -33,11 +33,12 @@ function check_deps_exist {
 
 function bootstrap {
     # Create directories
-    printf "\n[Bootstrap] Creating directories: Workspace, Quicklinks, scripts, notes...\n"
+    printf "\n[Bootstrap] Creating directories: Workspace, Quicklinks, scripts, notes, ssh...\n"
     mkdir -p ~/Workspace || handle_error
     mkdir -p ~/Quicklinks || handle_error
     mkdir -p ~/Workspace/scripts || handle_error
     mkdir -p ~/Documents/notes || handle_error
+    mkdir -p ~/.ssh || handle_error
 
     # Create symlinks
     printf "\n[Bootstrap] Creating symlinks to dotfiles...\n"

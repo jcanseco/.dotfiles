@@ -22,6 +22,7 @@ DOTFILES=(
     [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
     [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
+    [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
 )
 
 function handle_error {
@@ -33,9 +34,13 @@ function main {
     echo "Backing up any pre-existing files (or directories)..."
     mkdir -p "${BACKUP_DIR}"
     for f in "${!DOTFILES[@]}"; do
+        parent_dirs=$(dirname ${f}) # Outputs "." if f has no parent directory (see dirname --help)
+        backup_dir="${BACKUP_DIR}/${parent_dirs}"
+
         file="${HOME}/${f}"
         if [[ -e $file ]]; then
-            cp -rv $file $BACKUP_DIR/ || handle_error
+            mkdir -p $backup_dir
+            cp -rv $file $backup_dir/ || handle_error
             rm -rf $file || handle_error
         fi
     done
