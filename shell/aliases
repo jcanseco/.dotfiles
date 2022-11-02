@@ -43,6 +43,11 @@ alias tl="tmux ls"
 alias ta="tmux attach-session -t"
 alias tr="tmux rename-session"
 
+alias k="kubectl"
+alias kk="kubectl get"
+alias kd="kubectl describe"
+alias ka="kubectl apply"
+
 alias cd..="cd .."
 alias g="git"
 alias gti="git"
