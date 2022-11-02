@@ -3,6 +3,8 @@
 # Installs dependencies for Debian-like Linux distros (e.g. Ubuntu).
 # Usage: install_debian_deps.sh
 
+SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
+
 # Required
 sudo apt install -y \
     git \
@@ -27,4 +29,4 @@ sudo apt install -y \
     python3-dev
 
 # Golang
-sudo ./install_golang.sh
+sudo ${SCRIPTS_DIR}/install_golang.sh
