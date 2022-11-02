@@ -1,0 +1,7 @@
+# Enable SSH-Multiplexing
+# (see https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing)
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/master-%r@%h:%p
+  ControlPersist 15h
+  ServerAliveInterval 30
