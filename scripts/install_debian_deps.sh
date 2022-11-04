@@ -11,12 +11,13 @@ sudo apt install -y \
     exuberant-ctags \
     vim \
     tmux \
-    zsh
+    zsh \
+    fd-find
 
 # Extras
 sudo apt install -y \
     tree \
-    silversearcher-ag \
+    ripgrep \
     vim-gtk \
     libterm-readkey-perl
 

@@ -41,7 +41,7 @@ Plug 'ludovicchabant/vim-gutentags', {'commit': '0423321'} " Tag files generator
 Plug 'airblade/vim-rooter', {'commit': 'd64f3e0'} " Helper functions for guessing the project root using heuristics (e.g. FindRootDirectory())
 Plug 'jeetsukumaran/vim-filebeagle', {'commit': '9c05886'} " File browser
 Plug 'junegunn/fzf', {'commit': '06d63a8', 'do': './install --bin'} " Fuzzy finder (configured to auto-install binary, but not shell integration for independent usage in bash, zsh, etc.)
-Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to improve usage of fzf in vim (recommended: ag)
+Plug 'junegunn/fzf.vim', {'commit': '8f1e73b'} " Commands and mappings used to improve usage of fzf in vim (recommended: rg)
 Plug 'pbrisbin/vim-mkdir', {'commit': 'f0ba7a7'} " Automatically create any non-existing directories before writing the buffer
 Plug 'ycm-core/YouCompleteMe', {'commit': 'd35df61', 'do': function('BuildYcm')} " Auto-completion engine (required: vim 8.1.2269+ with python3 support, OS-specific build dependencies (see README); recommended: language-specific dependencies for semantic completion (see README))
 Plug 'neomake/neomake', {'commit': 'd10e539'} " Linting and make framework (required: vim 7.4.503+; recommended: vim 8.0.0027+, toolchain for target languages (i.e. compilers, interpreters, linters))
@@ -88,16 +88,48 @@ nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
-let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening an FZF search
+let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening a search, unless explicitly enabled using 'options' below
 
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
+" Override the Files and Files! commands:
+" * Use `fdfind` instead of `find` to search for files. The former is faster
+"   and more configurable (via flags). See `fdfind --help` for info.
+" * Preview the currently selected file path on the right side and wrap it if
+"   it is too long (useful for long file paths) (see `man fzf` to understand
+"   the flags in `options`).
+" Original command definitions are at
+" https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(
+  \   <q-args>,
+  \   {
+  \     'source': 'fdfind --type file --follow --hidden --exclude .git',
+  \     'options': ['--preview', 'echo {}', '--preview-window', 'wrap'],
+  \   },
+  \   <bang>0,
+  \ )
+
+" Override the Rg and Rg! commands:
+" * Search from the project root instead of current working directory.
+" * Preview contents of the currently selected result on the right side (see
+"   `man fzf` to understand the flags in `options`).
+" Original command definitions are at
+" https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   "rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>),
+  \   1,
+  \   {
+  \     'dir': FindRootDirectory(),
+  \     'options': ['--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}'],
+  \   },
+  \   <bang>0
+  \ )
 
 nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
-nnoremap <Leader>aa :Ag!<space>| " Start ag search from the project root (full-screen)
-nnoremap <Leader>aw :call ExecAndRecordInCmdHistory("Ag! <C-r><C-w>")<CR>| " Start ag search for word under cursor (full-screen)
+nnoremap <Leader>aa :Rg!<space>| " Start rg search from the project root (full-screen)
+nnoremap <Leader>aw :call ExecAndRecordInCmdHistory("Rg! <C-r><C-w>")<CR>| " Start rg search for word under cursor (full-screen)
 
 """ YouCompleteMe
 set completeopt-=preview " Only show completion candidates as a list instead of on a preview window
