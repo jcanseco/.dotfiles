@@ -17,7 +17,7 @@ sudo apt install -y \
 # Extras
 sudo apt install -y \
     tree \
-    silversearcher-ag \
+    ripgrep \
     vim-gtk \
     libterm-readkey-perl
 

@@ -30,7 +30,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 #### Extras
 
 * tree
-* ag (recommended for fzf's ag search)
+* rg (recommended for fzf's rg search)
 * vim-gtk (recommended for vim's clipboard feature on Debian/Ubuntu,
   see [this](https://vim.fandom.com/wiki/Accessing_the_system_clipboard#Checking_for_X11-clipboard_support_in_terminal)
   for info on other distros)
