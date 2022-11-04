@@ -25,6 +25,7 @@ These are my dotfiles. There are many like it, but these ones are mine.
 * tmux (v1.9+ required by TPM, v2.3+ recommended for `split-window`'s `-f`
   option)
 * zsh (v5.1.1+ required by ohmyzsh)
+* fd (used by fzf to search for file names)
 
 #### Extras
 

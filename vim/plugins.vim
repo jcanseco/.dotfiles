@@ -90,8 +90,26 @@ nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 let g:fzf_layout={'down': '~25%'}
 let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening an FZF search
 
+" Override the Files and Files! commands. Use `fdfind` instead of `find` to
+" search for files. The former is faster and more configurable (via flags).
+" See `fdfind --help` for info. Original command definitions are at
+" https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(
+  \   <q-args>,
+  \   {'source': 'fdfind --type file --follow --hidden --exclude .git'},
+  \   <bang>0,
+  \ )
+
+" Override the Ag and Ag! commands. Search from the project root instead of
+" current working directory. Original command definitions are at
+" https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>, {'dir': FindRootDirectory()}, <bang>0) " Override Ag and Ag! to search from the project root
+  \ call fzf#vim#ag(
+  \   <q-args>,
+  \   {'dir': FindRootDirectory()},
+  \   <bang>0
+  \ )
 
 nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)

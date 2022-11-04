@@ -11,7 +11,8 @@ sudo apt install -y \
     exuberant-ctags \
     vim \
     tmux \
-    zsh
+    zsh \
+    fd-find
 
 # Extras
 sudo apt install -y \
