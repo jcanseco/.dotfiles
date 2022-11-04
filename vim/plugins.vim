@@ -88,27 +88,40 @@ nnoremap <silent> <Leader>f :FileBeagle<CR>| " Open file browser
 
 """ Fzf
 let g:fzf_layout={'down': '~25%'}
-let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening an FZF search
+let g:fzf_preview_window='' " Disable preview window that shows up to the right when opening a search, unless explicitly enabled using 'options' below
 
-" Override the Files and Files! commands. Use `fdfind` instead of `find` to
-" search for files. The former is faster and more configurable (via flags).
-" See `fdfind --help` for info. Original command definitions are at
+" Override the Files and Files! commands:
+" * Use `fdfind` instead of `find` to search for files. The former is faster
+"   and more configurable (via flags). See `fdfind --help` for info.
+" * Preview the currently selected file path on the right side and wrap it if
+"   it is too long (useful for long file paths) (see `man fzf` to understand
+"   the flags in `options`).
+" Original command definitions are at
 " https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(
   \   <q-args>,
-  \   {'source': 'fdfind --type file --follow --hidden --exclude .git'},
+  \   {
+  \     'source': 'fdfind --type file --follow --hidden --exclude .git',
+  \     'options': ['--preview', 'echo {}', '--preview-window', 'wrap'],
+  \   },
   \   <bang>0,
   \ )
 
-" Override the Rg and Rg! commands. Search from the project root instead of
-" current working directory. Original command definitions are at
+" Override the Rg and Rg! commands:
+" * Search from the project root instead of current working directory.
+" * Preview contents of the currently selected result on the right side (see
+"   `man fzf` to understand the flags in `options`).
+" Original command definitions are at
 " https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   "rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>),
   \   1,
-  \   {'dir': FindRootDirectory()},
+  \   {
+  \     'dir': FindRootDirectory(),
+  \     'options': ['--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}'],
+  \   },
   \   <bang>0
   \ )
 
