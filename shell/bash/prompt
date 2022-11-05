@@ -2,12 +2,11 @@
 
 source ~/.dotfiles/shell/helpers
 
-# Add ssh indicator if running bash on ssh
-if in_ssh; then
-    ssh_prompt="(ssh) "
-else
-    ssh_prompt=""
-fi
+function ssh_prompt() {
+    if in_ssh; then
+        echo "(ssh) "
+    fi
+}
 
 # Set chroot identifier
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -21,8 +20,8 @@ esac
 
 # Configure prompt
 if [ "$color_prompt" = yes ]; then
-    PS1='${ssh_prompt}${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='$(ssh_prompt)${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${ssh_prompt}${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='$(ssh_prompt)${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt

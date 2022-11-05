@@ -6,17 +6,17 @@
 
 source ~/.dotfiles/shell/helpers
 
-if in_ssh; then
-    ssh_prompt="(ssh) "
-else
-    ssh_prompt=""
-fi
+function ssh_prompt() {
+    if in_ssh; then
+        echo "(ssh) "
+    fi
+}
 
 ret_status="%(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ )"
-
-PROMPT='${ssh_prompt}${ret_status} %{$fg_bold[blue]%}%2~ $(git_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_bold[yellow]%}*%{$fg_bold[blue]%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[blue]%})"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+
+PROMPT='$(ssh_prompt)${ret_status} %{$fg_bold[blue]%}%2~ $(git_prompt_info)%{$reset_color%}'
