@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-# Note: Use single quotes for alias definitions to ensure variables and
-# subcommands in alias definitions are evaluated dynamically instead of on
-# alias creation (see https://unix.stackexchange.com/a/355637).
+# Note: Use single quotes for alias definitions instead of double quotes. This
+# ensures that variables and subcommands in alias definitions are evaluated
+# dynamically (i.e. when the alias is executed) instead of when the alias is
+# created (see https://unix.stackexchange.com/a/355637).
 
 alias vdot='vim ~/.dotfiles'
 alias vin='vim -Nu NONE' # Launch vim in no-compatible mode, but with no vimrc
