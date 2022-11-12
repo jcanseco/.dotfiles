@@ -12,8 +12,12 @@
 # working directory is _always_ the repo's root directory (where the .git
 # directory is stored) no matter from where in the repo the script is called.
 
-# Terminate immediately if not currently in a git working tree
-git rev-parse --is-inside-work-tree > /dev/null || exit 1
+source ~/.dotfiles/shell/helpers
+
+if ! is_pwd_in_git_repo; then
+    echo "error: not in a git repository."
+    exit 1
+fi
 
 calling_directory=${1}
 path=${2}

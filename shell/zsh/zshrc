@@ -27,8 +27,8 @@ bindkey "^p" up-line-or-search # Set 'Ctrl + p' to behave like the up-arrow
 bindkey "^n" down-line-or-search # Set 'Ctrl + n' to behave like the down-arrow
 
 # Zsh-specific aliases
-alias rl="source ~/.zshrc" # Reload the zsh configuration file
-alias rla="all 'source ~/.zshrc'" # Reload the zsh configuration file on all tmux panes
+alias rl='source ~/.zshrc' # Reload the zsh configuration file
+alias rla='all "source ~/.zshrc"' # Reload the zsh configuration file on all tmux panes
 
 # Load completions for kubectl if kubectl exists
 (( $+commands[kubectl] )) && source <(kubectl completion zsh)
