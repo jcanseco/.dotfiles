@@ -49,6 +49,6 @@ function cd {
 }
 
 # Bash-specific aliases
-alias z="SHELL=$(which zsh) zsh" # Launch zsh
-alias rl="source ~/.bashrc" # Reload the bash configuration file
-alias rla="all 'source ~/.bashrc'" # Reload the bash configuration file on all tmux panes
+alias z='SHELL=$(which zsh) zsh' # Launch zsh
+alias rl='source ~/.bashrc' # Reload the bash configuration file
+alias rla='all "source ~/.bashrc"' # Reload the bash configuration file on all tmux panes
