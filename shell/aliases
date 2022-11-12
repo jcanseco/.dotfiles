@@ -1,58 +1,62 @@
 #!/usr/bin/env bash
 
-alias vdot="vim ~/.dotfiles"
-alias vin="vim -Nu NONE" # Launch vim in no-compatible mode, but with no vimrc
+# Note: Use single quotes for alias definitions to ensure variables and
+# subcommands in alias definitions are evaluated dynamically instead of on
+# alias creation (see https://unix.stackexchange.com/a/355637).
+
+alias vdot='vim ~/.dotfiles'
+alias vin='vim -Nu NONE' # Launch vim in no-compatible mode, but with no vimrc
 alias rt='cd "$(git rev-parse --show-toplevel)" && echo "$_"' # Go to git root directory
-alias open="xdg-open"
-alias tgz="tar -xvzf"
-alias myip="dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com" # Get public IPv4 address (see https://unix.stackexchange.com/a/477715)
+alias open='xdg-open'
+alias tgz='tar -xvzf'
+alias myip='dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com' # Get public IPv4 address (see https://unix.stackexchange.com/a/477715)
 
-alias w="watch " # Add extra space to allow use of aliases with watch
-alias cl="clear"
-alias q="exit"
-alias qq="exit"
+alias w='watch ' # Add extra space to allow use of aliases with watch
+alias cl='clear'
+alias q='exit'
+alias qq='exit'
 
-alias cla="all 'clear'"
-alias qa="all 'exit'"
+alias cla='all "clear"'
+alias qa='all "exit"'
 
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-alias -- -="cd -" # Go back to previous directory using -
+alias -- -='cd -' # Go back to previous directory using -
 
-alias dot="cd ~/.dotfiles"
-alias ws="cd ~/Workspace"
-alias ql="cd ~/Quicklinks"
-alias doc="cd ~/Documents"
-alias dl="cd ~/Downloads"
-alias scripts="cd ~/Workspace/scripts"
-alias notes="cd ~/Documents/notes"
-alias tmp="cd /tmp"
+alias dot='cd ~/.dotfiles'
+alias ws='cd ~/Workspace'
+alias ql='cd ~/Quicklinks'
+alias doc='cd ~/Documents'
+alias dl='cd ~/Downloads'
+alias scripts='cd ~/Workspace/scripts'
+alias notes='cd ~/Documents/notes'
+alias tmp='cd /tmp'
 
-alias cp="cp -i" # Ask if about to overwrite existing file
-alias mv="mv -i" # Same as above
-alias mkdir="mkdir -p" # Automatically create intermediate directories if needed
-alias ls="ls --color=auto --group-directories-first"
-alias tree="tree --dirsfirst"
-alias grep="grep --color=auto"
-alias less="less --ignore-case" # Ignore case during searches
+alias cp='cp -i' # Ask if about to overwrite existing file
+alias mv='mv -i' # Same as above
+alias mkdir='mkdir -p' # Automatically create intermediate directories if needed
+alias ls='ls --color=auto --group-directories-first'
+alias tree='tree --dirsfirst'
+alias grep='grep --color=auto'
+alias less='less --ignore-case' # Ignore case during searches
 
-alias t="tmux"
-alias tl="tmux ls"
-alias ta="tmux attach-session -t"
-alias tr="tmux rename-session"
+alias t='tmux'
+alias tl='tmux ls'
+alias ta='tmux attach-session -t'
+alias tr='tmux rename-session'
 
-alias cd..="cd .."
-alias g="git"
-alias gti="git"
-alias igt="git"
-alias gt="git"
-alias got="git"
-alias giut="git"
-alias gitu="git"
-alias giit="git"
-alias ggit="git"
-alias gitt="git"
-alias gi="git"
-alias it="git"
+alias cd..='cd ..'
+alias g='git'
+alias gti='git'
+alias igt='git'
+alias gt='git'
+alias got='git'
+alias giut='git'
+alias gitu='git'
+alias giit='git'
+alias ggit='git'
+alias gitt='git'
+alias gi='git'
+alias it='git'
