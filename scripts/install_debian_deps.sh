@@ -32,5 +32,8 @@ sudo apt install -y \
 # Golang
 sudo ${SCRIPTS_DIR}/install_golang.sh
 
+# Kubectl
+sudo ${SCRIPTS_DIR}/install_kubectl.sh
+
 # Docker
 sudo ${SCRIPTS_DIR}/install_docker.sh
