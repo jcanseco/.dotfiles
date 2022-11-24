@@ -21,7 +21,7 @@ autocmd VimEnter *
 "   * for others: see README for YCM
 function! BuildYcm(info)
   if a:info.status == 'installed' || a:info.force
-    !python3 ./install.py
+    !python3 ./install.py --go-completer
   endif
 endfunction
 
@@ -30,6 +30,7 @@ call plug#begin('~/.vim/plugged') " Download plugins onto the specified path
 Plug 'jeffkreeftmeijer/vim-dim', {'commit': '00d1b3b'} " Colorscheme
 Plug 'vim-airline/vim-airline', {'commit': 'ee85ed4'} " Fancy status line (required: vim 7.2+)
 Plug 'vim-airline/vim-airline-themes', {'commit': '3fb676b'} " Themes for vim-airline
+Plug 'fatih/vim-go', {'tag': 'v1.25', 'for': 'go', 'do': ':GoInstallBinaries'} " Go support; must be loaded before vim-polyglot (see https://github.com/fatih/vim-go/blob/96b74acc8747d667247fd8d30eb15f6b44778f6f/doc/vim-go.txt#L2647-L2651)
 Plug 'sheerun/vim-polyglot', {'commit': '22095fe'} " Syntax highlighting and indentation for various languages
 Plug 'Raimondi/delimitMate', {'commit': '728b57a'} " Automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'sickill/vim-pasta', {'commit': 'cb4501a'} " Context-aware pasting (i.e. changes indentation of pasted text to match that of surrounding text)
@@ -60,6 +61,7 @@ let g:airline_powerline_fonts=0 " Disable powerline symbols
 let g:airline_symbols_ascii=1 " Use only ascii symbols
 let g:airline#extensions#whitespace#symbol='' " Disable symbol used for trailing-whitespace/mixed-indent warnings; they're visible enough as is
 let g:airline_extensions=['neomake', 'quickfix', 'whitespace'] " Explicitly whitelist enabled extensions to avoid unintentionally loading unwanted ones, especially ones that are enabled by default and loaded in once their corresponding plugin is installed
+let g:airline#extensions#whitespace#skip_indent_check_ft={'go': ['mixed-indent-file']} " Disable mixed-indent-file checks for Go
 
 """ DelimitMate
 let g:delimitMate_expand_cr=1 " Create new line and move cursor one tab into body when creating code block with braces
@@ -167,6 +169,21 @@ augroup my_neomake_colors
   autocmd ColorScheme * highlight NeomakeError cterm=underline ctermfg=red
   autocmd ColorScheme * highlight NeomakeWarning cterm=underline ctermfg=yellow
 augroup END
+
+""" Vim-Go
+let g:go_fmt_command='goimports' " Everything gofmt does + manages imports (adds missing, removes unused, and groups imports)
+let g:go_fmt_fail_silently=1 " Disable auto-opening of location list when g:go_fmt_command fails (e.g. when there are syntax errors; Neomake already notifies us of such errors through vim-airline and the sign-gutter, and if we fail to notice these, then the next :GoBuild/:GoRun will fail, which would open up a quickfix/location list)
+let g:go_list_height=10 " Set height of quickfix/location list to be same as default heights used by vim
+let g:go_build_tags='integration' " Ensure that Go tools used by vim-go (e.g. go, gopls) work on integration test files too (files with build tag 'integration').  See https://github.com/golang/go/issues/41081#issuecomment-682269983 for details on why this is needed for gopls to work correctly on integration test files and https://wawand.co/blog/posts/using-build-tags/ for info on build tags in Go.
+let g:go_highlight_function_calls=1
+
+autocmd FileType go nmap <Leader>gb <Plug>(go-build)
+autocmd FileType go nmap <Leader>gi <Plug>(go-info)
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gr <Plug>(go-referrers)
+autocmd FileType go nmap <Leader>gs <Plug>(go-implements)
+
+autocmd FileType go nnoremap <Leader>l :GoDeclsDir<CR>| " Show function and type declarations in the current working directory (note: overrides the keymap for FZF's line search)
 
 """ Vim-Tmux-Navigator
 let g:tmux_navigator_disable_when_zoomed=1 " Disable exiting out of tmux zoom (i.e. by navigating away from the pane) when zoomed in on a vim pane

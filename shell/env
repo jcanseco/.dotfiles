@@ -3,3 +3,11 @@
 source ~/.dotfiles/shell/helpers
 
 append_to_path ~/.dotfiles/shell/bin
+
+# Golang
+export GOPATH=~/Workspace/go
+prepend_to_path $GOPATH/bin
+# Use Go distribution installed at /usr/local/go and 'go' binary at
+# /usr/local/go/bin. Note: this is where install_golang.sh installs to.
+export GOROOT=/usr/local/go
+prepend_to_path $GOROOT/bin

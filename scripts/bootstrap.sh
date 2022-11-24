@@ -34,14 +34,23 @@ function check_deps_exist {
 function bootstrap {
     # Create directories
     printf "\n[Bootstrap] Creating directories: Workspace, Quicklinks, scripts, notes...\n"
-    mkdir -p ~/Workspace || handle_error
     mkdir -p ~/Quicklinks || handle_error
+    mkdir -p ~/Workspace || handle_error
+    mkdir -p ~/Workspace/go || handle_error
+    mkdir -p ~/Workspace/go/bin || handle_error
+    mkdir -p ~/Workspace/go/src || handle_error
     mkdir -p ~/Workspace/scripts || handle_error
     mkdir -p ~/Documents/notes || handle_error
 
     # Create symlinks
     printf "\n[Bootstrap] Creating symlinks to dotfiles...\n"
     $SCRIPTS_DIR/create_links.sh || handle_error
+
+    # Source env file to set GOPATH; must be done before vim-go begins
+    # installing go packages so that packages can be installed under GOPATH
+    # instead of the home directory
+    printf "\n[Bootstrap] Sourcing env file to set up environment variables...\n"
+    source ~/.dotfiles/shell/env || handle_error
 
     # Download Base16 Shell
     printf "\n[Bootstrap] Downloading Base16 Shell...\n"

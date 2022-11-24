@@ -34,6 +34,7 @@ alias dl='cd ~/Downloads'
 alias scripts='cd ~/Workspace/scripts'
 alias notes='cd ~/Documents/notes'
 alias tmp='cd /tmp'
+alias gs='cd ${GOPATH}/src'
 
 alias cp='cp -i' # Ask if about to overwrite existing file
 alias mv='mv -i' # Same as above

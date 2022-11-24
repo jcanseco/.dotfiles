@@ -14,6 +14,7 @@ nnoremap <Leader>ew :e ~/Workspace/
 nnoremap <Leader>eq :e ~/Quicklinks/
 nnoremap <Leader>ed :e ~/Documents/
 nnoremap <Leader>et :e /tmp/
+nnoremap <Leader>eg :e $GOPATH/src/
 
 " Toggle paste mode
 nnoremap <silent> <Leader>p :set paste!<CR>
