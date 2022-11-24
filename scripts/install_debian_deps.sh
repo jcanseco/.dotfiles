@@ -31,3 +31,6 @@ sudo apt install -y \
 
 # Golang
 sudo ${SCRIPTS_DIR}/install_golang.sh
+
+# Docker
+sudo ${SCRIPTS_DIR}/install_docker.sh
