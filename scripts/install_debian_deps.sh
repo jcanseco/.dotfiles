@@ -35,5 +35,5 @@ sudo ${SCRIPTS_DIR}/install_golang.sh
 # kubectl
 sudo ${SCRIPTS_DIR}/install_kubectl.sh
 
-# Docker
+# Docker (should go last to ensure visibility of the ACTION REQUIRED message)
 sudo ${SCRIPTS_DIR}/install_docker.sh
