@@ -29,11 +29,11 @@ sudo apt install -y \
     cmake \
     python3-dev
 
-# Golang
+# go
 sudo ${SCRIPTS_DIR}/install_golang.sh
 
-# Kubectl
+# kubectl
 sudo ${SCRIPTS_DIR}/install_kubectl.sh
 
-# Docker
+# docker
 sudo ${SCRIPTS_DIR}/install_docker.sh
