@@ -23,6 +23,7 @@ DOTFILES=(
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
     [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
     [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
+    [".config/sublime-text-3/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
 )
 
 function handle_error {
