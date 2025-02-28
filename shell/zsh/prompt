@@ -12,7 +12,7 @@ function ssh_prompt() {
     fi
 }
 
-ret_status="%(?:%{${fg[green]}%}➜ :%{$fg{[red]}%}➜ )"
+ret_status="%(?:%{${fg[green]}%}➜ :%{${fg[red]}%}➜ )"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{${fg_bold[blue]}%}(%{${fg_bold[red]}%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{${fg_bold[yellow]}%}*%{${fg_bold[blue]}%})"
