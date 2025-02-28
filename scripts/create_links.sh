@@ -7,6 +7,10 @@
 # Usage: create_links.sh
 # Note: safe to re-run
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
 DOTFILES_DIR="$(cd $SCRIPTS_DIR/.. && pwd)"
 
@@ -23,12 +27,9 @@ DOTFILES=(
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
     [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
     [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
+    [".config/sublime-text/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
+    [".config/sublime-text-3/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
 )
-
-function handle_error {
-    printf "\nError encountered. Stop.\n"
-    exit 1
-}
 
 function main {
     echo "Backing up any pre-existing files (or directories)..."
@@ -39,9 +40,9 @@ function main {
 
         file="${HOME}/${f}"
         if [[ -e $file ]]; then
-            mkdir -p $backup_dir || handle_error
-            cp -rv $file $backup_dir/ || handle_error
-            rm -rf $file || handle_error
+            mkdir -p $backup_dir
+            cp -rv $file $backup_dir/
+            rm -rf $file
         fi
     done
     echo ""
@@ -49,11 +50,11 @@ function main {
     echo "Creating symlinks to dotfiles in the home directory..."
     for f in "${!DOTFILES[@]}"; do
         parent_dirs=$(dirname ${f}) # Outputs "." if f has no parent directory (see dirname --help)
-        mkdir -p "${HOME}/${parent_dirs}" || handle_error
+        mkdir -p "${HOME}/${parent_dirs}"
 
         symlink="${HOME}/${f}"
         file="${DOTFILES[$f]}"
-        ln -sv $file $symlink || handle_error
+        ln -sv $file $symlink
     done
     echo ""
 
