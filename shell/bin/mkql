@@ -9,9 +9,9 @@ link="$@"
 if [[ ! -d ~/Quicklinks/ ]]; then
     echo "Error: ~/Quicklinks/ does not exist."
     exit 1
-elif [[ -z $link ]]; then
+elif [[ -z ${link} ]]; then
     echo "Error: no argument provided for link name."
     exit 1
 fi
 
-ln -sT "$(pwd -P)" ~/Quicklinks/"$link"
+ln -sT "$(pwd -P)" "~/Quicklinks/${link}"

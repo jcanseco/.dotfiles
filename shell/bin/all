@@ -7,11 +7,11 @@
 
 CR=C-m # Carriage return in tmux
 cmd="$@"
-active_pane_id=$TMUX_PANE
+active_pane_id=${TMUX_PANE}
 
 for pane_id in $(tmux list-panes -F '#{pane_id}'); do
-    if [[ $pane_id != $active_pane_id ]]; then
-        tmux send-keys -t $pane_id "$cmd" $CR
+    if [[ ${pane_id} != ${active_pane_id} ]]; then
+        tmux send-keys -t ${pane_id} "${cmd}" ${CR}
     fi
 done
 
@@ -19,4 +19,4 @@ done
 # function). This is because a command may involve termination of the pane,
 # and we don't want to terminate the active pane before it could send out
 # the command to the other panes.
-tmux send-keys -t $active_pane_id "$cmd" $CR
+tmux send-keys -t ${active_pane_id} "${cmd}" ${CR}

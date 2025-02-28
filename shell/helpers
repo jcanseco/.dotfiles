@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function in_ssh {
-    [[ -n $SSH_CLIENT || -n $SSH_TTY ]]
+    [[ -n ${SSH_CLIENT} || -n ${SSH_TTY} ]]
 }
 
 function is_pwd_in_git_repo() {
@@ -26,20 +26,20 @@ function add_to_path() {
     should_prepend=${2:-false}
 
     # PATH is empty
-    if [[ -z $PATH ]]; then
-        export PATH=$dir
+    if [[ -z ${PATH} ]]; then
+        export PATH=${dir}
         return 0
     fi
 
     # PATH already contains directory
-    if [[ ":$PATH:" == *":$dir:"* ]]; then
+    if [[ ":${PATH}:" == *":${dir}:"* ]]; then
         return 0
     fi
 
-    if [[ "$should_prepend" == "true" ]]; then
-        export PATH=$dir:$PATH
+    if [[ "${should_prepend}" == "true" ]]; then
+        export PATH=${dir}:${PATH}
         return 0
     fi
 
-    export PATH=$PATH:$dir
+    export PATH=${PATH}:${dir}
 }

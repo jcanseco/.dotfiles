@@ -12,7 +12,7 @@ set -o nounset
 set -o pipefail
 
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
-DOTFILES_DIR="$(cd $SCRIPTS_DIR/.. && pwd)"
+DOTFILES_DIR="$(cd ${SCRIPTS_DIR}/.. && pwd)"
 
 CURR_DATE_TIME="$(date '+%Y%m%d%H%M%S')"
 BACKUP_DIR="${HOME}/.backups/dotfiles-${CURR_DATE_TIME}"
@@ -39,10 +39,10 @@ function main {
         backup_dir="${BACKUP_DIR}/${parent_dirs}"
 
         file="${HOME}/${f}"
-        if [[ -e $file ]]; then
-            mkdir -p $backup_dir
-            cp -rv $file $backup_dir/
-            rm -rf $file
+        if [[ -e ${file} ]]; then
+            mkdir -p ${backup_dir}
+            cp -rv ${file} ${backup_dir}/
+            rm -rf ${file}
         fi
     done
     echo ""
@@ -53,8 +53,8 @@ function main {
         mkdir -p "${HOME}/${parent_dirs}"
 
         symlink="${HOME}/${f}"
-        file="${DOTFILES[$f]}"
-        ln -sv $file $symlink
+        file="${DOTFILES[${f}]}"
+        ln -sv ${file} ${symlink}
     done
     echo ""
 
