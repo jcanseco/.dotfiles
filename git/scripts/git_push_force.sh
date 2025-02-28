@@ -27,20 +27,20 @@ fi
 remote=$1
 branch=$2
 
-[[ -z $remote ]] && { echo "git: Error: no argument provided for remote."; exit 1; }
-[[ -z $branch ]] && { echo "git: Error: no argument provided for branch."; exit 1; }
+[[ -z ${remote} ]] && { echo "git: Error: no argument provided for remote."; exit 1; }
+[[ -z ${branch} ]] && { echo "git: Error: no argument provided for branch."; exit 1; }
 
 curr_branch="$(git symbolic-ref --short -q HEAD)"
-if [[ $branch != $curr_branch ]]; then
-    echo "git: Error: '$branch' is not the currently checked out branch."
+if [[ ${branch} != ${curr_branch} ]]; then
+    echo "git: Error: '${branch}' is not the currently checked out branch."
     exit 1
 fi
 
-# Determine remote branch tracked by $branch
+# Determine remote branch tracked by ${branch}
 # (see https://stackoverflow.com/a/9753364)
-remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git rev-parse --symbolic-full-name $branch 2> /dev/null))
-if [[ $remote/$branch != $remote_branch ]]; then
-    echo "git: Error: the remote branch tracked by '$branch' is not '$remote/$branch', but '$remote_branch'"
+remote_branch=$(git for-each-ref --format='%(upstream:short)' $(git rev-parse --symbolic-full-name ${branch} 2> /dev/null))
+if [[ ${remote}/${branch} != ${remote_branch} ]]; then
+    echo "git: Error: the remote branch tracked by '${branch}' is not '${remote}/${branch}', but '${remote_branch}'"
     exit 1
 fi
 
@@ -52,21 +52,21 @@ function emph {
     local reset="$(tput sgr0)"
 
     local str="$@"
-    echo $bold$red$str$reset
+    echo ${bold}${red}${str}${reset}
 }
 
-read -n1 -p "git: Force pushing $(emph $branch) to $(emph $remote/$branch) with lease. Continue? [Y/n]: " opt
+read -n1 -p "git: Force pushing $(emph ${branch}) to $(emph ${remote}/${branch}) with lease. Continue? [Y/n]: " opt
 printf "\n"
 
-if [[ $opt == "Y" ]]; then
-    # Command to push $branch to $remote/$branch
+if [[ ${opt} == "Y" ]]; then
+    # Command to push ${branch} to ${remote}/${branch}
     # Note: it's important to understand that this commonly used syntax for
     # git-push is fairly misleading and can therefore be dangerous when used
     # with something like --force[-with-lease], hence all the safety checks
     # (see https://longair.net/blog/2011/02/27/an-asymmetry-between-git-pull-and-git-push)
-    git_push_cmd="git push $remote $branch"
+    git_push_cmd="git push ${remote} ${branch}"
 
-    $git_push_cmd --force-with-lease
+    ${git_push_cmd} --force-with-lease
 
     if [[ $? -ne 0 ]]; then
         printf "\n"
@@ -74,7 +74,7 @@ if [[ $opt == "Y" ]]; then
         printf "\n"
 
         if [[ $opt == "Y" ]]; then
-            $git_push_cmd --force
+            ${git_push_cmd} --force
         fi
     fi
 fi

@@ -13,6 +13,6 @@ fi
 read -n1 -p "git: Amending commit. Continue? [Y/n]: " opt
 printf "\n"
 
-if [[ $opt == "Y" ]]; then
+if [[ ${opt} == "Y" ]]; then
     git commit --amend
 fi
