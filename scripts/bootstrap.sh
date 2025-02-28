@@ -15,8 +15,8 @@ LOG_FILE="${LOG_DIR}/bootstrap-${CURR_DATE_TIME}.log"
 
 function check_cmd_exists {
     cmd=$1
-    command -v $cmd > /dev/null 2>&1 || {
-        echo >&2 "[Bootstrap] Command not found: $cmd. Aborting."
+    command -v ${cmd} > /dev/null 2>&1 || {
+        echo >&2 "[Bootstrap] Command not found: ${cmd}. Aborting."
         exit 1
     }
 }
@@ -34,7 +34,7 @@ function git_clone {
     url=$1
     directory=$2
 
-    rm -rf $directory && git clone $url $directory
+    rm -rf ${directory} && git clone ${url} ${directory}
 }
 
 function bootstrap {
@@ -47,7 +47,7 @@ function bootstrap {
 
     # Create symlinks
     printf "\n[Bootstrap] Creating symlinks to dotfiles...\n"
-    $SCRIPTS_DIR/create_links.sh
+    ${SCRIPTS_DIR}/create_links.sh
 
     # Download Base16 Shell
     printf "\n[Bootstrap] Downloading Base16 Shell...\n"
@@ -89,15 +89,15 @@ function bootstrap {
 function main {
     check_deps_exist
 
-    mkdir -p $LOG_DIR
-    touch $LOG_FILE
+    mkdir -p ${LOG_DIR}
+    touch ${LOG_FILE}
 
     # Run bootstrap with logging
     # Different ways of saving terminal output to a file: https://askubuntu.com/a/731237
     # Using tee with '|&' but in a way that works with older versions of bash: https://askubuntu.com/a/485762
-    bootstrap 2>&1 | tee $LOG_FILE
+    bootstrap 2>&1 | tee ${LOG_FILE}
 
-    printf "\n[Bootstrap] Logs: $LOG_FILE\n"
+    printf "\n[Bootstrap] Logs: ${LOG_FILE}\n"
 }
 
 main
