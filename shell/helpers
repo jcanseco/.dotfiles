@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
+# Update with absolute path to monorepo root to enable monorepo support. If
+# monorepo is in home directory, use ${HOME} instead of ~.
+export MONOREPO_ROOT=""
+
 function in_ssh {
     [[ -n ${SSH_CLIENT} || -n ${SSH_TTY} ]]
 }
 
 function is_pwd_in_git_repo() {
     [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) ]]
+}
+
+function is_pwd_in_monorepo() {
+    [[ ! -z ${MONOREPO_ROOT} && "${PWD}/" == "${MONOREPO_ROOT}/"* ]]
 }
 
 function append_to_path() {
@@ -42,4 +50,20 @@ function add_to_path() {
     fi
 
     export PATH=${PATH}:${dir}
+}
+
+# Helper for determining the absolute path to the project root:
+# * If within a monorepo, prints the path to the monorepo root.
+# * If within a git repo, prints the path to the git repo root.
+# Usage: project_root
+# Example: cd "${project_root}"
+function project_root() {
+    if is_pwd_in_monorepo; then
+        echo ${MONOREPO_ROOT}
+    elif is_pwd_in_git_repo; then
+        git rev-parse --show-toplevel
+    else
+        echo "No project root found."
+        return 1
+    fi
 }
