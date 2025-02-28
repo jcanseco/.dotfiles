@@ -59,3 +59,7 @@ Make sure to check that you meet the version requirements outlined in the
 
 If you want to set up YouCompleteMe for vim, follow this
 [guide](docs/YouCompleteMe.md).
+
+If you plan to work on a big monorepo, consider enabling monorepo support by
+setting the `MONOREPO_ROOT` environment variable in
+[shell/helpers](shell/helpers).

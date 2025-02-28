@@ -79,7 +79,7 @@ augroup END
 let g:rooter_manual_only=1 " Disable auto-changing of the current working directory; we only want this plugin for its helper functions
 let g:rooter_patterns=['.proj_root', '.git', '.git/'] " The files/directories used to identify the project root directory (see :h rooter_patterns)
 
-command! Rt execute 'edit ' . FindRootDirectory()| " Open project root directory
+command! Rt execute 'edit ' . ProjectRoot()| " Open project root directory
 command! RT Rt " Common typo
 
 """ FileBeagle
@@ -95,6 +95,8 @@ let g:fzf_preview_window='' " Disable preview window that shows up to the right 
 " Override the Files and Files! commands:
 " * Use `fdfind` instead of `find` to search for files. The former is faster
 "   and more configurable (via flags). See `fdfind --help` for info.
+" * Optionally set --ignore-file (using flag.sh) to limit the directories
+"   included in the search.
 " * Preview the currently selected file path on the right side and wrap it if
 "   it is too long (useful for long file paths) (see `man fzf` to understand
 "   the flags in `options`).
@@ -104,7 +106,7 @@ command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(
   \   <q-args>,
   \   {
-  \     'source': 'fdfind --type file --follow --hidden --exclude .git',
+  \     'source': 'fdfind --type file --follow --hidden --exclude .git $(~/.dotfiles/vim/ignore/flag.sh)',
   \     'options': ['--preview', 'echo {}', '--preview-window', 'wrap'],
   \   },
   \   <bang>0,
@@ -112,22 +114,24 @@ command! -bang -nargs=? -complete=dir Files
 
 " Override the Rg and Rg! commands:
 " * Search from the project root instead of current working directory.
+" * Optionally set --ignore-file (using flag.sh) to limit the directories
+"   included in the search.
 " * Preview contents of the currently selected result on the right side (see
 "   `man fzf` to understand the flags in `options`).
 " Original command definitions are at
 " https://github.com/junegunn/fzf.vim/blob/9ceac718026fd39498d95ff04fa04d3e40c465d7/plugin/fzf.vim#L47-L69.
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   "rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>),
+  \   "rg --column --line-number --no-heading --color=always --smart-case $(~/.dotfiles/vim/ignore/flag.sh) -- ".shellescape(<q-args>),
   \   1,
   \   {
-  \     'dir': FindRootDirectory(),
+  \     'dir': ProjectRoot(),
   \     'options': ['--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}'],
   \   },
   \   <bang>0
   \ )
 
-nnoremap <C-p> :execute 'Files ' . FindRootDirectory()<CR>| " Start file search from the project root
+nnoremap <C-p> :execute 'Files ' . ProjectRoot()<CR>| " Start file search from the project root
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>aa :Rg!<space>| " Start rg search from the project root (full-screen)

@@ -1,0 +1,23 @@
+# How to interpret this file:
+#
+# Let us say we want to allowlist 'my/team/project':
+#
+#   # Ignore all files and directories in the monorepo root
+#   *
+#
+#   # ...except for 'my'
+#   !my
+#
+#   # Ignore all files and directories in 'my' (recursively)
+#   my/**
+#   # ...except for 'team'
+#   !my/team
+#
+#   # Ignore all files and directories in 'team' (recursively)
+#   my/team/**
+#   # ...except for 'project' and everything inside it
+#   !my/team/project
+#   !my/team/project/**
+#
+# See https://stackoverflow.com/a/14422549 and
+# https://git-scm.com/docs/gitignore for more details.
