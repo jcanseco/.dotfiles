@@ -30,6 +30,13 @@ function check_deps_exist {
     check_cmd_exists vim
 }
 
+function git_clone {
+    url=$1
+    directory=$2
+
+    rm -rf $directory && git clone $url $directory
+}
+
 function bootstrap {
     # Create directories
     printf "\n[Bootstrap] Creating directories: Workspace, Quicklinks, scripts, notes...\n"
@@ -44,11 +51,11 @@ function bootstrap {
 
     # Download Base16 Shell
     printf "\n[Bootstrap] Downloading Base16 Shell...\n"
-    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+    git_clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
     # Download zgenom
     printf "\n[Bootstrap] Downloading zgenom...\n"
-    git clone https://github.com/jandamm/zgenom.git ~/.zgenom
+    git_clone https://github.com/jandamm/zgenom.git ~/.zgenom
 
     # Download zsh plugins
     printf "\n[Bootstrap] Downloading zsh plugins...\n"
@@ -56,7 +63,7 @@ function bootstrap {
 
     # Download Tmux Plugin Manager
     printf "\n[Bootstrap] Downloading Tmux Plugin Manager...\n"
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git_clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
     # Download tmux plugins
     # Requires a bit of a hack to work (see https://github.com/tmux-plugins/tpm/issues/151)
