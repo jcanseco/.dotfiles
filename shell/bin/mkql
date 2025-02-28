@@ -14,4 +14,4 @@ elif [[ -z ${link} ]]; then
     exit 1
 fi
 
-ln -sT "$(pwd -P)" "~/Quicklinks/${link}"
+ln -sT "$(pwd -P)" ~/Quicklinks/"${link}"
