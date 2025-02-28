@@ -37,4 +37,4 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{${fg_bold[yellow]}%}*%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{${reset_color}%} "
 
-PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt_info)$(monorepo_prompt)%{${reset_color}%}'
+PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt)$(monorepo_prompt)%{${reset_color}%}'
