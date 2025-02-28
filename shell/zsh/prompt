@@ -12,6 +12,24 @@ function ssh_prompt() {
     fi
 }
 
+function git_prompt() {
+    # Skip git_prompt_info when in monorepo even if git_prompt_info would not
+    # have printed any output. This is done since git_prompt_info takes too
+    # long to execute when in a big monorepo, resulting in a laggy shell
+    # experience.
+    if ! is_pwd_in_monorepo; then
+        git_prompt_info
+    fi
+}
+
+function monorepo_prompt() {
+    if is_pwd_in_monorepo; then
+        prefix="%{${fg_bold[blue]}%}(%{${fg_bold[white]}%}" # Similar to ZSH_THEME_GIT_PROMPT_PREFIX
+        suffix="%{${fg_bold[blue]}%})%{${reset_color}%} " # Similar to ZSH_THEME_GIT_PROMPT_CLEAN + ZSH_THEME_GIT_PROMPT_SUFFIX
+        echo "${prefix}monorepo${suffix}"
+    fi
+}
+
 ret_status="%(?:%{${fg[green]}%}➜ :%{${fg[red]}%}➜ )"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{${fg_bold[blue]}%}(%{${fg_bold[red]}%}"
@@ -19,4 +37,4 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{${fg_bold[yellow]}%}*%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{${reset_color}%} "
 
-PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt_info)%{${reset_color}%}'
+PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt_info)$(monorepo_prompt)%{${reset_color}%}'
