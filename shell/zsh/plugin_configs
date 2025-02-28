@@ -14,3 +14,8 @@ if ! in_ssh; then
 fi
 
 ZSH_TMUX_AUTOCONNECT="false"
+
+# Fix ohmyzsh's git_prompt_info function (see
+# https://github.com/ohmyzsh/ohmyzsh/issues/12328#issuecomment-2400576507 and
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/README.md#async-git-prompt)
+zstyle ':omz:alpha:lib:git' async-prompt force
