@@ -3,6 +3,10 @@
 # Installs dependencies for Debian-like Linux distros (e.g. Ubuntu).
 # Usage: install_debian_deps.sh
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
 
 # Required

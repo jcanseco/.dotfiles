@@ -47,7 +47,6 @@ alias less='less --ignore-case' # Ignore case during searches
 alias t='tmux'
 alias tl='tmux ls'
 alias ta='tmux attach-session -t'
-alias tr='tmux rename-session'
 
 alias k='kubectl'
 alias kd='kubectl describe'
