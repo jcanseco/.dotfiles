@@ -77,7 +77,6 @@ function bootstrap {
         && sleep 0.1 \
         && ~/.tmux/plugins/tpm/bin/install_plugins
 
-
     # Download vim-plug
     printf "\n[Bootstrap] Downloading vim-plug...\n"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
