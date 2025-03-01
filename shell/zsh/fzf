@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# Load key bindings (except for 'Ctrl+T' and 'Alt+C') and fuzzy completion.
+FZF_CTRL_T_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)

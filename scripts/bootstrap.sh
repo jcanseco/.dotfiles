@@ -34,7 +34,7 @@ function git_clone {
     url=$1
     directory=$2
 
-    rm -rf ${directory} && git clone ${url} ${directory}
+    rm -rf ${directory} && git clone --depth 1 ${url} ${directory}
 }
 
 function bootstrap {
@@ -56,6 +56,11 @@ function bootstrap {
     # Download zgenom
     printf "\n[Bootstrap] Downloading zgenom...\n"
     git_clone https://github.com/jandamm/zgenom.git ~/.zgenom
+
+    # Download fzf
+    printf "\n[Bootstrap] Downloading fzf...\n"
+    git_clone https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --bin # Install binary only (don't touch bash/zsh configs)
 
     # Download zsh plugins
     printf "\n[Bootstrap] Downloading zsh plugins...\n"

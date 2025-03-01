@@ -3,3 +3,4 @@
 source ~/.dotfiles/shell/helpers
 
 append_to_path ~/.dotfiles/shell/bin
+append_to_path ~/.fzf/bin # fzf binary
