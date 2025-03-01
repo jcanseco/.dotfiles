@@ -56,7 +56,7 @@ function add_to_path() {
 # * If within a monorepo, prints the path to the monorepo root.
 # * If within a git repo, prints the path to the git repo root.
 # Usage: project_root
-# Example: cd "${project_root}"
+# Example: cd "$(project_root)"
 function project_root() {
     if is_pwd_in_monorepo; then
         echo ${MONOREPO_ROOT}

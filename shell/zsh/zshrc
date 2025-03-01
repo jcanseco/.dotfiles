@@ -16,6 +16,9 @@ source ~/.dotfiles/shell/env
 # Set aliases
 source ~/.dotfiles/shell/aliases
 
+# Load fzf integration (must go after envs are loaded since this needs the PATH to contain the fzf binary)
+source ~/.dotfiles/shell/zsh/fzf
+
 # Automatically list directory contents when changing directories
 function chpwd {
     ls
