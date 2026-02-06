@@ -11,5 +11,8 @@
     "folderTrust": {
       "enabled": true
     }
+  },
+  "ui": {
+    "theme": "Atom One"
   }
 }
