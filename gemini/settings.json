@@ -13,6 +13,12 @@
     }
   },
   "ui": {
-    "theme": "Atom One"
+    "footer": {
+      "hideSandboxStatus": true,
+      "hideModelInfo": true
+    },
+    "hideBanner": true,
+    "theme": "Atom One",
+    "useAlternateBuffer": true
   }
 }
