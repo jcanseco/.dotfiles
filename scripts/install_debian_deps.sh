@@ -33,5 +33,8 @@ sudo apt install -y \
     cmake \
     python3-dev
 
+# Gemini CLI
+sudo ${SCRIPTS_DIR}/install_gemini_cli.sh
+
 # Golang
 sudo ${SCRIPTS_DIR}/install_golang.sh
