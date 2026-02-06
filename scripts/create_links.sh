@@ -27,6 +27,7 @@ DOTFILES=(
     [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
     [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
     [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
+    [".gemini/settings.json"]="${DOTFILES_DIR}/gemini/settings.json"
     [".config/sublime-text/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
     [".config/sublime-text-3/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
 )

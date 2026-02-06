@@ -33,7 +33,10 @@ sudo apt install -y \
     cmake \
     python3-dev
 
-# Go
+# Gemini CLI
+sudo ${SCRIPTS_DIR}/install_gemini_cli.sh
+
+# Golang
 sudo ${SCRIPTS_DIR}/install_golang.sh
 
 # kubectl
