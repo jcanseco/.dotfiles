@@ -48,6 +48,8 @@ alias t='tmux'
 alias tl='tmux ls'
 alias ta='tmux attach-session -t'
 
+alias gg='gemini'
+
 alias cd..='cd ..'
 alias g='git'
 alias gti='git'
