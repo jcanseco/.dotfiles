@@ -7,6 +7,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+SCRIPTS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null 2>&1 && pwd)"
+
 # Required
 sudo apt install -y \
     git \
@@ -30,3 +32,6 @@ sudo apt install -y \
     build-essential \
     cmake \
     python3-dev
+
+# Gemini CLI
+sudo ${SCRIPTS_DIR}/install_gemini_cli.sh
