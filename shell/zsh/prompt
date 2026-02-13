@@ -30,6 +30,10 @@ function monorepo_prompt() {
     fi
 }
 
+function time_prompt() {
+    echo "(%D{%I:%M %p}) "
+}
+
 ret_status="%(?:%{${fg[green]}%}➜ :%{${fg[red]}%}➜ )"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{${fg_bold[blue]}%}(%{${fg_bold[red]}%}"
@@ -37,4 +41,4 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{${fg_bold[yellow]}%}*%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{${fg_bold[blue]}%})"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{${reset_color}%} "
 
-PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt)$(monorepo_prompt)%{${reset_color}%}'
+PROMPT='$(ssh_prompt)${ret_status} %{${fg_bold[blue]}%}%2~ $(git_prompt)$(monorepo_prompt)%{${reset_color}%}$(time_prompt)'
