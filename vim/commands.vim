@@ -1,12 +1,15 @@
-" Save current session using :SaveSession (or :SaveSession! if a session file
-" already exists), and restore using :RestoreSession.
-command! -bang SaveSession :mksession<bang> /tmp/session.vim
-command! RestoreSession :source /tmp/session.vim
+" Change the current working directory to the project root and open FileBeagle
+command! Root execute 'lcd ' . ProjectRoot() | FileBeagle
 
 " Copy the path of the current file, relative to ProjectRoot(), into the vim
 " clipboard (i.e. the '+' register) and the tmux clipboard (via the
 " vim-tmux-clipboard plugin).
 command! Path call CopyPathToClipboard()
+
+" Save current session using :SaveSession (or :SaveSession! if a session file
+" already exists), and restore using :RestoreSession.
+command! -bang SaveSession :mksession<bang> /tmp/session.vim
+command! RestoreSession :source /tmp/session.vim
 
 " Common typos (we don't add one for 'q:' because we use 'q' in FileBeagle)
 command! WQ wq
