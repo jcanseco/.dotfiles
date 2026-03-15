@@ -129,7 +129,7 @@ command! -bang -nargs=* Rg
   \   <bang>0
   \ )
 
-nnoremap <C-p> :execute 'Files ' . ProjectRoot()<CR>| " Start file search from the project root
+nnoremap <silent> <C-p> :execute 'Files ' . ProjectRoot()<CR><Bar>:lcd %:p:h<CR> " Start file search from the project root, then if you open a file, update the current working directory to that of the file
 nnoremap <Leader>h :History!<CR>| " Start file search amongst recently opened files (full-screen)
 nnoremap <Leader>l :Lines!<CR>| " Start line search on open buffers (full-screen)
 nnoremap <Leader>aa :Rg!<space>| " Start rg search from the project root (full-screen)
