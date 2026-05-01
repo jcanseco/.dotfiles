@@ -6,6 +6,10 @@ command! Root execute 'lcd ' . ProjectRoot() | FileBeagle
 " vim-tmux-clipboard plugin).
 command! Path call CopyPathToClipboard()
 
+" Copy the absolute path of the current file, into the vim clipboard (i.e. the
+" '+' register) and the tmux clipboard (via the vim-tmux-clipboard plugin).
+command! AbsPath call CopyAbsPathToClipboard()
+
 " Save current session using :SaveSession (or :SaveSession! if a session file
 " already exists), and restore using :RestoreSession.
 command! -bang SaveSession :mksession<bang> /tmp/session.vim

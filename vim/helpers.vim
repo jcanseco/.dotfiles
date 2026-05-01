@@ -16,12 +16,14 @@ function! Path()
   return substitute(current_file, '^' . project_root . '/', '', '')
 endfunction
 
-" Copies the path of the current file, relative to ProjectRoot(), into the vim
-" clipboard (i.e. the '+' register) and the tmux clipboard (via the
-" vim-tmux-clipboard plugin).
-function! CopyPathToClipboard()
-  let path = Path()
+" Returns the absolute path of the current file.
+function! AbsPath()
+  return expand('%:p')
+endfunction
 
+" Copies the given text into the vim clipboard (i.e. the '+' register) and the
+" tmux clipboard (via the vim-tmux-clipboard plugin).
+function! CopyToClipboard(text)
   " Save current buffer number
   let current_buf = bufnr('%')
 
@@ -29,15 +31,29 @@ function! CopyPathToClipboard()
   new
   setlocal buftype=nofile bufhidden=hide noswapfile
 
-  " Put the path into the buffer and yank it
-  call setline(1, path)
+  " Put the text into the buffer and yank it
+  call setline(1, a:text)
   normal! gg"+yG
 
   " Close scratch buffer and return to original buffer
   bdelete!
   execute 'buffer ' . current_buf
 
-  echo 'Copied to clipboard: ' . path
+  echo 'Copied to clipboard: ' . a:text
+endfunction
+
+" Copies the path of the current file, relative to ProjectRoot(), into the vim
+" clipboard (i.e. the '+' register) and the tmux clipboard (via the
+" vim-tmux-clipboard plugin).
+function! CopyPathToClipboard()
+  call CopyToClipboard(Path())
+endfunction
+
+" Copies the absolute path of the current file, into the vim clipboard (i.e.
+" the '+' register) and the tmux clipboard (via the vim-tmux-clipboard
+" plugin).
+function! CopyAbsPathToClipboard()
+  call CopyToClipboard(AbsPath())
 endfunction
 
 " Executes the given string as a command and records it in the command
