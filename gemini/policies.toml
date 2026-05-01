@@ -1,0 +1,23 @@
+# NOTE: Currently broken by https://github.com/google-gemini/gemini-cli/issues/20281.
+
+# Allow safe read-only shell commands
+[[rule]]
+toolName = "run_shell_command"
+decision = "allow"
+priority = 999
+commandPrefix = [
+    "awk",
+    "cat",
+    "echo",
+    "find",
+    "git diff",
+    "git log",
+    "git show",
+    "git status",
+    "grep",
+    "head",
+    "ls",
+    "pwd",
+    "tail",
+    "wc",
+]
