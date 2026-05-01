@@ -49,7 +49,7 @@ function! CopyPathToClipboard()
   call CopyToClipboard(Path())
 endfunction
 
-" Copies the absolute path of the current file, into the vim clipboard (i.e.
+" Copies the absolute path of the current file into the vim clipboard (i.e.
 " the '+' register) and the tmux clipboard (via the vim-tmux-clipboard
 " plugin).
 function! CopyAbsPathToClipboard()
