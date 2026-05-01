@@ -22,15 +22,15 @@ typeset -A DOTFILES
 DOTFILES=(
     [".bash_profile"]="${DOTFILES_DIR}/shell/bash/bash_profile"
     [".bashrc"]="${DOTFILES_DIR}/shell/bash/bashrc"
-    [".zshrc"]="${DOTFILES_DIR}/shell/zsh/zshrc"
-    [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
-    [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
-    [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
-    [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
+    [".config/sublime-text-3/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
+    [".config/sublime-text/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
     [".gemini/policies/policies.toml"]="${DOTFILES_DIR}/gemini/policies.toml"
     [".gemini/settings.json"]="${DOTFILES_DIR}/gemini/settings.json"
-    [".config/sublime-text/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
-    [".config/sublime-text-3/Packages/User/Preferences.sublime-settings"]="${DOTFILES_DIR}/sublime/Preferences.sublime-settings"
+    [".gitconfig"]="${DOTFILES_DIR}/git/gitconfig"
+    [".ssh/config"]="${DOTFILES_DIR}/ssh/config"
+    [".tmux.conf"]="${DOTFILES_DIR}/tmux/tmux.conf"
+    [".vimrc"]="${DOTFILES_DIR}/vim/vimrc"
+    [".zshrc"]="${DOTFILES_DIR}/shell/zsh/zshrc"
 )
 
 function main {
