@@ -1,0 +1,29 @@
+{
+  "editor": "vim",
+  "permissions": {
+    "allow": [
+      "command(cat)",
+      "command(diff)",
+      "command(find)",
+      "command(git branch)",
+      "command(git diff)",
+      "command(git log)",
+      "command(git remote)",
+      "command(git show)",
+      "command(git status)",
+      "command(grep)",
+      "command(jq)",
+      "command(tail)",
+      "write_file(/home/jcanseco/.dotfiles)",
+      "write_file(/home/jcanseco/Workspace/scripts)"
+    ],
+    "deny": [
+      "command(git add)"
+    ]
+  },
+  "showFeedbackSurvey": false,
+  "trustedWorkspaces": [
+    "/home/jcanseco/.dotfiles",
+    "/home/jcanseco/Workspace/scripts"
+  ]
+}

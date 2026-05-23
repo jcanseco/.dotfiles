@@ -84,3 +84,8 @@ Session.vim
 # auto-generated tag files
 
 # End of https://www.gitignore.io/api/git,vim,tags,linux,sublimetext
+
+# Manually Added
+
+### Antigravity ###
+.antigravitycli

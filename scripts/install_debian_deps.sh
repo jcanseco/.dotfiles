@@ -33,5 +33,5 @@ sudo apt install -y \
     cmake \
     python3-dev
 
-# Gemini CLI
-sudo ${SCRIPTS_DIR}/install_gemini_cli.sh
+# Antigravity CLI
+curl -fsSL https://antigravity.google/cli/install.sh | bash
