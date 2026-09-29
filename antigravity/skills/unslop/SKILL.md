@@ -5,7 +5,6 @@ description: >-
   and artifacts. Rewrites text to be clear, natural, and direct. Use ONLY when
   the user explicitly invokes /unslop (e.g. '/unslop <doc>', 'Use /unslop skill
   to unslop that artifact'). Do NOT use unless explicitly invoked with /unslop.
-disable-model-invocation: true
 ---
 
 # Unslop (`/unslop`)
