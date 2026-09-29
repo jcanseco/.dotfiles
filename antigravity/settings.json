@@ -15,6 +15,7 @@
       "command(jq)",
       "command(tail)",
       "write_file(/home/jcanseco/.dotfiles)",
+      "write_file(/home/jcanseco/.gemini/antigravity-cli/brain)",
       "write_file(/home/jcanseco/Workspace/scripts)"
     ],
     "deny": [
@@ -24,6 +25,7 @@
   "showFeedbackSurvey": false,
   "trustedWorkspaces": [
     "/home/jcanseco/.dotfiles",
+    "/home/jcanseco/.gemini/antigravity-cli/brain",
     "/home/jcanseco/Workspace/scripts"
   ]
 }
