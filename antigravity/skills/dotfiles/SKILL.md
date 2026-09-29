@@ -45,7 +45,12 @@ When adding a new configuration file to the system:
 When creating or updating skills in `~/.dotfiles/antigravity/skills/`:
 1. Use the [skill-creator](skill-creator) skill for guidance.
 2. Ensure each skill is in its own directory with a `SKILL.md` file.
-3. If you create a new skill, update the mapping reference at
+3. When creating a skill where the user specifies it should be triggered
+   if and only if invoking `/<skill-name>`, set
+   `disable-model-invocation: true` in the YAML frontmatter of its
+   `SKILL.md`. In addition, clearly document in both the description and the
+   body that the skill must only be triggered when explicitly invoked.
+4. If you create a new skill, update the mapping reference at
    `~/.dotfiles/antigravity/skills/dotfiles/references/mapping.md`
    if it needs a specific symlink (though usually the entire
    `~/.dotfiles/antigravity/skills/` directory is symlinked).
