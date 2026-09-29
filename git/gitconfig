@@ -102,3 +102,11 @@
 
 [advice]
     statusHints = false
+
+[init]
+    # Force use of file-based refs (.git/HEAD, .git/refs/) instead of
+    # 'reftable'. The former is the traditional behavior and the default, but
+    # some hosts enable the latter by setting 'feature.experimental = true' in
+    # the system gitconfig. This breaks tools that rely on file-based refs
+    # (e.g. vim-plug which reads .got/HEAD to check out pinned commits).
+    defaultRefFormat = files
