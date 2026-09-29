@@ -9,6 +9,7 @@ description: >-
   micro-decisions. Use ONLY when the user explicitly triggers
   /goldfish-readiness. Do NOT use unless explicitly invoked with
   /goldfish-readiness.
+disable-model-invocation: true
 ---
 
 # Goldfish Implementation Readiness (Elephant-Goldfish Model)

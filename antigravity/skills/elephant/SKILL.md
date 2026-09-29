@@ -6,6 +6,7 @@ description: >-
   guides the user on how to use the Elephant-Goldfish process. Use ONLY when
   the user explicitly triggers /elephant. Do NOT use unless explicitly invoked
   with /elephant.
+disable-model-invocation: true
 ---
 
 # Elephant Prompt Creator (Elephant-Goldfish Model)

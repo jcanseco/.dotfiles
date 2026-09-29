@@ -8,6 +8,7 @@ description: >-
   and capturing structured feedback for the author session. Use ONLY when the
   user explicitly triggers /goldfish-review. Do NOT use unless explicitly
   invoked with /goldfish-review.
+disable-model-invocation: true
 ---
 
 # Goldfish Critic Review (Elephant-Goldfish Model)

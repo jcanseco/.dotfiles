@@ -7,6 +7,7 @@ description: >-
   failure modes, and architectural improvements. Use ONLY when the user
   explicitly triggers /critical-partner. Do NOT use unless explicitly invoked
   with /critical-partner.
+disable-model-invocation: true
 ---
 
 # Critical Design Partner (`/critical-partner`)

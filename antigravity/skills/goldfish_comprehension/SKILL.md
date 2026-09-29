@@ -9,6 +9,7 @@ description: >-
   unstated assumptions. Use ONLY when the user explicitly triggers
   /goldfish-comprehension. Do NOT use unless explicitly invoked with
   /goldfish-comprehension.
+disable-model-invocation: true
 ---
 
 # Goldfish Comprehension Test (Elephant-Goldfish Model)
